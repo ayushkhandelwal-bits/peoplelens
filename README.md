@@ -95,10 +95,11 @@ simple baseline:
 
 | Question | Options compared | Chosen | Why |
 |---|---|---|---|
-| Headcount in 6 months? | Naive, Drift, Holt, Holt-Winters, Flow model | Flow model (MAE 30 vs 97 naive) | Lowest backtest error; uses the known hiring pipeline |
+| Headcount in 6 months? | Naive, Drift, Holt, Holt-Winters, Flow model | Flow model (MAE 29 vs 97 naive) | Lowest backtest error; uses the known hiring pipeline |
 | Who is likely to leave? | Logistic regression, Gradient boosting | Logistic regression (AUC 0.64, lift 1.9×) | Boosting not materially better; drivers stay explainable |
 | How long to fill a role? | Global median, Segment median, Gradient boosting | Kaplan-Meier P50/P80 ranges | No point model beat the baseline |
-| What if…? | — | Deterministic scenario arithmetic | What-ifs must be traceable, not "predicted" |
+| What if we improve engagement, pay gaps, promotions? | — | Attrition driver simulator: re-scores the workforce with the trained model, feeds the change into the headcount projection | Ties model drivers to headcount and cost; associations, not causes |
+| What if attrition, hiring pace or pay change? | — | Deterministic scenario arithmetic | What-ifs must be traceable, not "predicted" |
 | Comment sentiment & themes | VADER, keyword lexicon, TF-IDF | VADER + workplace lexicon | Offline, free, explainable; limits measured |
 | Plain-English questions | LLM text-to-SQL (rejected) | Rule-based templates | Correct, auditable, zero cost |
 
@@ -145,7 +146,7 @@ multipage navigation, which conflicts with the custom navigation used here.)
 | ML | scikit-learn (logistic regression, gradient boosting) |
 | NLP | VADER (offline lexicon, extended with a small workplace lexicon), TF-IDF, keyword themes |
 | App & charts | Streamlit, Plotly |
-| Quality | pytest (94 tests), Ruff, Playwright headless UI checks |
+| Quality | pytest (97 tests), Ruff, Playwright headless UI checks |
 
 ## 6. Synthetic data generation
 
@@ -195,7 +196,7 @@ DDL in [`database/schema.sql`](database/schema.sql) is generated from it.
 |---|---|
 | **Workforce Explorer** | KPIs with prior-period deltas and definitions; headcount vs plan; joiners vs exits; composition; span of control; movements; curated SQL library with computed interpretations; custom read-only SQL; analyst-only record view |
 | **Talent & Lifecycle** | Recruitment funnel, stage timings and source effectiveness; censoring-aware cohort retention, Kaplan-Meier by source; performance, promotion and mobility; engagement trends, eNPS, engagement→exit and manager-change analyses; feedback NLP; statistical diagnostics |
-| **Predictive Intelligence** | 6-month headcount forecast with model comparison and intervals; attrition-risk model with ROC/PR/calibration; time-to-fill survival curves; hiring demand; interactive what-if scenarios; model monitoring |
+| **Predictive Intelligence** | 6-month headcount forecast with model comparison and intervals; attrition-risk model with ROC/PR/calibration; time-to-fill survival curves; hiring demand; **attrition driver simulator** (engagement, manager support, career growth, pay gaps, promotions, manager stability → leavers, headcount, turnover and pay cost); interactive what-if scenarios; model monitoring. Every tab opens with a plain-English *How this works* panel |
 | **Planning & Business Insights** | Plan vs actual (absolute and %); manpower cost vs budget; turnover-cost model with sensitivity; scenario comparison; rule-based recommendations; exportable executive report |
 | **Ask PeopleLens** | Natural-language questions → parameterised SQL / model artefacts → explained answers |
 | **Data & Governance** | Quality results, lineage, run log, metric glossary, data dictionary, live access-control test, privacy |
@@ -217,7 +218,7 @@ DDL in [`database/schema.sql`](database/schema.sql) is generated from it.
 
 | Model | Validation | Result on the generated data |
 |---|---|---|
-| Headcount forecast (6 months) | Rolling-origin backtests (3 origins), vs Naive, Drift, Holt, Holt-Winters | **Flow model selected — MAE 30 heads vs 97 for naive** (Holt damped 31) |
+| Headcount forecast (6 months) | Rolling-origin backtests (3 origins), vs Naive, Drift, Holt, Holt-Winters | **Flow model selected — MAE 29 heads vs 97 for naive** (Holt damped 31) |
 | Attrition risk (voluntary exit ≤ 6 months) | Temporal hold-out: train 7 quarter-ends (Mar 2024–Sep 2025), test Mar 2026 | **Logistic regression ROC-AUC 0.64**, PR-AUC 0.13 vs 7.6% base rate, top-decile lift 1.9× (GBM 0.62) |
 | Time to fill | Chronological hold-out + Kaplan-Meier | Segment models **do not beat** the global median (MAE ≈ 41 days) → planning uses P50/P80 distributions |
 
@@ -317,7 +318,7 @@ If the database is missing, the app builds it on first launch (`PEOPLELENS_AUTO_
 
 ```powershell
 pip install -r requirements-dev.txt
-pytest                # 94 tests on an isolated temporary database (~30 s)
+pytest                # 97 tests on an isolated temporary database (~30 s)
 ruff check .
 # optional headless UI checks against a running app:
 python -m playwright install chromium

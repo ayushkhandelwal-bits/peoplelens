@@ -107,10 +107,27 @@ def seasonal_exit_rates(hist: pd.DataFrame) -> dict[int, float]:
     return rates
 
 
+PENDING_WINDOW_DAYS = 100  # an accepted offer older than this without a join record is not a live pipeline
+
+
 def pipeline_at(accepted: pd.DataFrame, origin: pd.Timestamp, months: list[pd.Timestamp]) -> np.ndarray:
-    """Accepted offers known at ``origin`` scheduled to join in each future month."""
+    """Accepted offers known at ``origin`` expected to join in each future month.
+
+    Offers with a recorded joining date after ``origin`` use that date. Offers
+    still pending (accepted recently, no joining record yet — typical at the
+    extraction date) are placed at accepted date + the median accept-to-join
+    gap observed before ``origin`` (never earlier than the next day).
+    """
     known = accepted[(accepted.accepted_date <= origin) & (accepted.join_date > origin)]
-    jm = known.join_date + pd.offsets.MonthEnd(0)
+    dates = known.join_date
+    pending = accepted[(accepted.accepted_date <= origin) & accepted.join_date.isna()
+                       & (accepted.accepted_date > origin - pd.Timedelta(days=PENDING_WINDOW_DAYS))]
+    if len(pending):
+        done = accepted[accepted.join_date <= origin]
+        lag = (done.join_date - done.accepted_date).dt.days.median() if len(done) else 35
+        exp = (pending.accepted_date + pd.to_timedelta(lag, unit="D")).clip(lower=origin + pd.Timedelta(days=1))
+        dates = pd.concat([dates, exp])
+    jm = dates + pd.offsets.MonthEnd(0)
     return np.array([int((jm == m).sum()) for m in months])
 
 

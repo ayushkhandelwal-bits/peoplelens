@@ -359,6 +359,13 @@ def risk_scores(v: str) -> pd.DataFrame | None:
     return load_scores()
 
 
+@st.cache_data(ttl=TTL, show_spinner=False)
+def current_salaries(v: str) -> pd.Series:
+    """Current annual base salary per employee (used to cost pay-gap scenarios)."""
+    df = read_sql("SELECT employee_id, annual_base_salary FROM compensation_history WHERE effective_end_date IS NULL")
+    return df.set_index("employee_id").annual_base_salary.astype(float)
+
+
 @st.cache_data(ttl=TTL, show_spinner="Generating recommendations…")
 def recommendations(f: Filters, v: str) -> list[dict]:
     from src.analytics.recommendations import generate

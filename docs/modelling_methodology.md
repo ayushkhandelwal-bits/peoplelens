@@ -17,20 +17,22 @@ hires(t)     = max(known offer pipeline(t) × historical join rate, trailing 6-m
 ```
 
 The known pipeline is the set of offers already accepted *at the forecast origin* with an agreed joining date after
-it — information a planner really has at that time (verified by a test).
+it — information a planner really has at that time (verified by a test). Offers accepted but not yet joined at
+the origin (no joining record yet) are placed at the accepted date plus the median accept-to-join gap observed
+before the origin.
 
 **Validation.** Rolling-origin backtests with a 6-month horizon at three origins (Sep 2025, Dec 2025, Mar 2026),
 strictly chronological, never shuffled. Selection = lowest mean MAE.
 
 | Model | MAE (heads) | RMSE |
 |---|---:|---:|
-| **Flow model (selected)** | **30.1** | 34.7 |
+| **Flow model (selected)** | **29.1** | 33.9 |
 | Holt (damped) | 31.1 | 34.5 |
 | Drift | 34.8 | 39.7 |
 | Holt-Winters | 52.0 | 63.5 |
 | Naive | 97.4 | 110.9 |
 
-The flow model cuts error by 69% versus naive; Holt is a close second. Holt-Winters overfits the short (≤ 30-month)
+The flow model cuts error by 70% versus naive; Holt is a close second. Holt-Winters overfits the short (≤ 30-month)
 training windows. For **monthly exits**, seasonal-naive (MAE 10.1 exits/month) slightly beats the flow model's
 exit component (11.3) — reported honestly; the flow model is still preferred for headcount because it combines exits
 with the hiring pipeline.

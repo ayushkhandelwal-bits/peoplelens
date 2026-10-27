@@ -108,3 +108,46 @@ def test_scenarios_are_deterministic_and_directional(engine):
     assert worse["total_exits"] > base["total_exits"] and worse["end_headcount"] < base["end_headcount"]
     assert pricier["workforce_cost"] == pytest.approx(base["workforce_cost"] * 1.10, rel=1e-9)
     assert scenarios.summarise(scenarios.run(scenarios.Scenario("Baseline"), inp)) == base
+
+
+def test_driver_simulator_baseline_and_direction(built_db):
+    from src.models.driver_simulator import Levers, apply_levers, simulate
+
+    scores = attrition.load_scores()
+    base = simulate(scores, Levers())
+    assert base["leavers_change_6m"] == pytest.approx(0.0)
+    assert base["attrition_delta_pp"] == pytest.approx(0.0)
+    better = simulate(scores, Levers(engagement_delta=0.3))
+    worse = simulate(scores, Levers(engagement_delta=-0.3))
+    assert better["new_leavers_6m"] < base["base_leavers_6m"] < worse["new_leavers_6m"]
+    assert simulate(scores, Levers(pay_floor=0.95))["leavers_change_6m"] <= 0
+    # scores stay on the survey scale and promotions only touch eligible people
+    mod, info = apply_levers(scores, Levers(engagement_delta=0.5, promote_share=1.0))
+    assert mod.engagement_score.dropna().between(1, 5).all()
+    elig = (scores.months_since_promotion >= 36) & (scores.level_num < 7)
+    assert info["promoted"] == int(elig.sum())
+    assert (mod.loc[~elig, "level_num"] == scores.loc[~elig, "level_num"]).all()
+
+
+def test_driver_simulator_department_scope(built_db):
+    from src.models.driver_simulator import Levers, simulate
+
+    scores = attrition.load_scores()
+    dept = scores.department_id.value_counts().index[0]
+    r = simulate(scores, Levers(engagement_delta=0.3), dept)
+    assert r["employees_in_scope"] == int((scores.department_id == dept).sum())
+    # employees outside the department are unchanged, so the org change equals the department change
+    assert r["new_leavers_6m"] - r["base_leavers_6m"] == pytest.approx(
+        r["new_leavers_6m_scope"] - r["base_leavers_6m_scope"])
+
+
+def test_pipeline_counts_pending_offers():
+    origin = pd.Timestamp("2026-09-30")
+    acc = pd.DataFrame({
+        "accepted_date": pd.to_datetime(["2026-06-01", "2026-07-01", "2026-09-10", "2026-09-20", "2025-01-01"]),
+        "join_date": pd.to_datetime(["2026-07-05", "2026-10-15", None, None, None]),
+    })
+    months = [origin + pd.offsets.MonthEnd(k) for k in range(1, 4)]
+    p = workforce_forecast.pipeline_at(acc, origin, months)
+    # one dated future joiner + two recent pending offers (median lag 34 days -> Oct); the stale 2025 offer is ignored
+    assert p.sum() == 3 and p[0] == 3

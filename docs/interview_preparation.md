@@ -54,7 +54,7 @@ stated. The MBA lens: every technical component answers a business question.
 ## Forecasting methodology
 * Baselines first (naive, drift), then Holt and Holt-Winters, then a structural flow model using the accepted-offer
   pipeline and seasonal exit rates.
-* Rolling-origin backtests; flow model MAE 30 heads vs 97 naive. Holt-Winters overfits with ~30 months of history.
+* Rolling-origin backtests; flow model MAE 29 heads vs 97 naive. Holt-Winters overfits with ~30 months of history.
 * Seasonal-naive actually forecasts *monthly exits* slightly better than the flow model — I report that rather than
   hide it.
 * Intervals from out-of-sample errors, not in-sample fit.

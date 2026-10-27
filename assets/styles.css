@@ -149,3 +149,15 @@ section[data-testid="stSidebar"] .st-key-pl_nav_active [data-testid="stIconMater
 .pl-glance-v { color: #FFFFFF; font-weight: 700; font-size: 1.02rem; }
 .pl-glance-v.neg { color: #FCA5A5; }
 .pl-glance-v.pos { color: #86EFAC; }
+
+/* Predictive: "How this works" panel */
+.pl-ex { background: var(--pl-card); border: 1px solid var(--pl-border); border-radius: 12px; padding: 12px 14px;
+  margin: 2px 0 12px 0; border-top: 3px solid var(--pl-teal); }
+.pl-ex-h { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--pl-teal); margin-bottom: 8px; }
+.pl-ex-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; }
+.pl-ex-l { font-size: 0.74rem; font-weight: 700; color: var(--pl-navy); margin-bottom: 3px; }
+.pl-ex-t { font-size: 0.8rem; color: #334155; line-height: 1.45; }
+.pl-ex-t b { color: var(--pl-navy); }
+@media (max-width: 1100px) { .pl-ex-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) { .pl-ex-grid { grid-template-columns: 1fr; } }

@@ -160,7 +160,7 @@ def render() -> None:
     dq = s.get("dq", {})
     metric(c[2], "Quality checks passed", f"{dq.get('PASS', 0)} / {sum(dq.values()) if dq else 0}")
     metric(c[3], "Defined KPIs", "35")
-    metric(c[4], "Automated tests", "94")
+    metric(c[4], "Automated tests", "97")
 
     tabs = st.tabs(["End-to-end flow", "Step by step", "Models explained", "Tech stack", "Design decisions",
                     "Key terms"])
@@ -308,6 +308,8 @@ def _models() -> None:
          "Boosting not materially better; LR is explainable", "Train 2024–25 → test Mar 2026"],
         ["Time to fill", "Global median, Segment median, Gradient boosting", "Kaplan-Meier ranges",
          "No point model beat the baseline", "Chronological hold-out"],
+        ["Attrition drivers (what-if)", "—", "Re-score with the attrition model",
+         "Links engagement, pay, promotions to leavers, headcount and cost", "Baseline & direction tests"],
         ["Scenarios", "—", "Deterministic arithmetic", "What-ifs must be transparent, not 'predicted'", "Direction tests"],
         ["Comment sentiment", "VADER", "VADER + workplace lexicon", "Offline, free, explainable",
          "Against generator labels"],
@@ -431,7 +433,7 @@ def _stack() -> None:
         ["Text", "VADER (vaderSentiment)", "Comment sentiment", "Offline, free, explainable"],
         ["App", "Streamlit", "Web interface, navigation, caching", "Python-only, free hosting"],
         ["Charts", "Plotly", "Interactive charts", "Hover detail, consistent styling"],
-        ["Testing & quality", "pytest, Ruff", "94 tests, code style", "Catch regressions before deploy"],
+        ["Testing & quality", "pytest, Ruff", "97 tests, code style", "Catch regressions before deploy"],
         ["UI checks", "Playwright", "Headless browser tests, screenshots", "Proves pages render without errors"],
         ["Packaging", "Docker, docker-compose", "App + PostgreSQL in one command", "Reproducible setup"],
         ["Hosting", "Streamlit Community Cloud", "Public demo", "Free; rebuilds data on start"],

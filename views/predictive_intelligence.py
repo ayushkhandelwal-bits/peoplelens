@@ -10,6 +10,7 @@ import streamlit as st
 
 from components import charts, data
 from components.kpi_cards import caption, fmt_inr, fmt_int, fmt_pct, insight, metric, page_header
+from components.model_explainers import explain
 from components.sidebar import current_role
 from components.tables import show
 from src.governance.access_control import can
@@ -41,21 +42,24 @@ def render() -> None:
     if m is None:
         return
     fc, att, ttf = m
-    tabs = st.tabs(["Workforce forecast", "Attrition risk", "Hiring & time to fill", "Scenario explorer",
-                    "Model monitoring"])
+    tabs = st.tabs(["Workforce forecast", "Attrition risk", "Attrition drivers (what-if)", "Hiring & time to fill",
+                    "Scenario explorer", "Model monitoring"])
     with tabs[0]:
-        _forecast(fc)
+        _forecast(fc, v)
     with tabs[1]:
         _attrition(att, v)
     with tabs[2]:
-        _ttf(ttf, fc)
+        _drivers(att, v)
     with tabs[3]:
-        _scenarios(v)
+        _ttf(ttf, fc)
     with tabs[4]:
+        _scenarios(v)
+    with tabs[5]:
         _monitoring(fc, att, ttf)
 
 
-def _forecast(fc: dict) -> None:
+def _forecast(fc: dict, v: str) -> None:
+    explain("forecast")
     hist = pd.DataFrame(fc["history"]).assign(month=lambda d: pd.to_datetime(d.month))
     f = pd.DataFrame(fc["forecast"]).assign(month=lambda d: pd.to_datetime(d.month))
     comp = pd.DataFrame(fc["model_comparison"])
@@ -83,6 +87,7 @@ def _forecast(fc: dict) -> None:
                     config=charts.CONFIG)
     caption("Other candidate models can be switched on in the legend. Intervals come from out-of-sample backtest "
             "errors by horizon.")
+    _forecast_inputs(fc, v)
     c1, c2 = st.columns([3, 2])
     with c1:
         st.markdown("**Model comparison (rolling-origin backtests, 6-month horizon)**")
@@ -113,6 +118,7 @@ def _forecast(fc: dict) -> None:
 
 
 def _attrition(att: dict, v: str) -> None:
+    explain("attrition")
     primary = att["primary_model"]
     res = att["results"][primary]
     other = [k for k in att["results"] if k != primary][0]
@@ -177,6 +183,7 @@ def _attrition(att: dict, v: str) -> None:
                         config=charts.CONFIG)
         caption("Amber = associated with higher risk, teal = lower risk, per one standard deviation. Associations, "
                 "not causes; location is included as a test variable and shows little effect.")
+    _feature_table(att)
     st.markdown("#### Current risk distribution (score date " + att["score_date"] + ")")
     sc = data.risk_scores(v)
     if sc is not None:
@@ -207,6 +214,7 @@ def _attrition(att: dict, v: str) -> None:
 
 
 def _ttf(ttf: dict, fc: dict) -> None:
+    explain("ttf")
     s = pd.DataFrame(ttf["km_summary"])
     curves = pd.DataFrame(ttf["km_curves"])
     ev = ttf["evaluation"]
@@ -258,6 +266,7 @@ def _ttf(ttf: dict, fc: dict) -> None:
 def _scenarios(v: str) -> None:
     from src.models.scenarios import Scenario, run, summarise
 
+    explain("scenarios")
     inp = data.scenario_inputs(v)
     base = inp["base"]
     st.markdown("Adjust assumptions and see the deterministic projection recalculate. This is arithmetic on stated "
@@ -300,6 +309,7 @@ def _scenarios(v: str) -> None:
 
 
 def _monitoring(fc: dict, att: dict, ttf: dict) -> None:
+    explain("monitoring")
     rows = [
         dict(model="Workforce forecast", version=fc["model_version"], trained=fc["trained_at"],
              data=f"{fc['history_months']} months to {fc['history_end']}",
@@ -325,3 +335,180 @@ def _monitoring(fc: dict, att: dict, ttf: dict) -> None:
             st.markdown(f"- {a}")
     caption("Models are retrained deliberately with `python scripts/train_models.py` (or the button shown when "
             "artefacts are missing), never automatically on page load.")
+
+
+FEATURE_TEXT = {
+    "tenure_months": "Months with the company",
+    "level_num": "Job level (1 = entry, 7 = senior)",
+    "contract": "Contract (non-permanent) employee",
+    "engagement_score": "Latest engagement survey score (1–5)",
+    "engagement_missing": "No engagement score on record",
+    "engagement_change": "Change in engagement since the previous survey",
+    "manager_support_score": "Latest 'my manager supports me' score (1–5)",
+    "career_growth_score": "Latest 'I can grow my career here' score (1–5)",
+    "last_rating": "Latest performance rating (1–5)",
+    "rating_missing": "No performance rating yet",
+    "pay_vs_peer_median": "Salary ÷ median of peers at the same level and job family",
+    "months_since_promotion": "Months since last promotion (or since joining)",
+    "manager_change_6m": "Changed manager in the last 6 months",
+    "team_size": "Manager's number of direct reports",
+    "training_hours_12m": "Training hours in the last 12 months",
+    "dept_trailing_attrition": "Department's attrition over the previous 12 months",
+}
+
+
+def _feature_table(att: dict) -> None:
+    co = pd.DataFrame(att["coefficients"])
+    num = co[co.feature.str.startswith("num__")].copy()
+    num["input"] = num.feature.str.replace("num__", "", regex=False)
+    num["meaning"] = num.input.map(FEATURE_TEXT).fillna(num.label)
+    strength = num.coefficient.abs()
+    num["association"] = np.where(num.coefficient > 0, "raises risk", "lowers risk")
+    num["strength"] = pd.cut(strength, [-1, 0.03, 0.08, 0.15, 10], labels=["negligible", "weak", "moderate", "strong"])
+    num.loc[num.strength == "negligible", "association"] = "≈ no effect"
+    num = num.reindex(strength.sort_values(ascending=False).index)
+    with st.expander("What the model looks at — every input and how it relates to leaving",
+                     icon=":material/list_alt:", expanded=True):
+        show(num[["label", "meaning", "association", "strength", "odds_ratio"]],
+             {"odds_ratio": "float2"},
+             rename={"label": "Input", "meaning": "What it means", "association": "Association",
+                     "strength": "Strength", "odds_ratio": "Odds × per 1 SD"})
+        caption("Odds × per 1 SD: how the odds of leaving change when the input rises by one standard deviation, "
+                "holding the others fixed (below 1 = protective). Business unit, location and hiring source enter "
+                "as categories. Gender and names are deliberately excluded.")
+
+
+def _forecast_inputs(fc: dict, v: str) -> None:
+    inp = data.scenario_inputs(v)
+    base = inp["base"]
+    hc = float(base.headcount.sum())
+    rate = float((base.annual_exit_rate * base.headcount).sum() / hc)
+    pace = float(base.monthly_hires.sum())
+    pipe = float(sum(p[:6].sum() for p in inp["pipeline"].values()))
+    st.markdown("#### What this forecast depends on")
+    c = st.columns(4)
+    metric(c[0], f"Starting headcount · {inp['origin']:%b %Y}", fmt_int(hc))
+    metric(c[1], "Annual exit rate (last 12 months)", fmt_pct(rate),
+           help_extra="Spread across months using the historical seasonal pattern.")
+    metric(c[2], "Hiring pace (last 6 months)", f"{pace:,.0f} / month",
+           help_extra="Used for hires beyond the known offer pipeline.")
+    metric(c[3], "Accepted offers due to join (6 months)", f"{pipe:,.0f}",
+           help_extra="Accepted offers with a future joining date, adjusted by the historical offer-to-join rate.")
+    insight("These four drivers move the forecast. To change them, use **Scenario explorer** (attrition, hiring "
+            "pace, delays, cost) or **Attrition drivers** (engagement, pay, promotions → attrition → headcount).")
+    with st.expander("Forecast assumptions", icon=":material/rule:"):
+        for a in fc["assumptions"]:
+            st.markdown(f"- {a}")
+
+
+@st.cache_data(ttl=3600, show_spinner="Re-scoring the workforce…")
+def _simulate(lv_dict: dict, dept: str | None, v: str) -> tuple[dict, pd.DataFrame]:
+    from src.models.driver_simulator import Levers, lever_contributions, simulate
+
+    sc = data.risk_scores(v)
+    lv = Levers(**lv_dict)
+    res = simulate(sc, lv, dept, data.current_salaries(v))
+    return res, lever_contributions(sc, lv, dept)
+
+
+def _drivers(att: dict, v: str) -> None:
+    from src.models.driver_simulator import Levers
+    from src.models.scenarios import Scenario, run, summarise
+
+    explain("drivers")
+    sc = data.risk_scores(v)
+    if sc is None:
+        st.info("Attrition scores are not available yet.")
+        return
+    nm = data.names(v)
+    depts = sorted(sc.department_id.unique(), key=lambda d: nm["departments"].get(d, d))
+    scope = st.selectbox("Apply changes to", ["Whole organisation"] + depts, key="drv_scope",
+                         format_func=lambda d: d if d == "Whole organisation" else nm["departments"].get(d, d))
+    dept = None if scope == "Whole organisation" else scope
+    st.markdown("**Survey scores** (1–5 scale; the organisation averages about 3.6)")
+    c = st.columns(3)
+    eng = c[0].slider("Engagement score change", -0.5, 0.5, 0.0, 0.05, key="drv_eng",
+                      help="Added to each employee's latest engagement score (kept within 1–5).")
+    mgr = c[1].slider("Manager support score change", -0.5, 0.5, 0.0, 0.05, key="drv_mgr")
+    car = c[2].slider("Career growth score change", -0.5, 0.5, 0.0, 0.05, key="drv_car")
+    st.markdown("**Policy actions**")
+    c = st.columns(3)
+    floor = c[0].select_slider("Close pay gaps: raise anyone below…", ["Off", "85%", "90%", "95%", "100%"],
+                               value="Off", key="drv_pay",
+                               help="…up to this share of the median pay of peers at the same level and job family.")
+    promo = c[1].slider("Promote % of people waiting 3+ years", 0, 100, 0, 10, key="drv_promo",
+                        help="Highest-rated first. Applies to employees below the top level with no promotion for 36+ "
+                             "months.")
+    stable = c[2].toggle("Avoid manager changes for 6 months", key="drv_stable")
+    lv = Levers(engagement_delta=eng, manager_support_delta=mgr, career_growth_delta=car,
+                pay_floor=None if floor == "Off" else int(floor[:-1]) / 100, promote_share=promo / 100,
+                stable_managers=stable)
+    res, contrib = _simulate(lv.to_dict(), dept, v)
+
+    inp = data.scenario_inputs(v)
+    b_df = run(Scenario("Baseline"), inp)
+    s_df = run(Scenario("With driver changes", attrition_delta_pp=res["attrition_delta_pp"]), inp)
+    b, s = summarise(b_df), summarise(s_df)
+    scope_name = "organisation" if dept is None else nm["departments"].get(dept, dept)
+    k = st.columns(5)
+    same = lv.is_baseline()
+    metric(k[0], "Leavers in 6 months", f"{res['new_leavers_6m_scope']:,.0f}",
+           None if same else f"{res['new_leavers_6m_scope'] - res['base_leavers_6m_scope']:+,.1f} vs today",
+           inverse=True,
+           help_extra="Expected voluntary leavers in scope: the sum of everyone's predicted probability of "
+                      "resigning in the next six months.")
+    metric(k[1], "Voluntary attrition / yr", fmt_pct(res["new_annual_rate_scope"]),
+           None if same else f"{(res['new_annual_rate_scope'] - res['base_annual_rate_scope']) * 100:+.2f} pp",
+           inverse=True, help_extra=f"Predicted annual voluntary attrition for the {'organisation' if dept is None else 'department'}.")
+    metric(k[2], "Headcount in 6 months", fmt_int(s["end_headcount"]),
+           None if same else f"{s['end_headcount'] - b['end_headcount']:+,.0f} vs baseline")
+    metric(k[3], "Turnover cost (6m)", fmt_inr(s["turnover_cost"]),
+           None if same else fmt_inr(s["turnover_cost"] - b["turnover_cost"], signed=True), inverse=True,
+           help_extra="Exits × replacement cost per exit (hiring, onboarding, ramp-up and vacancy).")
+    pay_cost = res.get("pay_cost_annual")
+    metric(k[4], "Pay-gap cost / year", fmt_inr(pay_cost) if pay_cost else "—",
+           f"{res['pay_adjusted']:,} people" if res["pay_adjusted"] else None, inverse=True)
+
+    if lv.is_baseline():
+        insight("Move a slider to see how the trained attrition model expects leavers, headcount and cost to respond.")
+    c1, c2 = st.columns([2, 3], gap="large")
+    with c1:
+        if len(contrib):
+            contrib = contrib.sort_values("leavers_change_6m")
+            fig = go.Figure(go.Bar(x=contrib.leavers_change_6m, y=contrib.lever, orientation="h",
+                                   marker_color=np.where(contrib.leavers_change_6m > 0, charts.AMBER, charts.TEAL),
+                                   text=contrib.leavers_change_6m.map(lambda x: f"{x:+.1f}"),
+                                   textposition="auto", insidetextanchor="middle", textangle=0, cliponaxis=False))
+            fig = charts.finish(fig, "Effect of each lever on leavers", 300)
+            fig.update_layout(margin=dict(l=130))
+            fig.update_yaxes(automargin=True)
+            st.plotly_chart(fig, config=charts.CONFIG)
+            caption("Change in expected leavers over 6 months when each lever is applied on its own. Levers overlap, "
+                    "so they do not add up exactly to the combined total.")
+        notes = []
+        if res["promoted"]:
+            notes.append(f"**{res['promoted']:,}** of {res['eligible_for_promotion']:,} long-waiting employees promoted "
+                         "(one level up).")
+        if res["pay_adjusted"]:
+            notes.append(f"**{res['pay_adjusted']:,}** employees' pay raised to {floor} of their peer median"
+                         + (f", costing about **{fmt_inr(pay_cost)}** a year." if pay_cost else "."))
+        if res["manager_changes_avoided"]:
+            notes.append(f"**{res['manager_changes_avoided']:,}** recent manager changes treated as avoided.")
+        for n in notes:
+            st.markdown(f"- {n}")
+    with c2:
+        g = pd.concat([b_df, s_df]).groupby(["scenario", "month"]).headcount.sum().reset_index()
+        w = g.pivot(index="month", columns="scenario", values="headcount").reset_index()
+        plan = b_df.groupby("month").planned_headcount.sum(min_count=1).reset_index()
+        w = w.merge(plan, on="month", how="left")
+        ys = ["Baseline", "With driver changes"] + (["planned_headcount"] if w.planned_headcount.notna().any() else [])
+        st.plotly_chart(charts.line(w, "month", ys, ["Baseline", "With your changes", "Plan"][:len(ys)],
+                                    "Organisation headcount: baseline vs your changes",
+                                    colors=[charts.SLATE, charts.TEAL, charts.NAVY], dash=["solid", "solid", "dot"],
+                                    height=300), config=charts.CONFIG)
+        caption(f"The change in {scope_name} attrition is converted to an organisation-wide change of "
+                f"{res['attrition_delta_pp']:+.2f} pp a year and fed into the scenario engine (6-month horizon).")
+    insight("**Read with care.** The model learns associations from historical (synthetic) data — e.g. engaged people "
+            "leave less — not proven cause and effect. Use these numbers to compare options and size them roughly. "
+            "Training hours are a model input but show no protective association here, so they are not offered as "
+            "a lever.", "warn")

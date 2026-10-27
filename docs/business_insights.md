@@ -81,10 +81,10 @@ To reproduce: `python scripts/run_pipeline.py`, then open the module named under
 
 * **Business question:** Will we have the workforce the plan assumes?
 * **KPI:** headcount vs plan; forecast gap; hires required vs planned hires.
-* **Method:** AOP comparison; validated flow-model forecast (backtest MAE 30 heads vs 97 naive); hiring-demand
+* **Method:** AOP comparison; validated flow-model forecast (backtest MAE 29 heads vs 97 naive); hiring-demand
   calculation net of the offer pipeline.
-* **Result:** actual **6,106** vs plan **6,195** (−89, −1.4%) at Sep 2026; forecast **−102** vs plan by Dec 2026. The
-  largest absolute gap is SMB Sales (−15) and the largest percentage gap Marketing (−6.2%). In **13 of 25**
+* **Result:** actual **6,106** vs plan **6,195** (−89, −1.4%) at Sep 2026; forecast **−75** vs plan by Dec 2026. The
+  largest absolute gap is Service Operations North (−16) and the largest percentage gap Marketing (−7.0%). In **13 of 25**
   departments the hires needed over six months exceed the hires the plan budgeted.
 * **Interpretation:** the shortfall is driven by attrition running above the plan's assumption plus time-to-fill
   (median ≈ 63 days, P80 well above 100 days for several families), not by insufficient requisitions alone.
