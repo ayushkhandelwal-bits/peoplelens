@@ -28,6 +28,7 @@ from src.data_generation.generate_compensation import (
     promotion_increase,
 )
 from src.data_generation.generate_employees import assign_manager
+from src.data_generation.generate_recruitment import SOURCES
 from src.data_generation.reference_data import (
     INVOLUNTARY_REASONS,
     JOB_FAMILIES,
@@ -36,7 +37,6 @@ from src.data_generation.reference_data import (
     TRAINING_PROGRAMS,
     VOLUNTARY_REASONS,
 )
-from src.data_generation.generate_recruitment import SOURCES
 from src.data_generation.state import WorkforceState, from_ordinal, ordinal
 
 LEVEL_ATTRITION = {1: 1.15, 2: 1.05, 3: 1.0, 4: 0.9, 5: 0.8, 6: 0.7, 7: 0.6, 8: 0.0, 9: 0.0}

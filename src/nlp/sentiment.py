@@ -16,9 +16,22 @@ from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 POS, NEG = 0.05, -0.05
 
 
+# Small, documented workplace lexicon added to VADER's general-purpose one. VADER
+# scores everyday words; without these, workplace complaints such as "burnout" or
+# "firefighting" read as neutral. Valences follow VADER's -4..+4 scale.
+WORKPLACE_LEXICON = {
+    "burnout": -2.6, "firefighting": -1.8, "micromanagement": -2.2, "overworked": -2.2, "understaffed": -1.8,
+    "stretched": -1.2, "silos": -1.3, "invisible": -1.4, "sustainable": 1.2, "unsustainable": -1.8,
+    "exhausting": -2.0, "unsettling": -1.6, "supportive": 1.9, "flexible": 1.2, "transparent": 1.3,
+    "unclear": -1.0, "irrelevant": -1.2, "generic": -0.8, "competitive": 0.9,
+}
+
+
 @lru_cache(maxsize=1)
 def _analyzer() -> SentimentIntensityAnalyzer:
-    return SentimentIntensityAnalyzer()
+    a = SentimentIntensityAnalyzer()
+    a.lexicon.update(WORKPLACE_LEXICON)
+    return a
 
 
 def score(text: str) -> float:

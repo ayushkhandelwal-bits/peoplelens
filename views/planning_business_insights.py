@@ -4,9 +4,8 @@ exportable executive report."""
 
 from __future__ import annotations
 
-from dataclasses import replace
-
 import html
+from dataclasses import replace
 
 import pandas as pd
 import plotly.graph_objects as go

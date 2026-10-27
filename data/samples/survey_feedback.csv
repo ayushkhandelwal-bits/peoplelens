@@ -1,0 +1,301 @@
+feedback_id,survey_date,survey_period,department_id,tenure_band,feedback_text
+1,2024-11-15,2024-Q4,D11,5+ years,Promotions seem to depend on visibility rather than performance.
+2,2024-11-15,2024-Q4,D21,5+ years,Would like more clarity on how the salary bands are decided.
+3,2024-11-15,2024-Q4,D22,5+ years,"Plenty of opportunities to grow, but my manager is rarely around."
+4,2024-11-15,2024-Q4,D02,5+ years,The increment did not even match inflation.
+5,2024-11-15,2024-Q4,D03,5+ years,Not sure the workload is sustainable if two more people leave.
+6,2024-11-15,2024-Q4,D18,5+ years,"Changed managers twice this year and nobody explained why, very unsettling."
+7,2024-11-15,2024-Q4,D02,5+ years,Teams work in silos and handoffs between departments are painful.
+8,2024-11-15,2024-Q4,D03,5+ years,I rarely have to work weekends and leave requests are approved quickly.
+9,2024-11-15,2024-Q4,D21,5+ years,"The new office layout is fine, still getting used to it."
+10,2024-11-15,2024-Q4,D08,5+ years,I do not feel my manager supports me when issues come up.
+11,2024-11-15,2024-Q4,D25,5+ years,The increment did not even match inflation.
+12,2024-11-15,2024-Q4,D13,5+ years,"Plenty of opportunities to grow, but my manager is rarely around."
+13,2024-11-15,2024-Q4,D25,5+ years,"Pay is not terrible, just not great either."
+14,2024-11-15,2024-Q4,D23,5+ years,"The new office layout is fine, still getting used to it"
+15,2024-11-15,2024-Q4,D11,5+ years,"Salary is below market, new joiners are paid more than people with experience."
+16,2024-11-15,2024-Q4,D12,5+ years,"Hard to switch off, messages keep coming after hours."
+17,2024-11-15,2024-Q4,D02,5+ years,Not much has changed since the last survey.
+18,2024-11-15,2024-Q4,D08,5+ years,"Salary is below market, new joiners are paid more than people with experience. Thanks."
+19,2024-11-15,2024-Q4,D09,5+ years,Really appreciate how my lead backs the team in difficult conversations.
+20,2024-11-15,2024-Q4,D02,5+ years,"Micromanagement is exhausting, there is no trust in the team."
+21,2024-11-15,2024-Q4,D11,5+ years,"Great team, people help each other without being asked."
+22,2024-11-15,2024-Q4,D21,5+ years,"Salary is below market, new joiners are paid more than people with experience."
+23,2024-11-15,2024-Q4,D15,3-5 years,It has been an average quarter.
+24,2024-11-15,2024-Q4,D21,3-5 years,My manager is supportive and always makes time for one-on-ones.
+25,2024-11-15,2024-Q4,D20,3-5 years,No major concerns at the moment.
+26,2024-11-15,2024-Q4,D13,3-5 years,Pay is the main reason people on my team are leaving.
+27,2024-11-15,2024-Q4,D02,3-5 years,"Plenty of opportunities to grow, but my manager is rarely around."
+28,2024-11-15,2024-Q4,D16,3-5 years,No time to attend training even when it is approved.
+29,2024-11-15,2024-Q4,D19,3-5 years,"The training is good, but there is no promotion at the end of it."
+30,2024-11-15,2024-Q4,D10,3-5 years,"Good manager, gives honest feedback and trusts us to deliver."
+31,2024-11-15,2024-Q4,D14,3-5 years,Not sure the workload is sustainable if two more people leave.
+32,2024-11-15,2024-Q4,D20,3-5 years,"I don't hate it here, but I'm not sure there's a future for me."
+33,2024-11-15,2024-Q4,D09,3-5 years,Teams work in silos and handoffs between departments are painful.
+34,2024-11-15,2024-Q4,D03,3-5 years,"We moved to a new manager recently, too early to say how it is going."
+35,2024-11-15,2024-Q4,D20,3-5 years,Collaboration across teams has improved a lot this year.
+36,2024-11-15,2024-Q4,D09,3-5 years,My manager is rarely available and feedback only comes at appraisal time.
+37,2024-11-15,2024-Q4,D10,3-5 years,Teams work in silos and handoffs between departments are painful.
+38,2024-11-15,2024-Q4,D05,3-5 years,"Flexible hours are a big plus, salary not so much. Thanks."
+39,2024-11-15,2024-Q4,D16,3-5 years,Workload is manageable and priorities are clear most weeks.
+40,2024-11-15,2024-Q4,D24,3-5 years,"Amazing career growth, if you count new acronyms as growth."
+41,2024-11-15,2024-Q4,D07,3-5 years,My reporting manager genuinely cares about our wellbeing.
+42,2024-11-15,2024-Q4,D11,3-5 years,"Hard to see where my career goes from here, nobody discusses it."
+43,2024-11-15,2024-Q4,D16,3-5 years,"The training is good, but there is no promotion at the end of it."
+44,2024-11-15,2024-Q4,D23,3-5 years,"I feel invisible, good work is simply expected and never acknowledged."
+45,2024-11-15,2024-Q4,D16,3-5 years,Learning budget exists on paper but approvals never come through.
+46,2024-11-15,2024-Q4,D03,3-5 years,Promotions seem to depend on visibility rather than performance.
+47,2024-11-15,2024-Q4,D12,3-5 years,Plenty of learning budget and time set aside to use it.
+48,2024-11-15,2024-Q4,D01,1-3 years,"Good manager, gives honest feedback and trusts us to deliver."
+49,2024-11-15,2024-Q4,D12,1-3 years,My manager is supportive and always makes time for one-on-ones. Thanks.
+50,2024-11-15,2024-Q4,D11,1-3 years,"hard to see where my career goes from here, nobody discusses it."
+51,2024-11-15,2024-Q4,D22,1-3 years,"Great, another quarter of doing two people's jobs. Love it."
+52,2024-11-15,2024-Q4,D02,1-3 years,"Some processes changed this quarter, waiting to see how it settles."
+53,2024-11-15,2024-Q4,D10,1-3 years,"Plenty of opportunities to grow, but my manager is rarely around."
+54,2024-11-15,2024-Q4,D09,1-3 years,The courses on offer are generic and not relevant to my work.
+55,2024-11-15,2024-Q4,D22,1-3 years,Hybrid working has been great for my work-life balance.
+56,2024-11-15,2024-Q4,D18,1-3 years,please keep the survey shorter next time.
+57,2024-11-15,2024-Q4,D20,1-3 years,i feel valued and recognised for what i contribute.
+58,2024-11-15,2024-Q4,D17,1-3 years,"Leadership acknowledged our launch publicly, which was motivating. Thanks."
+59,2024-11-15,2024-Q4,D25,1-3 years,My reporting manager genuinely cares about our wellbeing.
+60,2024-11-15,2024-Q4,D02,1-3 years,Pay is the main reason people on my team are leaving.
+61,2024-11-15,2024-Q4,D11,1-3 years,"Micromanagement is exhausting, there is no trust in the team."
+62,2024-11-15,2024-Q4,D10,1-3 years,"My manager is great, but the pay is well below market."
+63,2024-11-15,2024-Q4,D13,1-3 years,Collaboration across teams has improved a lot this year.
+64,2024-11-15,2024-Q4,D15,1-3 years,My manager is supportive and always makes time for one-on-ones.
+65,2024-11-15,2024-Q4,D10,1-3 years,My manager is supportive and always makes time for one-on-ones.
+66,2024-11-15,2024-Q4,D09,1-3 years,Really appreciate how my lead backs the team in difficult conversations.
+67,2024-11-15,2024-Q4,D09,1-3 years,Too many open positions so the rest of us are covering extra work.
+68,2024-11-15,2024-Q4,D02,1-3 years,"Changed managers twice this year and nobody explained why, very unsettling"
+69,2024-11-15,2024-Q4,D09,1-3 years,Learning budget exists on paper but approvals never come through.
+70,2024-11-15,2024-Q4,D09,1-3 years,"Things are okay, nothing specific to add this time."
+71,2024-11-15,2024-Q4,D20,1-3 years,"Micromanagement is exhausting, there is no trust in the team."
+72,2024-11-15,2024-Q4,D22,1-3 years,"Late-night calls and weekend work have become normal, it is not sustainable."
+73,2024-11-15,2024-Q4,D06,1-3 years,Would be good to see the survey results shared with teams. Thanks.
+74,2024-11-15,2024-Q4,D15,1-3 years,The increment did not even match inflation.
+75,2024-11-15,2024-Q4,D14,1-3 years,"salary is below market, new joiners are paid more than people with experience."
+76,2024-11-15,2024-Q4,D09,1-3 years,"Late-night calls and weekend work have become normal, it is not sustainable."
+77,2024-11-15,2024-Q4,D15,1-3 years,"Good manager, gives honest feedback and trusts us to deliver."
+78,2024-11-15,2024-Q4,D10,1-3 years,"Micromanagement is exhausting, there is no trust in the team."
+79,2024-11-15,2024-Q4,D11,1-3 years,"The new office layout is fine, still getting used to it."
+80,2024-11-15,2024-Q4,D12,1-3 years,There are real opportunities to take on bigger responsibilities if you ask.
+81,2024-11-15,2024-Q4,D14,1-3 years,My manager is supportive and always makes time for one-on-ones.
+82,2024-11-15,2024-Q4,D05,1-3 years,There are real opportunities to take on bigger responsibilities if you ask.
+83,2024-11-15,2024-Q4,D11,1-3 years,No time to attend training even when it is approved
+84,2024-11-15,2024-Q4,D12,1-3 years,"The new office layout is fine, still getting used to it."
+85,2024-11-15,2024-Q4,D20,1-3 years,internal openings are filled from outside before we even hear about them.
+86,2024-11-15,2024-Q4,D13,1-3 years,My colleagues are the best part of working here.
+87,2024-11-15,2024-Q4,D10,1-3 years,"Changed managers twice this year and nobody explained why, very unsettling."
+88,2024-11-15,2024-Q4,D13,1-3 years,"Changed managers twice this year and nobody explained why, very unsettling."
+89,2024-11-15,2024-Q4,D10,1-3 years,There is a lot of blame when things go wrong instead of solving problems.
+90,2024-11-15,2024-Q4,D17,1-3 years,"good manager, gives honest feedback and trusts us to deliver."
+91,2024-11-15,2024-Q4,D20,1-3 years,"Good manager, gives honest feedback and trusts us to deliver."
+92,2024-11-15,2024-Q4,D10,1-3 years,"Hard to switch off, messages keep coming after hours."
+93,2024-11-15,2024-Q4,D12,1-3 years,"plenty of opportunities to grow, but my manager is rarely around."
+94,2024-11-15,2024-Q4,D04,1-3 years,Plenty of learning budget and time set aside to use it
+95,2024-11-15,2024-Q4,D12,1-3 years,"Good manager, gives honest feedback and trusts us to deliver."
+96,2024-11-15,2024-Q4,D15,1-3 years,Pay is the main reason people on my team are leaving.
+97,2024-11-15,2024-Q4,D19,1-3 years,"The new office layout is fine, still getting used to it."
+98,2024-11-15,2024-Q4,D22,1-3 years,"Changed managers twice this year and nobody explained why, very unsettling."
+99,2024-11-15,2024-Q4,D14,1-3 years,Learning budget exists on paper but approvals never come through.
+100,2024-11-15,2024-Q4,D20,1-3 years,"salary is below market, new joiners are paid more than people with experience."
+101,2024-11-15,2024-Q4,D09,1-3 years,"my manager is great, but the pay is well below market."
+102,2024-11-15,2024-Q4,D02,6-12 months,"I feel invisible, good work is simply expected and never acknowledged"
+103,2024-11-15,2024-Q4,D12,6-12 months,The increment did not even match inflation.
+104,2024-11-15,2024-Q4,D02,6-12 months,"Workload is too high, we are constantly firefighting."
+105,2024-11-15,2024-Q4,D12,6-12 months,"Salary is below market, new joiners are paid more than people with experience"
+106,2024-11-15,2024-Q4,D13,6-12 months,Pay is the main reason people on my team are leaving
+107,2024-11-15,2024-Q4,D09,6-12 months,"Changed managers twice this year and nobody explained why, very unsettling."
+108,2024-11-15,2024-Q4,D19,6-12 months,"Leadership acknowledged our launch publicly, which was motivating."
+109,2024-11-15,2024-Q4,D14,6-12 months,"Good manager, gives honest feedback and trusts us to deliver."
+110,2024-11-15,2024-Q4,D20,6-12 months,Communication across teams is poor and decisions are not shared.
+111,2024-11-15,2024-Q4,D04,<6 months,"Late-night calls and weekend work have become normal, it is not sustainable."
+112,2024-11-15,2024-Q4,D10,<6 months,"Leadership acknowledged our launch publicly, which was motivating."
+113,2024-11-15,2024-Q4,D09,<6 months,No major concerns at the moment.
+114,2024-11-15,2024-Q4,D10,<6 months,"Loved the leadership course, I am already applying what I learnt."
+115,2024-11-15,2024-Q4,D04,<6 months,"We get recognised for our work, but there is simply too much of it."
+116,2024-11-15,2024-Q4,D22,<6 months,"Loved the leadership course, I am already applying what I learnt."
+117,2024-11-15,2024-Q4,D10,<6 months,"We get recognised for our work, but there is simply too much of it."
+118,2024-11-15,2024-Q4,D09,<6 months,My manager is rarely available and feedback only comes at appraisal time.
+119,2024-11-15,2024-Q4,D11,<6 months,"No clear growth path, I have been in the same role for years."
+120,2024-11-15,2024-Q4,D03,<6 months,Hybrid working has been great for my work-life balance.
+121,2024-11-15,2024-Q4,D09,<6 months,Too many open positions so the rest of us are covering extra work.
+122,2025-02-15,2025-Q1,D12,5+ years,Internal openings are filled from outside before we even hear about them.
+123,2025-02-15,2025-Q1,D14,5+ years,Learning budget exists on paper but approvals never come through. Thanks.
+124,2025-02-15,2025-Q1,D01,5+ years,"changed managers twice this year and nobody explained why, very unsettling."
+125,2025-02-15,2025-Q1,D12,5+ years,"Late-night calls and weekend work have become normal, it is not sustainable."
+126,2025-02-15,2025-Q1,D23,5+ years,Learning budget exists on paper but approvals never come through.
+127,2025-02-15,2025-Q1,D20,5+ years,The courses on offer are generic and not relevant to my work. Thanks.
+128,2025-02-15,2025-Q1,D03,5+ years,"Great team, people help each other without being asked."
+129,2025-02-15,2025-Q1,D17,5+ years,My manager is rarely available and feedback only comes at appraisal time. Thanks.
+130,2025-02-15,2025-Q1,D22,5+ years,"Love my team, though the workload has been brutal lately."
+131,2025-02-15,2025-Q1,D08,5+ years,The courses on offer are generic and not relevant to my work.
+132,2025-02-15,2025-Q1,D08,5+ years,Deadlines are realistic and planning has improved this quarter.
+133,2025-02-15,2025-Q1,D25,5+ years,"My manager is great, but the pay is well below market"
+134,2025-02-15,2025-Q1,D02,5+ years,Pay is the main reason people on my team are leaving.
+135,2025-02-15,2025-Q1,D01,5+ years,"I feel invisible, good work is simply expected and never acknowledged."
+136,2025-02-15,2025-Q1,D22,5+ years,Learning budget exists on paper but approvals never come through.
+137,2025-02-15,2025-Q1,D17,5+ years,Really appreciate how my lead backs the team in difficult conversations.
+138,2025-02-15,2025-Q1,D18,5+ years,Maybe the recognition programme could be explained better.
+139,2025-02-15,2025-Q1,D08,5+ years,The courses on offer are generic and not relevant to my work.
+140,2025-02-15,2025-Q1,D13,5+ years,There is a lot of blame when things go wrong instead of solving problems.
+141,2025-02-15,2025-Q1,D07,5+ years,"Sure, the pizza party totally makes up for the weekend work."
+142,2025-02-15,2025-Q1,D06,5+ years,"Flexible hours are a big plus, salary not so much."
+143,2025-02-15,2025-Q1,D11,5+ years,"My manager is great, but the pay is well below market."
+144,2025-02-15,2025-Q1,D21,5+ years,"No clear growth path, I have been in the same role for years."
+145,2025-02-15,2025-Q1,D11,5+ years,Not sure the workload is sustainable if two more people leave.
+146,2025-02-15,2025-Q1,D13,5+ years,I do not feel my manager supports me when issues come up. Thanks.
+147,2025-02-15,2025-Q1,D02,3-5 years,My reporting manager genuinely cares about our wellbeing.
+148,2025-02-15,2025-Q1,D14,3-5 years,"Hard to see where my career goes from here, nobody discusses it."
+149,2025-02-15,2025-Q1,D05,3-5 years,My manager is supportive and always makes time for one-on-ones. Thanks.
+150,2025-02-15,2025-Q1,D09,3-5 years,my manager is supportive and always makes time for one-on-ones.
+151,2025-02-15,2025-Q1,D11,3-5 years,Compensation is not competitive and the bonus structure is unclear
+152,2025-02-15,2025-Q1,D17,3-5 years,My reporting manager genuinely cares about our wellbeing.
+153,2025-02-15,2025-Q1,D20,3-5 years,"hard to switch off, messages keep coming after hours."
+154,2025-02-15,2025-Q1,D02,3-5 years,Compensation is not competitive and the bonus structure is unclear.
+155,2025-02-15,2025-Q1,D16,3-5 years,Too many open positions so the rest of us are covering extra work.
+156,2025-02-15,2025-Q1,D22,3-5 years,"The team is well staffed now, so the pressure has eased a lot."
+157,2025-02-15,2025-Q1,D02,3-5 years,Not sure the workload is sustainable if two more people leave.
+158,2025-02-15,2025-Q1,D03,3-5 years,my reporting manager genuinely cares about our wellbeing.
+159,2025-02-15,2025-Q1,D07,3-5 years,really appreciate how my lead backs the team in difficult conversations.
+160,2025-02-15,2025-Q1,D02,3-5 years,Too many open positions so the rest of us are covering extra work. Thanks.
+161,2025-02-15,2025-Q1,D01,3-5 years,The increment did not even match inflation.
+162,2025-02-15,2025-Q1,D12,3-5 years,My manager is supportive and always makes time for one-on-ones. Thanks.
+163,2025-02-15,2025-Q1,D22,3-5 years,"No clear growth path, I have been in the same role for years."
+164,2025-02-15,2025-Q1,D14,3-5 years,"No clear growth path, I have been in the same role for years."
+165,2025-02-15,2025-Q1,D22,3-5 years,Pay is the main reason people on my team are leaving.
+166,2025-02-15,2025-Q1,D10,1-3 years,"Workload is too high, we are constantly firefighting."
+167,2025-02-15,2025-Q1,D08,1-3 years,My reporting manager genuinely cares about our wellbeing.
+168,2025-02-15,2025-Q1,D17,1-3 years,Really appreciate how my lead backs the team in difficult conversations.
+169,2025-02-15,2025-Q1,D18,1-3 years,"Micromanagement is exhausting, there is no trust in the team."
+170,2025-02-15,2025-Q1,D11,1-3 years,The increment did not even match inflation.
+171,2025-02-15,2025-Q1,D10,1-3 years,"Burnout is real on our team, we are stretched thin."
+172,2025-02-15,2025-Q1,D22,1-3 years,Would be good to see the survey results shared with teams.
+173,2025-02-15,2025-Q1,D14,1-3 years,"Micromanagement is exhausting, there is no trust in the team."
+174,2025-02-15,2025-Q1,D12,1-3 years,Deadlines are realistic and planning has improved this quarter.
+175,2025-02-15,2025-Q1,D09,1-3 years,There is a lot of blame when things go wrong instead of solving problems.
+176,2025-02-15,2025-Q1,D14,1-3 years,No major concerns at the moment.
+177,2025-02-15,2025-Q1,D13,1-3 years,"I feel invisible, good work is simply expected and never acknowledged."
+178,2025-02-15,2025-Q1,D24,1-3 years,Recognition goes to the same few people every time. Thanks.
+179,2025-02-15,2025-Q1,D09,1-3 years,"Love my team, though the workload has been brutal lately."
+180,2025-02-15,2025-Q1,D10,1-3 years,promotions seem to depend on visibility rather than performance.
+181,2025-02-15,2025-Q1,D22,1-3 years,"plenty of opportunities to grow, but my manager is rarely around."
+182,2025-02-15,2025-Q1,D12,1-3 years,My manager is rarely available and feedback only comes at appraisal time.
+183,2025-02-15,2025-Q1,D05,1-3 years,No time to attend training even when it is approved.
+184,2025-02-15,2025-Q1,D20,1-3 years,There are real opportunities to take on bigger responsibilities if you ask.
+185,2025-02-15,2025-Q1,D01,1-3 years,My manager is rarely available and feedback only comes at appraisal time.
+186,2025-02-15,2025-Q1,D04,1-3 years,communication across teams is poor and decisions are not shared.
+187,2025-02-15,2025-Q1,D24,1-3 years,Compensation is not competitive and the bonus structure is unclear.
+188,2025-02-15,2025-Q1,D02,1-3 years,"burnout is real on our team, we are stretched thin."
+189,2025-02-15,2025-Q1,D12,1-3 years,"Burnout is real on our team, we are stretched thin."
+190,2025-02-15,2025-Q1,D11,1-3 years,Compensation is not competitive and the bonus structure is unclear.
+191,2025-02-15,2025-Q1,D09,1-3 years,Too many open positions so the rest of us are covering extra work.
+192,2025-02-15,2025-Q1,D12,1-3 years,Too many open positions so the rest of us are covering extra work.
+193,2025-02-15,2025-Q1,D14,1-3 years,I feel valued and recognised for what I contribute. Thanks.
+194,2025-02-15,2025-Q1,D09,1-3 years,I do not feel my manager supports me when issues come up. Thanks.
+195,2025-02-15,2025-Q1,D17,1-3 years,"We had a team restructure, still figuring out who owns what."
+196,2025-02-15,2025-Q1,D03,1-3 years,Communication across teams is poor and decisions are not shared. Thanks.
+197,2025-02-15,2025-Q1,D13,1-3 years,Collaboration across teams has improved a lot this year
+198,2025-02-15,2025-Q1,D11,1-3 years,"We moved to a new manager recently, too early to say how it is going."
+199,2025-02-15,2025-Q1,D12,1-3 years,"Hard to switch off, messages keep coming after hours."
+200,2025-02-15,2025-Q1,D04,1-3 years,"Good work gets noticed here, the shout-outs in team meetings mean a lot."
+201,2025-02-15,2025-Q1,D21,1-3 years,I do not feel my manager supports me when issues come up.
+202,2025-02-15,2025-Q1,D20,1-3 years,"Salary is below market, new joiners are paid more than people with experience."
+203,2025-02-15,2025-Q1,D09,1-3 years,"Good manager, gives honest feedback and trusts us to deliver."
+204,2025-02-15,2025-Q1,D01,1-3 years,My reporting manager genuinely cares about our wellbeing.
+205,2025-02-15,2025-Q1,D12,1-3 years,Promotions seem to depend on visibility rather than performance
+206,2025-02-15,2025-Q1,D10,1-3 years,My reporting manager genuinely cares about our wellbeing.
+207,2025-02-15,2025-Q1,D12,1-3 years,Maybe the recognition programme could be explained better.
+208,2025-02-15,2025-Q1,D20,1-3 years,It would help to understand the criteria for the next level.
+209,2025-02-15,2025-Q1,D14,1-3 years,Targets keep increasing every month without any extra support.
+210,2025-02-15,2025-Q1,D22,1-3 years,"I feel invisible, good work is simply expected and never acknowledged."
+211,2025-02-15,2025-Q1,D15,1-3 years,Compensation is not competitive and the bonus structure is unclear.
+212,2025-02-15,2025-Q1,D19,1-3 years,"Changed managers twice this year and nobody explained why, very unsettling."
+213,2025-02-15,2025-Q1,D18,1-3 years,"We get recognised for our work, but there is simply too much of it."
+214,2025-02-15,2025-Q1,D22,1-3 years,"The team is well staffed now, so the pressure has eased a lot."
+215,2025-02-15,2025-Q1,D05,1-3 years,Pay is the main reason people on my team are leaving.
+216,2025-02-15,2025-Q1,D03,1-3 years,Communication across teams is poor and decisions are not shared.
+217,2025-02-15,2025-Q1,D03,1-3 years,Not much has changed since the last survey.
+218,2025-02-15,2025-Q1,D19,1-3 years,plenty of learning budget and time set aside to use it.
+219,2025-02-15,2025-Q1,D16,1-3 years,My reporting manager genuinely cares about our wellbeing
+220,2025-02-15,2025-Q1,D10,1-3 years,Communication across teams is poor and decisions are not shared.
+221,2025-02-15,2025-Q1,D20,6-12 months,"Changed managers twice this year and nobody explained why, very unsettling."
+222,2025-02-15,2025-Q1,D12,6-12 months,Too many open positions so the rest of us are covering extra work.
+223,2025-02-15,2025-Q1,D09,6-12 months,The training programmes have been genuinely useful for my day-to-day work
+224,2025-02-15,2025-Q1,D16,6-12 months,My reporting manager genuinely cares about our wellbeing.
+225,2025-02-15,2025-Q1,D20,6-12 months,I do not feel my manager supports me when issues come up.
+226,2025-02-15,2025-Q1,D14,6-12 months,Pay is the main reason people on my team are leaving.
+227,2025-02-15,2025-Q1,D12,6-12 months,My manager is rarely available and feedback only comes at appraisal time.
+228,2025-02-15,2025-Q1,D12,6-12 months,Please keep the survey shorter next time.
+229,2025-02-15,2025-Q1,D11,6-12 months,"The training is good, but there is no promotion at the end of it."
+230,2025-02-15,2025-Q1,D01,6-12 months,No major concerns at the moment.
+231,2025-02-15,2025-Q1,D21,6-12 months,Not much has changed since the last survey.
+232,2025-02-15,2025-Q1,D17,6-12 months,No time to attend training even when it is approved
+233,2025-02-15,2025-Q1,D16,6-12 months,Got promoted this cycle and the process felt fair and transparent.
+234,2025-02-15,2025-Q1,D04,6-12 months,"My manager is great, but the pay is well below market."
+235,2025-02-15,2025-Q1,D02,<6 months,shift timings change at short notice which makes planning impossible.
+236,2025-02-15,2025-Q1,D11,<6 months,"micromanagement is exhausting, there is no trust in the team."
+237,2025-02-15,2025-Q1,D19,<6 months,Teams work in silos and handoffs between departments are painful.
+238,2025-02-15,2025-Q1,D02,<6 months,would be good to see the survey results shared with teams.
+239,2025-02-15,2025-Q1,D15,<6 months,"we moved to a new manager recently, too early to say how it is going."
+240,2025-02-15,2025-Q1,D09,<6 months,"Micromanagement is exhausting, there is no trust in the team."
+241,2025-02-15,2025-Q1,D04,<6 months,Plenty of learning budget and time set aside to use it.
+242,2025-02-15,2025-Q1,D08,<6 months,I do not feel my manager supports me when issues come up
+243,2025-02-15,2025-Q1,D22,<6 months,It has been an average quarter.
+244,2025-02-15,2025-Q1,D11,<6 months,My reporting manager genuinely cares about our wellbeing.
+245,2025-05-15,2025-Q2,D03,5+ years,internal openings are filled from outside before we even hear about them. Thanks.
+246,2025-05-15,2025-Q2,D03,5+ years,"salary is below market, new joiners are paid more than people with experience."
+247,2025-05-15,2025-Q2,D10,5+ years,My manager is supportive and always makes time for one-on-ones.
+248,2025-05-15,2025-Q2,D21,5+ years,My manager is rarely available and feedback only comes at appraisal time.
+249,2025-05-15,2025-Q2,D12,5+ years,"We get recognised for our work, but there is simply too much of it."
+250,2025-05-15,2025-Q2,D21,5+ years,"Plenty of opportunities to grow, but my manager is rarely around."
+251,2025-05-15,2025-Q2,D03,5+ years,The courses on offer are generic and not relevant to my work.
+252,2025-05-15,2025-Q2,D12,5+ years,"the new office layout is fine, still getting used to it. Thanks."
+253,2025-05-15,2025-Q2,D10,5+ years,Compensation is not competitive and the bonus structure is unclear. Thanks.
+254,2025-05-15,2025-Q2,D09,5+ years,"Hard to see where my career goes from here, nobody discusses it."
+255,2025-05-15,2025-Q2,D20,5+ years,"Salary is below market, new joiners are paid more than people with experience."
+256,2025-05-15,2025-Q2,D08,5+ years,Targets keep increasing every month without any extra support.
+257,2025-05-15,2025-Q2,D25,5+ years,"No clear growth path, I have been in the same role for years."
+258,2025-05-15,2025-Q2,D09,5+ years,"The training is good, but there is no promotion at the end of it."
+259,2025-05-15,2025-Q2,D23,5+ years,Please keep the survey shorter next time.
+260,2025-05-15,2025-Q2,D04,5+ years,"The new office layout is fine, still getting used to it."
+261,2025-05-15,2025-Q2,D17,5+ years,Really appreciate how my lead backs the team in difficult conversations.
+262,2025-05-15,2025-Q2,D10,5+ years,Too many open positions so the rest of us are covering extra work.
+263,2025-05-15,2025-Q2,D11,5+ years,"The training is good, but there is no promotion at the end of it."
+264,2025-05-15,2025-Q2,D22,5+ years,"the training is good, but there is no promotion at the end of it."
+265,2025-05-15,2025-Q2,D22,5+ years,Teams work in silos and handoffs between departments are painful
+266,2025-05-15,2025-Q2,D16,5+ years,Plenty of learning budget and time set aside to use it.
+267,2025-05-15,2025-Q2,D07,5+ years,Deadlines are realistic and planning has improved this quarter.
+268,2025-05-15,2025-Q2,D11,5+ years,Learning budget exists on paper but approvals never come through.
+269,2025-05-15,2025-Q2,D13,5+ years,Nobody notices the extra effort we put in. Thanks.
+270,2025-05-15,2025-Q2,D09,5+ years,Internal openings are filled from outside before we even hear about them.
+271,2025-05-15,2025-Q2,D11,5+ years,"No clear growth path, I have been in the same role for years."
+272,2025-05-15,2025-Q2,D20,5+ years,No major concerns at the moment.
+273,2025-05-15,2025-Q2,D03,5+ years,Too many open positions so the rest of us are covering extra work.
+274,2025-05-15,2025-Q2,D02,5+ years,My manager is rarely available and feedback only comes at appraisal time.
+275,2025-05-15,2025-Q2,D14,3-5 years,Promotions seem to depend on visibility rather than performance.
+276,2025-05-15,2025-Q2,D03,3-5 years,Learning budget exists on paper but approvals never come through.
+277,2025-05-15,2025-Q2,D17,3-5 years,my reporting manager genuinely cares about our wellbeing.
+278,2025-05-15,2025-Q2,D11,3-5 years,my reporting manager genuinely cares about our wellbeing.
+279,2025-05-15,2025-Q2,D02,3-5 years,"Plenty of opportunities to grow, but my manager is rarely around"
+280,2025-05-15,2025-Q2,D22,3-5 years,"No clear growth path, I have been in the same role for years."
+281,2025-05-15,2025-Q2,D17,3-5 years,"I don't hate it here, but I'm not sure there's a future for me"
+282,2025-05-15,2025-Q2,D11,3-5 years,Compensation is not competitive and the bonus structure is unclear.
+283,2025-05-15,2025-Q2,D22,3-5 years,Please keep the survey shorter next time.
+284,2025-05-15,2025-Q2,D01,3-5 years,Learning budget exists on paper but approvals never come through. Thanks.
+285,2025-05-15,2025-Q2,D04,3-5 years,Really appreciate how my lead backs the team in difficult conversations.
+286,2025-05-15,2025-Q2,D20,3-5 years,the increment did not even match inflation.
+287,2025-05-15,2025-Q2,D02,3-5 years,Too many open positions so the rest of us are covering extra work.
+288,2025-05-15,2025-Q2,D12,3-5 years,My reporting manager genuinely cares about our wellbeing.
+289,2025-05-15,2025-Q2,D09,3-5 years,"My manager is great, but the pay is well below market."
+290,2025-05-15,2025-Q2,D09,3-5 years,Targets keep increasing every month without any extra support. Thanks.
+291,2025-05-15,2025-Q2,D22,3-5 years,"Late-night calls and weekend work have become normal, it is not sustainable"
+292,2025-05-15,2025-Q2,D14,3-5 years,Learning budget exists on paper but approvals never come through.
+293,2025-05-15,2025-Q2,D10,3-5 years,"the new office layout is fine, still getting used to it."
+294,2025-05-15,2025-Q2,D08,3-5 years,"Micromanagement is exhausting, there is no trust in the team."
+295,2025-05-15,2025-Q2,D04,3-5 years,Really appreciate how my lead backs the team in difficult conversations.
+296,2025-05-15,2025-Q2,D11,3-5 years,Workload has been about the same as last quarter.
+297,2025-05-15,2025-Q2,D10,3-5 years,the courses on offer are generic and not relevant to my work.
+298,2025-05-15,2025-Q2,D09,3-5 years,Internal openings are filled from outside before we even hear about them.
+299,2025-05-15,2025-Q2,D06,1-3 years,"Micromanagement is exhausting, there is no trust in the team."
+300,2025-05-15,2025-Q2,D01,1-3 years,"I feel invisible, good work is simply expected and never acknowledged."

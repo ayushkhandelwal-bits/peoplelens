@@ -14,11 +14,6 @@ from datetime import date
 from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
-DATA_DIR = PROJECT_ROOT / "data"
-GENERATED_DIR = DATA_DIR / "generated"
-ARTIFACT_DIR = PROJECT_ROOT / "artifacts"
-REPORT_DIR = PROJECT_ROOT / "reports"
-LOG_DIR = PROJECT_ROOT / "logs"
 
 
 def _load_dotenv(path: Path) -> None:
@@ -34,6 +29,12 @@ def _load_dotenv(path: Path) -> None:
 
 
 _load_dotenv(PROJECT_ROOT / ".env")
+
+DATA_DIR = Path(os.environ.get("PEOPLELENS_DATA_DIR", PROJECT_ROOT / "data"))
+GENERATED_DIR = DATA_DIR / "generated"
+ARTIFACT_DIR = Path(os.environ.get("PEOPLELENS_ARTIFACT_DIR", PROJECT_ROOT / "artifacts"))
+REPORT_DIR = Path(os.environ.get("PEOPLELENS_REPORT_DIR", PROJECT_ROOT / "reports"))
+LOG_DIR = Path(os.environ.get("PEOPLELENS_LOG_DIR", PROJECT_ROOT / "logs"))
 
 
 def default_sqlite_url() -> str:

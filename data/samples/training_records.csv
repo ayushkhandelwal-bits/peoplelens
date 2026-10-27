@@ -1,0 +1,301 @@
+training_record_id,employee_id,training_program,training_category,enrollment_date,completion_date,training_hours,training_cost,completion_status,assessment_score
+1,EMP00005,Leading Teams Through Change,Leadership,2024-10-19,2024-12-04,20.0,38000.0,Completed,92.8
+2,EMP00022,First-Time Manager Programme,Leadership,2024-10-15,2024-12-09,32.0,45000.0,Completed,85.5
+3,EMP00041,Financial Acumen for Managers,Functional,2024-10-03,2024-10-19,12.0,14000.0,Completed,66.7
+4,EMP00062,Data Analysis with SQL & Python,Technical,2024-10-04,2024-12-03,20.0,18000.0,Completed,81.4
+5,EMP00141,Time & Priority Management,Soft Skills,2024-10-24,,6.0,4000.0,Not Completed,
+28,EMP00015,Financial Acumen for Managers,Functional,2024-11-30,2025-01-19,12.0,14000.0,Completed,71.2
+29,EMP00055,Financial Acumen for Managers,Functional,2024-11-17,2024-12-06,12.0,14000.0,Completed,49.2
+30,EMP00068,Negotiation Skills,Soft Skills,2024-11-11,2024-12-11,10.0,9000.0,Completed,74.7
+31,EMP00074,Data Analysis with SQL & Python,Technical,2024-11-06,2025-01-08,20.0,18000.0,Completed,80.9
+32,EMP00090,Data Analysis with SQL & Python,Technical,2024-11-08,2024-12-08,20.0,18000.0,Completed,90.6
+33,EMP00133,Data Analysis with SQL & Python,Technical,2024-11-13,2024-12-11,20.0,18000.0,Completed,99.5
+34,EMP00148,Time & Priority Management,Soft Skills,2024-11-10,2025-01-09,6.0,4000.0,Completed,59.6
+49,EMP00035,Negotiation Skills,Soft Skills,2024-12-06,2024-12-29,10.0,9000.0,Completed,76.8
+50,EMP00111,Effective Communication,Soft Skills,2024-12-23,2025-02-15,8.0,5000.0,Completed,50.2
+51,EMP00147,Customer Experience Excellence,Functional,2024-12-07,2025-01-01,10.0,6500.0,Completed,62.6
+78,EMP00003,Leading Teams Through Change,Leadership,2025-01-20,2025-03-06,20.0,38000.0,Completed,67.9
+79,EMP00054,Financial Acumen for Managers,Functional,2025-01-11,2025-02-02,12.0,14000.0,Completed,87.6
+80,EMP00070,Advanced Excel & Reporting,Technical,2025-01-28,,12.0,6000.0,Not Completed,
+81,EMP00092,Data Analysis with SQL & Python,Technical,2025-01-11,,20.0,18000.0,Not Completed,
+82,EMP00110,Consultative Selling,Functional,2025-01-27,2025-04-03,16.0,15000.0,Completed,88.2
+83,EMP00128,First-Time Manager Programme,Leadership,2025-01-10,,32.0,45000.0,Not Completed,
+84,EMP00138,Effective Communication,Soft Skills,2025-01-24,,8.0,5000.0,Not Completed,
+85,EMP00139,Advanced Excel & Reporting,Technical,2025-01-07,2025-03-17,12.0,6000.0,Completed,70.5
+86,EMP00150,Consultative Selling,Functional,2025-01-03,,16.0,15000.0,Not Completed,
+104,EMP00051,Negotiation Skills,Soft Skills,2025-02-04,2025-03-24,10.0,9000.0,Completed,61.6
+105,EMP00106,Customer Experience Excellence,Functional,2025-02-21,,10.0,6500.0,Not Completed,
+106,EMP00108,Negotiation Skills,Soft Skills,2025-02-06,2025-03-23,10.0,9000.0,Completed,73.5
+126,EMP00022,Effective Communication,Soft Skills,2025-03-01,2025-05-02,8.0,5000.0,Completed,81.9
+127,EMP00104,Cloud Architecture Fundamentals,Technical,2025-03-22,,24.0,28000.0,Not Completed,
+128,EMP00111,Negotiation Skills,Soft Skills,2025-03-07,,10.0,9000.0,Not Completed,
+150,EMP00129,Time & Priority Management,Soft Skills,2025-04-15,2025-05-17,6.0,4000.0,Completed,84.5
+175,EMP00079,Data Analysis with SQL & Python,Technical,2025-05-22,2025-07-27,20.0,18000.0,Completed,87.2
+176,EMP00105,Effective Communication,Soft Skills,2025-05-16,2025-06-29,8.0,5000.0,Completed,66.0
+177,EMP00146,Time & Priority Management,Soft Skills,2025-05-26,2025-07-16,6.0,4000.0,Completed,74.9
+197,EMP00001,Code of Conduct & POSH Awareness,Compliance,2025-06-01,2025-06-15,2.0,500.0,Completed,71.4
+198,EMP00002,Code of Conduct & POSH Awareness,Compliance,2025-06-14,2025-06-28,2.0,500.0,Completed,73.9
+199,EMP00003,Code of Conduct & POSH Awareness,Compliance,2025-06-20,2025-07-04,2.0,500.0,Completed,77.0
+200,EMP00004,Code of Conduct & POSH Awareness,Compliance,2025-06-03,2025-06-17,2.0,500.0,Completed,100.0
+201,EMP00005,Code of Conduct & POSH Awareness,Compliance,2025-06-30,2025-07-14,2.0,500.0,Completed,80.0
+202,EMP00006,Code of Conduct & POSH Awareness,Compliance,2025-06-12,2025-06-26,2.0,500.0,Completed,94.2
+203,EMP00007,Code of Conduct & POSH Awareness,Compliance,2025-06-14,2025-06-28,2.0,500.0,Completed,65.5
+204,EMP00008,Code of Conduct & POSH Awareness,Compliance,2025-06-13,2025-06-27,2.0,500.0,Completed,77.5
+205,EMP00009,Code of Conduct & POSH Awareness,Compliance,2025-06-06,2025-06-20,2.0,500.0,Completed,80.3
+206,EMP00010,Code of Conduct & POSH Awareness,Compliance,2025-06-03,2025-06-17,2.0,500.0,Completed,64.1
+207,EMP00010,Financial Acumen for Managers,Functional,2025-06-15,,12.0,14000.0,Not Completed,
+208,EMP00011,Code of Conduct & POSH Awareness,Compliance,2025-06-16,2025-06-30,2.0,500.0,Completed,54.6
+209,EMP00012,Code of Conduct & POSH Awareness,Compliance,2025-06-17,2025-07-01,2.0,500.0,Completed,76.4
+210,EMP00013,Code of Conduct & POSH Awareness,Compliance,2025-06-23,2025-07-07,2.0,500.0,Completed,69.3
+211,EMP00014,Code of Conduct & POSH Awareness,Compliance,2025-06-22,2025-07-06,2.0,500.0,Completed,83.4
+212,EMP00015,Code of Conduct & POSH Awareness,Compliance,2025-06-12,2025-06-26,2.0,500.0,Completed,65.0
+213,EMP00016,Code of Conduct & POSH Awareness,Compliance,2025-06-12,2025-06-26,2.0,500.0,Completed,74.7
+214,EMP00017,Code of Conduct & POSH Awareness,Compliance,2025-06-29,2025-07-13,2.0,500.0,Completed,74.6
+215,EMP00018,Code of Conduct & POSH Awareness,Compliance,2025-06-19,2025-07-03,2.0,500.0,Completed,69.0
+216,EMP00020,Code of Conduct & POSH Awareness,Compliance,2025-06-09,2025-06-23,2.0,500.0,Completed,87.3
+217,EMP00021,Code of Conduct & POSH Awareness,Compliance,2025-06-19,2025-07-03,2.0,500.0,Completed,82.3
+218,EMP00022,Code of Conduct & POSH Awareness,Compliance,2025-06-30,2025-07-14,2.0,500.0,Completed,72.9
+219,EMP00023,Code of Conduct & POSH Awareness,Compliance,2025-06-19,2025-07-03,2.0,500.0,Completed,57.0
+220,EMP00024,Code of Conduct & POSH Awareness,Compliance,2025-06-24,2025-07-08,2.0,500.0,Completed,69.7
+221,EMP00024,Effective Communication,Soft Skills,2025-06-24,2025-08-08,8.0,5000.0,Completed,85.0
+222,EMP00025,Code of Conduct & POSH Awareness,Compliance,2025-06-20,2025-07-04,2.0,500.0,Completed,85.7
+223,EMP00026,Code of Conduct & POSH Awareness,Compliance,2025-06-10,2025-06-24,2.0,500.0,Completed,78.2
+224,EMP00027,Code of Conduct & POSH Awareness,Compliance,2025-06-16,2025-06-30,2.0,500.0,Completed,52.2
+225,EMP00028,Code of Conduct & POSH Awareness,Compliance,2025-06-15,2025-06-29,2.0,500.0,Completed,62.1
+226,EMP00029,Code of Conduct & POSH Awareness,Compliance,2025-06-22,2025-07-06,2.0,500.0,Completed,80.3
+227,EMP00030,Code of Conduct & POSH Awareness,Compliance,2025-06-28,2025-07-12,2.0,500.0,Completed,75.1
+228,EMP00031,Code of Conduct & POSH Awareness,Compliance,2025-06-06,2025-06-20,2.0,500.0,Completed,65.6
+229,EMP00032,Code of Conduct & POSH Awareness,Compliance,2025-06-29,2025-07-13,2.0,500.0,Completed,72.8
+230,EMP00033,Code of Conduct & POSH Awareness,Compliance,2025-06-09,2025-06-23,2.0,500.0,Completed,84.2
+231,EMP00034,Code of Conduct & POSH Awareness,Compliance,2025-06-17,2025-07-01,2.0,500.0,Completed,66.3
+232,EMP00035,Code of Conduct & POSH Awareness,Compliance,2025-06-27,2025-07-11,2.0,500.0,Completed,81.6
+233,EMP00036,Code of Conduct & POSH Awareness,Compliance,2025-06-12,2025-06-26,2.0,500.0,Completed,64.6
+234,EMP00037,Code of Conduct & POSH Awareness,Compliance,2025-06-29,2025-07-13,2.0,500.0,Completed,79.9
+235,EMP00038,Code of Conduct & POSH Awareness,Compliance,2025-06-20,2025-07-04,2.0,500.0,Completed,65.5
+236,EMP00039,Code of Conduct & POSH Awareness,Compliance,2025-06-24,2025-07-08,2.0,500.0,Completed,85.9
+237,EMP00040,Code of Conduct & POSH Awareness,Compliance,2025-06-26,2025-07-10,2.0,500.0,Completed,76.7
+238,EMP00041,Code of Conduct & POSH Awareness,Compliance,2025-06-14,2025-06-28,2.0,500.0,Completed,79.3
+239,EMP00042,Code of Conduct & POSH Awareness,Compliance,2025-06-19,2025-07-03,2.0,500.0,Completed,84.5
+240,EMP00043,Code of Conduct & POSH Awareness,Compliance,2025-06-05,2025-06-19,2.0,500.0,Completed,62.7
+241,EMP00044,Code of Conduct & POSH Awareness,Compliance,2025-06-12,2025-06-26,2.0,500.0,Completed,67.9
+242,EMP00045,Code of Conduct & POSH Awareness,Compliance,2025-06-15,2025-06-29,2.0,500.0,Completed,66.0
+243,EMP00047,Code of Conduct & POSH Awareness,Compliance,2025-06-30,,2.0,500.0,Not Completed,
+244,EMP00047,Negotiation Skills,Soft Skills,2025-06-24,2025-07-09,10.0,9000.0,Completed,64.5
+245,EMP00048,Code of Conduct & POSH Awareness,Compliance,2025-06-04,2025-06-18,2.0,500.0,Completed,75.8
+246,EMP00049,Code of Conduct & POSH Awareness,Compliance,2025-06-28,2025-07-12,2.0,500.0,Completed,72.0
+247,EMP00051,Code of Conduct & POSH Awareness,Compliance,2025-06-03,2025-06-17,2.0,500.0,Completed,40.0
+248,EMP00052,Code of Conduct & POSH Awareness,Compliance,2025-06-17,,2.0,500.0,Not Completed,
+249,EMP00053,Code of Conduct & POSH Awareness,Compliance,2025-06-10,2025-06-24,2.0,500.0,Completed,76.1
+250,EMP00054,Code of Conduct & POSH Awareness,Compliance,2025-06-23,2025-07-07,2.0,500.0,Completed,85.8
+251,EMP00055,Code of Conduct & POSH Awareness,Compliance,2025-06-26,,2.0,500.0,Not Completed,
+252,EMP00056,Code of Conduct & POSH Awareness,Compliance,2025-06-24,2025-07-08,2.0,500.0,Completed,71.3
+253,EMP00056,Data Analysis with SQL & Python,Technical,2025-06-04,2025-07-11,20.0,18000.0,Completed,81.2
+254,EMP00057,Code of Conduct & POSH Awareness,Compliance,2025-06-24,,2.0,500.0,Not Completed,
+255,EMP00058,Code of Conduct & POSH Awareness,Compliance,2025-06-01,2025-06-15,2.0,500.0,Completed,81.7
+256,EMP00060,Code of Conduct & POSH Awareness,Compliance,2025-06-04,2025-06-18,2.0,500.0,Completed,85.7
+257,EMP00061,Code of Conduct & POSH Awareness,Compliance,2025-06-28,2025-07-12,2.0,500.0,Completed,70.9
+258,EMP00062,Code of Conduct & POSH Awareness,Compliance,2025-06-29,2025-07-13,2.0,500.0,Completed,80.2
+259,EMP00063,Code of Conduct & POSH Awareness,Compliance,2025-06-14,2025-06-28,2.0,500.0,Completed,88.9
+260,EMP00065,Code of Conduct & POSH Awareness,Compliance,2025-06-02,2025-06-16,2.0,500.0,Completed,97.0
+261,EMP00066,Code of Conduct & POSH Awareness,Compliance,2025-06-08,2025-06-22,2.0,500.0,Completed,67.1
+262,EMP00067,Code of Conduct & POSH Awareness,Compliance,2025-06-07,2025-06-21,2.0,500.0,Completed,58.8
+263,EMP00068,Code of Conduct & POSH Awareness,Compliance,2025-06-29,2025-07-13,2.0,500.0,Completed,65.6
+264,EMP00069,Code of Conduct & POSH Awareness,Compliance,2025-06-26,2025-07-10,2.0,500.0,Completed,68.3
+265,EMP00072,Code of Conduct & POSH Awareness,Compliance,2025-06-19,2025-07-03,2.0,500.0,Completed,72.7
+266,EMP00073,Code of Conduct & POSH Awareness,Compliance,2025-06-15,2025-06-29,2.0,500.0,Completed,65.3
+267,EMP00074,Code of Conduct & POSH Awareness,Compliance,2025-06-24,2025-07-08,2.0,500.0,Completed,75.5
+268,EMP00075,Code of Conduct & POSH Awareness,Compliance,2025-06-20,2025-07-04,2.0,500.0,Completed,70.5
+269,EMP00076,Code of Conduct & POSH Awareness,Compliance,2025-06-06,2025-06-20,2.0,500.0,Completed,62.2
+270,EMP00078,Code of Conduct & POSH Awareness,Compliance,2025-06-04,2025-06-18,2.0,500.0,Completed,76.7
+271,EMP00079,Code of Conduct & POSH Awareness,Compliance,2025-06-14,2025-06-28,2.0,500.0,Completed,91.2
+272,EMP00080,Code of Conduct & POSH Awareness,Compliance,2025-06-25,,2.0,500.0,Not Completed,
+273,EMP00081,Code of Conduct & POSH Awareness,Compliance,2025-06-28,2025-07-12,2.0,500.0,Completed,71.3
+274,EMP00081,First-Time Manager Programme,Leadership,2025-06-08,2025-08-04,32.0,45000.0,Completed,84.8
+275,EMP00082,Code of Conduct & POSH Awareness,Compliance,2025-06-07,2025-06-21,2.0,500.0,Completed,71.9
+276,EMP00082,Cloud Architecture Fundamentals,Technical,2025-06-15,2025-07-24,24.0,28000.0,Completed,67.4
+277,EMP00083,Code of Conduct & POSH Awareness,Compliance,2025-06-02,2025-06-16,2.0,500.0,Completed,72.4
+278,EMP00084,Code of Conduct & POSH Awareness,Compliance,2025-06-02,2025-06-16,2.0,500.0,Completed,84.4
+279,EMP00085,Code of Conduct & POSH Awareness,Compliance,2025-06-24,2025-07-08,2.0,500.0,Completed,65.2
+280,EMP00086,Code of Conduct & POSH Awareness,Compliance,2025-06-25,2025-07-09,2.0,500.0,Completed,88.9
+281,EMP00088,Code of Conduct & POSH Awareness,Compliance,2025-06-06,,2.0,500.0,Not Completed,
+282,EMP00089,Code of Conduct & POSH Awareness,Compliance,2025-06-29,2025-07-13,2.0,500.0,Completed,88.3
+283,EMP00090,Code of Conduct & POSH Awareness,Compliance,2025-06-13,2025-06-27,2.0,500.0,Completed,95.0
+284,EMP00091,Code of Conduct & POSH Awareness,Compliance,2025-06-15,2025-06-29,2.0,500.0,Completed,97.3
+285,EMP00093,Code of Conduct & POSH Awareness,Compliance,2025-06-13,2025-06-27,2.0,500.0,Completed,85.5
+286,EMP00094,Code of Conduct & POSH Awareness,Compliance,2025-06-02,2025-06-16,2.0,500.0,Completed,86.9
+287,EMP00095,Code of Conduct & POSH Awareness,Compliance,2025-06-01,2025-06-15,2.0,500.0,Completed,69.0
+288,EMP00096,Code of Conduct & POSH Awareness,Compliance,2025-06-23,2025-07-07,2.0,500.0,Completed,65.4
+289,EMP00097,Code of Conduct & POSH Awareness,Compliance,2025-06-13,2025-06-27,2.0,500.0,Completed,81.5
+290,EMP00098,Code of Conduct & POSH Awareness,Compliance,2025-06-24,2025-07-08,2.0,500.0,Completed,85.8
+291,EMP00099,Code of Conduct & POSH Awareness,Compliance,2025-06-13,,2.0,500.0,Not Completed,
+292,EMP00100,Code of Conduct & POSH Awareness,Compliance,2025-06-03,2025-06-17,2.0,500.0,Completed,82.0
+293,EMP00101,Code of Conduct & POSH Awareness,Compliance,2025-06-20,2025-07-04,2.0,500.0,Completed,87.8
+294,EMP00101,Negotiation Skills,Soft Skills,2025-06-19,2025-08-16,10.0,9000.0,Completed,72.3
+295,EMP00102,Code of Conduct & POSH Awareness,Compliance,2025-06-04,2025-06-18,2.0,500.0,Completed,69.4
+296,EMP00103,Code of Conduct & POSH Awareness,Compliance,2025-06-20,2025-07-04,2.0,500.0,Completed,81.0
+297,EMP00104,Code of Conduct & POSH Awareness,Compliance,2025-06-08,,2.0,500.0,Not Completed,
+298,EMP00105,Code of Conduct & POSH Awareness,Compliance,2025-06-16,2025-06-30,2.0,500.0,Completed,66.8
+299,EMP00107,Code of Conduct & POSH Awareness,Compliance,2025-06-02,2025-06-16,2.0,500.0,Completed,51.8
+300,EMP00108,Code of Conduct & POSH Awareness,Compliance,2025-06-12,2025-06-26,2.0,500.0,Completed,61.1
+301,EMP00109,Code of Conduct & POSH Awareness,Compliance,2025-06-28,2025-07-12,2.0,500.0,Completed,69.3
+302,EMP00111,Code of Conduct & POSH Awareness,Compliance,2025-06-20,2025-07-04,2.0,500.0,Completed,64.0
+303,EMP00113,Code of Conduct & POSH Awareness,Compliance,2025-06-24,2025-07-08,2.0,500.0,Completed,88.5
+304,EMP00115,Code of Conduct & POSH Awareness,Compliance,2025-06-16,2025-06-30,2.0,500.0,Completed,79.4
+305,EMP00116,Code of Conduct & POSH Awareness,Compliance,2025-06-25,2025-07-09,2.0,500.0,Completed,69.2
+306,EMP00117,Code of Conduct & POSH Awareness,Compliance,2025-06-15,2025-06-29,2.0,500.0,Completed,60.5
+307,EMP00118,Code of Conduct & POSH Awareness,Compliance,2025-06-05,2025-06-19,2.0,500.0,Completed,80.1
+308,EMP00119,Code of Conduct & POSH Awareness,Compliance,2025-06-21,2025-07-05,2.0,500.0,Completed,88.4
+309,EMP00120,Code of Conduct & POSH Awareness,Compliance,2025-06-06,2025-06-20,2.0,500.0,Completed,66.7
+310,EMP00121,Code of Conduct & POSH Awareness,Compliance,2025-06-06,2025-06-20,2.0,500.0,Completed,64.6
+311,EMP00122,Code of Conduct & POSH Awareness,Compliance,2025-06-26,2025-07-10,2.0,500.0,Completed,55.5
+312,EMP00122,Advanced Excel & Reporting,Technical,2025-06-10,2025-06-27,12.0,6000.0,Completed,68.7
+313,EMP00123,Code of Conduct & POSH Awareness,Compliance,2025-06-27,,2.0,500.0,Not Completed,
+314,EMP00123,Negotiation Skills,Soft Skills,2025-06-30,2025-08-07,10.0,9000.0,Completed,86.3
+315,EMP00124,Code of Conduct & POSH Awareness,Compliance,2025-06-08,2025-06-22,2.0,500.0,Completed,77.3
+316,EMP00125,Code of Conduct & POSH Awareness,Compliance,2025-06-20,2025-07-04,2.0,500.0,Completed,67.7
+317,EMP00127,Code of Conduct & POSH Awareness,Compliance,2025-06-14,2025-06-28,2.0,500.0,Completed,64.2
+318,EMP00129,Code of Conduct & POSH Awareness,Compliance,2025-06-07,2025-06-21,2.0,500.0,Completed,90.8
+319,EMP00130,Code of Conduct & POSH Awareness,Compliance,2025-06-11,2025-06-25,2.0,500.0,Completed,70.9
+320,EMP00131,Code of Conduct & POSH Awareness,Compliance,2025-06-08,2025-06-22,2.0,500.0,Completed,77.6
+321,EMP00132,Code of Conduct & POSH Awareness,Compliance,2025-06-25,2025-07-09,2.0,500.0,Completed,76.1
+322,EMP00133,Code of Conduct & POSH Awareness,Compliance,2025-06-21,2025-07-05,2.0,500.0,Completed,85.0
+323,EMP00135,Code of Conduct & POSH Awareness,Compliance,2025-06-05,2025-06-19,2.0,500.0,Completed,72.7
+324,EMP00136,Code of Conduct & POSH Awareness,Compliance,2025-06-07,2025-06-21,2.0,500.0,Completed,83.3
+325,EMP00137,Code of Conduct & POSH Awareness,Compliance,2025-06-22,2025-07-06,2.0,500.0,Completed,80.0
+326,EMP00138,Code of Conduct & POSH Awareness,Compliance,2025-06-05,2025-06-19,2.0,500.0,Completed,54.7
+327,EMP00139,Code of Conduct & POSH Awareness,Compliance,2025-06-03,2025-06-17,2.0,500.0,Completed,65.4
+328,EMP00140,Code of Conduct & POSH Awareness,Compliance,2025-06-26,2025-07-10,2.0,500.0,Completed,49.8
+329,EMP00141,Code of Conduct & POSH Awareness,Compliance,2025-06-20,2025-07-04,2.0,500.0,Completed,53.0
+330,EMP00142,Code of Conduct & POSH Awareness,Compliance,2025-06-20,2025-07-04,2.0,500.0,Completed,65.3
+331,EMP00144,Code of Conduct & POSH Awareness,Compliance,2025-06-26,2025-07-10,2.0,500.0,Completed,73.4
+332,EMP00146,Code of Conduct & POSH Awareness,Compliance,2025-06-04,2025-06-18,2.0,500.0,Completed,47.5
+333,EMP00147,Code of Conduct & POSH Awareness,Compliance,2025-06-20,,2.0,500.0,Not Completed,
+334,EMP00148,Code of Conduct & POSH Awareness,Compliance,2025-06-04,2025-06-18,2.0,500.0,Completed,67.6
+335,EMP00149,Code of Conduct & POSH Awareness,Compliance,2025-06-25,2025-07-09,2.0,500.0,Completed,94.5
+904,EMP00099,Effective Communication,Soft Skills,2025-07-29,2025-08-20,8.0,5000.0,Completed,72.8
+926,EMP00057,First-Time Manager Programme,Leadership,2025-08-20,,32.0,45000.0,Not Completed,
+927,EMP00083,Leading Teams Through Change,Leadership,2025-08-05,2025-10-11,20.0,38000.0,Completed,76.5
+928,EMP00091,Time & Priority Management,Soft Skills,2025-08-14,2025-09-13,6.0,4000.0,Completed,87.8
+929,EMP00103,Leading Teams Through Change,Leadership,2025-08-16,2025-10-20,20.0,38000.0,Completed,89.3
+948,EMP00031,Financial Acumen for Managers,Functional,2025-09-04,2025-09-22,12.0,14000.0,Completed,65.9
+969,EMP00100,Consultative Selling,Functional,2025-10-29,2025-11-14,16.0,15000.0,Completed,81.9
+970,EMP00111,Time & Priority Management,Soft Skills,2025-10-03,2025-10-25,6.0,4000.0,Completed,58.5
+971,EMP00117,Data Analysis with SQL & Python,Technical,2025-10-21,2025-12-19,20.0,18000.0,Completed,65.9
+972,EMP00139,Time & Priority Management,Soft Skills,2025-10-08,2025-10-24,6.0,4000.0,Completed,72.0
+995,EMP00007,Leading Teams Through Change,Leadership,2025-11-04,2025-12-09,20.0,38000.0,Completed,60.3
+996,EMP00020,Negotiation Skills,Soft Skills,2025-11-29,,10.0,9000.0,Not Completed,
+997,EMP00055,Negotiation Skills,Soft Skills,2025-11-03,,10.0,9000.0,Not Completed,
+998,EMP00099,Negotiation Skills,Soft Skills,2025-11-12,2025-12-06,10.0,9000.0,Completed,87.3
+999,EMP00116,Negotiation Skills,Soft Skills,2025-11-29,2025-12-27,10.0,9000.0,Completed,54.0
+1000,EMP00123,Leading Teams Through Change,Leadership,2025-11-28,2026-01-22,20.0,38000.0,Completed,91.7
+1001,EMP00129,Data Analysis with SQL & Python,Technical,2025-11-10,2026-01-09,20.0,18000.0,Completed,86.8
+1025,EMP00038,Advanced Excel & Reporting,Technical,2025-12-01,,12.0,6000.0,Not Completed,
+1026,EMP00044,Data Analysis with SQL & Python,Technical,2025-12-19,2026-02-12,20.0,18000.0,Completed,73.9
+1027,EMP00068,Data Analysis with SQL & Python,Technical,2025-12-22,2026-01-13,20.0,18000.0,Completed,66.5
+1047,EMP00081,Financial Acumen for Managers,Functional,2026-01-15,2026-02-16,12.0,14000.0,Completed,84.3
+1048,EMP00085,Advanced Excel & Reporting,Technical,2026-01-04,2026-01-27,12.0,6000.0,Completed,75.0
+1049,EMP00096,Time & Priority Management,Soft Skills,2026-01-23,2026-03-11,6.0,4000.0,Completed,75.8
+1064,EMP00012,Cloud Architecture Fundamentals,Technical,2026-02-02,2026-03-12,24.0,28000.0,Completed,64.1
+1065,EMP00018,Advanced Excel & Reporting,Technical,2026-02-03,2026-03-17,12.0,6000.0,Completed,74.2
+1066,EMP00044,Consultative Selling,Functional,2026-02-23,2026-04-17,16.0,15000.0,Completed,85.8
+1067,EMP00074,Negotiation Skills,Soft Skills,2026-02-04,2026-02-20,10.0,9000.0,Completed,91.4
+1068,EMP00088,Cloud Architecture Fundamentals,Technical,2026-02-02,,24.0,28000.0,Not Completed,
+1069,EMP00096,Data Analysis with SQL & Python,Technical,2026-02-01,2026-02-22,20.0,18000.0,Completed,76.9
+1070,EMP00129,Advanced Excel & Reporting,Technical,2026-02-08,,12.0,6000.0,Not Completed,
+1084,EMP00044,Data Analysis with SQL & Python,Technical,2026-03-01,2026-03-21,20.0,18000.0,Completed,90.6
+1085,EMP00045,Data Analysis with SQL & Python,Technical,2026-03-11,2026-04-26,20.0,18000.0,Completed,81.4
+1086,EMP00062,Effective Communication,Soft Skills,2026-03-17,2026-04-10,8.0,5000.0,Completed,90.3
+1109,EMP00004,Negotiation Skills,Soft Skills,2026-04-27,2026-07-01,10.0,9000.0,Completed,73.1
+1110,EMP00044,Consultative Selling,Functional,2026-04-17,2026-05-04,16.0,15000.0,Completed,82.6
+1111,EMP00060,First-Time Manager Programme,Leadership,2026-04-04,2026-05-11,32.0,45000.0,Completed,86.2
+1112,EMP00074,Customer Experience Excellence,Functional,2026-04-08,2026-05-07,10.0,6500.0,Completed,79.1
+1113,EMP00079,Data Analysis with SQL & Python,Technical,2026-04-11,2026-05-01,20.0,18000.0,Completed,73.3
+1153,EMP00017,Time & Priority Management,Soft Skills,2026-05-08,2026-06-04,6.0,4000.0,Completed,78.8
+1154,EMP00102,Leading Teams Through Change,Leadership,2026-05-30,2026-07-11,20.0,38000.0,Completed,76.6
+1155,EMP00124,Advanced Excel & Reporting,Technical,2026-05-16,,12.0,6000.0,Not Completed,
+1156,EMP00137,Negotiation Skills,Soft Skills,2026-05-10,,10.0,9000.0,Not Completed,
+1185,EMP00001,Code of Conduct & POSH Awareness,Compliance,2026-06-05,2026-06-19,2.0,500.0,Completed,78.1
+1186,EMP00002,Code of Conduct & POSH Awareness,Compliance,2026-06-29,,2.0,500.0,Not Completed,
+1187,EMP00003,Code of Conduct & POSH Awareness,Compliance,2026-06-06,2026-06-20,2.0,500.0,Completed,70.8
+1188,EMP00004,Code of Conduct & POSH Awareness,Compliance,2026-06-08,2026-06-22,2.0,500.0,Completed,83.3
+1189,EMP00005,Code of Conduct & POSH Awareness,Compliance,2026-06-02,2026-06-16,2.0,500.0,Completed,90.9
+1190,EMP00006,Code of Conduct & POSH Awareness,Compliance,2026-06-03,,2.0,500.0,Not Completed,
+1191,EMP00008,Code of Conduct & POSH Awareness,Compliance,2026-06-09,2026-06-23,2.0,500.0,Completed,90.2
+1192,EMP00009,Code of Conduct & POSH Awareness,Compliance,2026-06-11,2026-06-25,2.0,500.0,Completed,64.7
+1193,EMP00011,Code of Conduct & POSH Awareness,Compliance,2026-06-09,2026-06-23,2.0,500.0,Completed,69.2
+1194,EMP00012,Code of Conduct & POSH Awareness,Compliance,2026-06-16,2026-06-30,2.0,500.0,Completed,63.3
+1195,EMP00013,Code of Conduct & POSH Awareness,Compliance,2026-06-14,2026-06-28,2.0,500.0,Completed,79.6
+1196,EMP00015,Code of Conduct & POSH Awareness,Compliance,2026-06-09,2026-06-23,2.0,500.0,Completed,77.6
+1197,EMP00016,Code of Conduct & POSH Awareness,Compliance,2026-06-24,2026-07-08,2.0,500.0,Completed,87.1
+1198,EMP00017,Code of Conduct & POSH Awareness,Compliance,2026-06-21,2026-07-05,2.0,500.0,Completed,75.4
+1199,EMP00018,Code of Conduct & POSH Awareness,Compliance,2026-06-14,2026-06-28,2.0,500.0,Completed,71.4
+1200,EMP00020,Code of Conduct & POSH Awareness,Compliance,2026-06-10,2026-06-24,2.0,500.0,Completed,86.9
+1201,EMP00021,Code of Conduct & POSH Awareness,Compliance,2026-06-08,2026-06-22,2.0,500.0,Completed,93.0
+1202,EMP00022,Code of Conduct & POSH Awareness,Compliance,2026-06-17,2026-07-01,2.0,500.0,Completed,69.8
+1203,EMP00023,Code of Conduct & POSH Awareness,Compliance,2026-06-29,2026-07-13,2.0,500.0,Completed,72.7
+1204,EMP00025,Code of Conduct & POSH Awareness,Compliance,2026-06-22,2026-07-06,2.0,500.0,Completed,64.8
+1205,EMP00027,Code of Conduct & POSH Awareness,Compliance,2026-06-03,2026-06-17,2.0,500.0,Completed,60.6
+1206,EMP00028,Code of Conduct & POSH Awareness,Compliance,2026-06-23,2026-07-07,2.0,500.0,Completed,55.7
+1207,EMP00029,Code of Conduct & POSH Awareness,Compliance,2026-06-22,2026-07-06,2.0,500.0,Completed,80.3
+1208,EMP00030,Code of Conduct & POSH Awareness,Compliance,2026-06-25,2026-07-09,2.0,500.0,Completed,79.5
+1209,EMP00031,Code of Conduct & POSH Awareness,Compliance,2026-06-16,2026-06-30,2.0,500.0,Completed,55.3
+1210,EMP00032,Code of Conduct & POSH Awareness,Compliance,2026-06-25,2026-07-09,2.0,500.0,Completed,68.1
+1211,EMP00033,Code of Conduct & POSH Awareness,Compliance,2026-06-01,2026-06-15,2.0,500.0,Completed,69.3
+1212,EMP00035,Code of Conduct & POSH Awareness,Compliance,2026-06-21,2026-07-05,2.0,500.0,Completed,70.2
+1213,EMP00038,Code of Conduct & POSH Awareness,Compliance,2026-06-10,2026-06-24,2.0,500.0,Completed,74.4
+1214,EMP00039,Code of Conduct & POSH Awareness,Compliance,2026-06-05,2026-06-19,2.0,500.0,Completed,89.3
+1215,EMP00040,Code of Conduct & POSH Awareness,Compliance,2026-06-30,2026-07-14,2.0,500.0,Completed,77.8
+1216,EMP00041,Code of Conduct & POSH Awareness,Compliance,2026-06-17,2026-07-01,2.0,500.0,Completed,80.0
+1217,EMP00041,Cloud Architecture Fundamentals,Technical,2026-06-27,2026-07-30,24.0,28000.0,Completed,71.2
+1218,EMP00043,Code of Conduct & POSH Awareness,Compliance,2026-06-03,2026-06-17,2.0,500.0,Completed,62.4
+1219,EMP00044,Code of Conduct & POSH Awareness,Compliance,2026-06-01,2026-06-15,2.0,500.0,Completed,99.9
+1220,EMP00045,Code of Conduct & POSH Awareness,Compliance,2026-06-22,2026-07-06,2.0,500.0,Completed,87.6
+1221,EMP00047,Code of Conduct & POSH Awareness,Compliance,2026-06-21,,2.0,500.0,Not Completed,
+1222,EMP00048,Code of Conduct & POSH Awareness,Compliance,2026-06-07,2026-06-21,2.0,500.0,Completed,60.6
+1223,EMP00049,Code of Conduct & POSH Awareness,Compliance,2026-06-21,2026-07-05,2.0,500.0,Completed,69.8
+1224,EMP00051,Code of Conduct & POSH Awareness,Compliance,2026-06-06,2026-06-20,2.0,500.0,Completed,59.2
+1225,EMP00054,Code of Conduct & POSH Awareness,Compliance,2026-06-06,2026-06-20,2.0,500.0,Completed,99.2
+1226,EMP00055,Code of Conduct & POSH Awareness,Compliance,2026-06-02,2026-06-16,2.0,500.0,Completed,69.5
+1227,EMP00055,Financial Acumen for Managers,Functional,2026-06-25,2026-07-24,12.0,14000.0,Completed,71.5
+1228,EMP00056,Code of Conduct & POSH Awareness,Compliance,2026-06-19,2026-07-03,2.0,500.0,Completed,60.7
+1229,EMP00057,Code of Conduct & POSH Awareness,Compliance,2026-06-12,,2.0,500.0,Not Completed,
+1230,EMP00058,Code of Conduct & POSH Awareness,Compliance,2026-06-06,2026-06-20,2.0,500.0,Completed,73.6
+1231,EMP00060,Code of Conduct & POSH Awareness,Compliance,2026-06-13,,2.0,500.0,Not Completed,
+1232,EMP00061,Code of Conduct & POSH Awareness,Compliance,2026-06-06,2026-06-20,2.0,500.0,Completed,63.0
+1233,EMP00062,Code of Conduct & POSH Awareness,Compliance,2026-06-26,2026-07-10,2.0,500.0,Completed,84.6
+1234,EMP00063,Code of Conduct & POSH Awareness,Compliance,2026-06-27,2026-07-11,2.0,500.0,Completed,89.4
+1235,EMP00065,Code of Conduct & POSH Awareness,Compliance,2026-06-14,,2.0,500.0,Not Completed,
+1236,EMP00066,Code of Conduct & POSH Awareness,Compliance,2026-06-15,2026-06-29,2.0,500.0,Completed,70.3
+1237,EMP00067,Code of Conduct & POSH Awareness,Compliance,2026-06-07,2026-06-21,2.0,500.0,Completed,69.8
+1238,EMP00068,Code of Conduct & POSH Awareness,Compliance,2026-06-24,2026-07-08,2.0,500.0,Completed,71.8
+1239,EMP00069,Code of Conduct & POSH Awareness,Compliance,2026-06-24,2026-07-08,2.0,500.0,Completed,56.9
+1240,EMP00072,Code of Conduct & POSH Awareness,Compliance,2026-06-21,2026-07-05,2.0,500.0,Completed,76.2
+1241,EMP00073,Code of Conduct & POSH Awareness,Compliance,2026-06-18,2026-07-02,2.0,500.0,Completed,78.4
+1242,EMP00074,Code of Conduct & POSH Awareness,Compliance,2026-06-11,,2.0,500.0,Not Completed,
+1243,EMP00075,Code of Conduct & POSH Awareness,Compliance,2026-06-26,2026-07-10,2.0,500.0,Completed,70.0
+1244,EMP00078,Code of Conduct & POSH Awareness,Compliance,2026-06-01,2026-06-15,2.0,500.0,Completed,78.8
+1245,EMP00079,Code of Conduct & POSH Awareness,Compliance,2026-06-25,2026-07-09,2.0,500.0,Completed,78.5
+1246,EMP00080,Code of Conduct & POSH Awareness,Compliance,2026-06-28,2026-07-12,2.0,500.0,Completed,60.5
+1247,EMP00082,Code of Conduct & POSH Awareness,Compliance,2026-06-07,2026-06-21,2.0,500.0,Completed,57.6
+1248,EMP00083,Code of Conduct & POSH Awareness,Compliance,2026-06-19,2026-07-03,2.0,500.0,Completed,84.7
+1249,EMP00085,Code of Conduct & POSH Awareness,Compliance,2026-06-29,2026-07-13,2.0,500.0,Completed,69.8
+1250,EMP00086,Code of Conduct & POSH Awareness,Compliance,2026-06-10,2026-06-24,2.0,500.0,Completed,84.3
+1251,EMP00088,Code of Conduct & POSH Awareness,Compliance,2026-06-01,2026-06-15,2.0,500.0,Completed,73.4
+1252,EMP00089,Code of Conduct & POSH Awareness,Compliance,2026-06-07,2026-06-21,2.0,500.0,Completed,92.1
+1253,EMP00090,Code of Conduct & POSH Awareness,Compliance,2026-06-23,2026-07-07,2.0,500.0,Completed,88.1
+1254,EMP00091,Code of Conduct & POSH Awareness,Compliance,2026-06-29,2026-07-13,2.0,500.0,Completed,71.7
+1255,EMP00093,Code of Conduct & POSH Awareness,Compliance,2026-06-30,2026-07-14,2.0,500.0,Completed,95.1
+1256,EMP00094,Code of Conduct & POSH Awareness,Compliance,2026-06-18,2026-07-02,2.0,500.0,Completed,89.1
+1257,EMP00095,Code of Conduct & POSH Awareness,Compliance,2026-06-25,2026-07-09,2.0,500.0,Completed,86.7
+1258,EMP00096,Code of Conduct & POSH Awareness,Compliance,2026-06-06,2026-06-20,2.0,500.0,Completed,64.4
+1259,EMP00098,Code of Conduct & POSH Awareness,Compliance,2026-06-15,2026-06-29,2.0,500.0,Completed,84.5
+1260,EMP00099,Code of Conduct & POSH Awareness,Compliance,2026-06-01,2026-06-15,2.0,500.0,Completed,91.1
+1261,EMP00100,Code of Conduct & POSH Awareness,Compliance,2026-06-19,2026-07-03,2.0,500.0,Completed,72.8
+1262,EMP00101,Code of Conduct & POSH Awareness,Compliance,2026-06-03,2026-06-17,2.0,500.0,Completed,80.4
+1263,EMP00102,Code of Conduct & POSH Awareness,Compliance,2026-06-10,2026-06-24,2.0,500.0,Completed,78.6
+1264,EMP00103,Code of Conduct & POSH Awareness,Compliance,2026-06-03,2026-06-17,2.0,500.0,Completed,85.1
+1265,EMP00105,Code of Conduct & POSH Awareness,Compliance,2026-06-07,2026-06-21,2.0,500.0,Completed,67.3
+1266,EMP00107,Code of Conduct & POSH Awareness,Compliance,2026-06-04,2026-06-18,2.0,500.0,Completed,71.0
+1267,EMP00109,Code of Conduct & POSH Awareness,Compliance,2026-06-03,2026-06-17,2.0,500.0,Completed,74.1
+1268,EMP00111,Code of Conduct & POSH Awareness,Compliance,2026-06-23,2026-07-07,2.0,500.0,Completed,66.1
+1269,EMP00113,Code of Conduct & POSH Awareness,Compliance,2026-06-11,2026-06-25,2.0,500.0,Completed,94.5

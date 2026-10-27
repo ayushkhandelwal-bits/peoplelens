@@ -17,7 +17,7 @@ from sqlalchemy.engine import Engine
 
 from database.connection import days_between, expand_in, get_readonly_engine, read_sql
 from src.analytics.common import Filters, add_months, safe_div
-from src.analytics.metrics import DIMENSIONS, TENURE_ORDER, attrition_rate, enps
+from src.analytics.metrics import DIMENSIONS, TENURE_ORDER, attrition_rate
 from src.assistant.intent_parser import ParsedQuestion
 
 

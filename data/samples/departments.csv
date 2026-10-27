@@ -1,0 +1,26 @@
+department_id,department_name,business_unit,primary_job_family,cost_centre,department_head_employee_id,location_id,department_creation_date,department_status
+D01,Platform Engineering,Technology,Engineering,CC-1010,EMP00001,LOC01,2012-04-01,Active
+D02,Mobile Engineering,Technology,Engineering,CC-1020,EMP00086,LOC01,2012-04-01,Active
+D03,Data Engineering,Technology,Data & Analytics,CC-1030,EMP00002,LOC01,2012-04-01,Active
+D04,Data Science & Analytics,Technology,Data & Analytics,CC-1040,EMP00608,LOC01,2018-04-01,Active
+D05,IT Infrastructure,Technology,IT & Security,CC-1050,EMP00592,LOC01,2012-04-01,Active
+D06,Information Security,Technology,IT & Security,CC-1060,EMP00332,LOC01,2019-04-01,Active
+D07,Product Management,Technology,Product & Design,CC-1070,EMP00103,LOC01,2012-04-01,Active
+D08,Design & UX,Technology,Product & Design,CC-1080,EMP00287,LOC01,2017-04-01,Active
+D09,Customer Support,Operations,Customer Support,CC-1090,EMP00218,LOC07,2012-04-01,Active
+D10,Service Operations North,Operations,Operations,CC-1100,EMP00879,LOC03,2012-04-01,Active
+D11,Service Operations South,Operations,Operations,CC-1110,EMP00005,LOC01,2012-04-01,Active
+D12,Service Operations West,Operations,Operations,CC-1120,EMP00526,LOC02,2012-04-01,Active
+D13,Quality Assurance,Operations,Operations,CC-1130,EMP00887,LOC01,2012-04-01,Active
+D14,Supply & Partner Operations,Operations,Operations,CC-1140,,LOC01,2012-04-01,Active
+D15,Procurement,Operations,Operations,CC-1150,EMP00555,LOC01,2012-04-01,Active
+D16,Enterprise Sales,Commercial,Sales,CC-1160,EMP00946,LOC02,2012-04-01,Active
+D17,SMB Sales,Commercial,Sales,CC-1170,EMP00083,LOC01,2012-04-01,Active
+D18,Marketing,Commercial,Marketing,CC-1180,EMP00035,LOC02,2012-04-01,Active
+D19,Growth & Partnerships,Commercial,Sales,CC-1190,EMP00874,LOC02,2020-04-01,Active
+D20,Account Management,Commercial,Sales,CC-1200,EMP00102,LOC02,2012-04-01,Active
+D21,Finance,Corporate,Finance,CC-1210,EMP00990,LOC01,2012-04-01,Active
+D22,Human Resources,Corporate,Human Resources,CC-1220,EMP00675,LOC01,2012-04-01,Active
+D23,Legal & Compliance,Corporate,Legal & Compliance,CC-1230,EMP00011,LOC01,2012-04-01,Active
+D24,Administration & Facilities,Corporate,Administration,CC-1240,EMP00347,LOC01,2012-04-01,Active
+D25,Executive Office,Executive,Executive,CC-1250,EMP00072,LOC01,2012-04-01,Active

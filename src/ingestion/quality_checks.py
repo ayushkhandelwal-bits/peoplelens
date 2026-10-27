@@ -103,6 +103,28 @@ def required_columns(t: Tables) -> list[CheckResult]:
     return out
 
 
+@rule
+def column_lengths(t: Tables) -> list[CheckResult]:
+    """Text values must fit their declared VARCHAR length (PostgreSQL enforces it; SQLite does not)."""
+    from sqlalchemy import String
+
+    out = []
+    for table in metadata.sorted_tables:
+        if table.name not in t:
+            continue
+        df = t[table.name]
+        bad, cols = 0, []
+        for c in table.columns:
+            if isinstance(c.type, String) and c.type.length and c.name in df:
+                n = int((df[c.name].dropna().astype(str).str.len() > c.type.length).sum())
+                if n:
+                    bad += n
+                    cols.append(f"{c.name} > {c.type.length}")
+        out.append(_result("Text values fit declared column lengths", "Invalid values", table.name, bad,
+                           details=", ".join(cols)))
+    return out
+
+
 # -------------------------------------------------------------- date logic
 
 @rule

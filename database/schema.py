@@ -107,7 +107,7 @@ job_history = Table(
     Column("job_level", String(4), nullable=False),
     Column("manager_id", String(10), _fk("employees.employee_id")),
     Column("employment_type", String(16), nullable=False),
-    Column("change_reason", String(30), nullable=False),
+    Column("change_reason", String(80), nullable=False),
     Column("promotion_flag", Integer, nullable=False),
     Column("transfer_flag", Integer, nullable=False),
     CheckConstraint(
@@ -165,7 +165,7 @@ candidates = Table(
     Column("experience_band", String(12), nullable=False),
     Column("furthest_stage", String(16), nullable=False),
     Column("candidate_status", String(8), nullable=False),
-    Column("final_disposition", String(20), nullable=False),
+    Column("final_disposition", String(24), nullable=False),
     Column("associated_employee_id", String(10), _fk("employees.employee_id")),
     CheckConstraint("candidate_status IN ('Open','Closed')", name="ck_cand_status"),
 )
@@ -272,7 +272,7 @@ compensation_history = Table(
     Column("variable_compensation", Float, nullable=False),
     Column("benefits_cost", Float, nullable=False),
     Column("currency", String(3), nullable=False),
-    Column("compensation_change_reason", String(30), nullable=False),
+    Column("compensation_change_reason", String(80), nullable=False),
     CheckConstraint("annual_base_salary > 0", name="ck_ch_base"),
     CheckConstraint("variable_compensation >= 0 AND benefits_cost >= 0", name="ck_ch_nonneg"),
 )
@@ -288,7 +288,7 @@ training_records = Table(
     Column("completion_date", Date),
     Column("training_hours", Float, nullable=False),
     Column("training_cost", Float, nullable=False),
-    Column("completion_status", String(12), nullable=False),
+    Column("completion_status", String(16), nullable=False),
     Column("assessment_score", Float),
     CheckConstraint("training_cost >= 0 AND training_hours >= 0", name="ck_tr_nonneg"),
 )
@@ -331,9 +331,9 @@ data_quality_results = Table(
     metadata,
     Column("result_id", Integer, primary_key=True),
     Column("run_id", String(20), nullable=False),
-    Column("check_name", String(80), nullable=False),
-    Column("category", String(30), nullable=False),
-    Column("table_name", String(40), nullable=False),
+    Column("check_name", String(160), nullable=False),
+    Column("category", String(60), nullable=False),
+    Column("table_name", String(60), nullable=False),
     Column("severity", String(8), nullable=False),
     Column("status", String(6), nullable=False),
     Column("failed_rows", Integer, nullable=False),

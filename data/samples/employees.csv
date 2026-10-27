@@ -1,0 +1,301 @@
+employee_id,employee_name,gender,department_id,location_id,job_family,job_level,employment_type,joining_date,exit_date,exit_type,current_status,current_manager_id,experience_before_joining,source_system,created_at,updated_at
+EMP00001,Bhavna Kulkarni,Female,D01,LOC01,Engineering,L7,Full-time,2012-04-20,,,Active,EMP00029,14.2,HRMS,2012-04-20,2024-10-01
+EMP00002,Meera Khan,Female,D03,LOC01,Data & Analytics,L7,Full-time,2012-04-20,,,Active,EMP00029,18.1,HRMS,2012-04-20,2024-10-01
+EMP00003,Trisha Kumar,Female,D03,LOC01,Data & Analytics,L5,Full-time,2012-04-20,,,Active,EMP00002,10.7,HRMS,2012-04-20,2024-10-14
+EMP00004,Suresh Bhat,Male,D10,LOC07,Operations,L5,Full-time,2012-04-20,,,Active,EMP00879,5.1,HRMS,2012-04-20,2026-04-01
+EMP00005,Harsh Dutta,Male,D11,LOC01,Operations,L7,Full-time,2012-04-20,,,Active,EMP00063,19.6,HRMS,2012-04-20,2024-10-01
+EMP00006,Rahul Mishra,Male,D11,LOC06,Operations,L6,Full-time,2012-04-20,,,Active,EMP00005,16.5,HRMS,2012-04-20,2024-10-01
+EMP00007,Tarun Jain,Male,D12,LOC02,Operations,L6,Full-time,2012-04-20,2026-06-21,Voluntary,Exited,,15.0,HRMS,2012-04-20,2026-06-21
+EMP00008,Gaurav Joshi,Male,D14,LOC04,Customer Support,L4,Full-time,2012-04-20,,,Active,EMP00040,8.6,HRMS,2012-04-20,2024-10-01
+EMP00009,Amit Thomas,Male,D14,LOC03,Data & Analytics,L5,Full-time,2012-04-20,,,Active,EMP00427,6.3,HRMS,2012-04-20,2025-04-01
+EMP00010,Shreya Patel,Female,D21,LOC01,Finance,L7,Full-time,2012-04-20,2026-01-11,Involuntary,Exited,,16.1,HRMS,2012-04-20,2026-01-11
+EMP00011,Tara Nair,Female,D23,LOC01,Legal & Compliance,L7,Full-time,2012-04-20,,,Active,EMP00336,17.6,HRMS,2012-04-20,2024-10-01
+EMP00012,Rohan Thomas,Male,D02,LOC04,Engineering,L3,Full-time,2012-05-26,,,Active,EMP00142,3.3,HRMS,2012-05-26,2024-10-01
+EMP00013,Vivek Pandey,Male,D24,LOC07,Administration,L6,Full-time,2012-07-27,,,Active,EMP00347,16.7,HRMS,2012-07-27,2024-10-01
+EMP00014,Swati Reddy,Female,D22,LOC01,Human Resources,L5,Full-time,2012-11-13,2026-02-09,Voluntary,Exited,,11.7,HRMS,2012-11-13,2026-02-09
+EMP00015,Pallavi Singh,Female,D01,LOC01,Engineering,L6,Full-time,2013-03-31,,,Active,EMP00001,14.4,HRMS,2013-03-31,2024-10-01
+EMP00016,Kunal Menon,Male,D09,LOC07,Customer Support,L7,Full-time,2013-10-24,2026-08-02,Voluntary,Exited,,16.9,HRMS,2013-10-24,2026-08-02
+EMP00017,Joseph Fernandes,Male,D01,LOC05,Engineering,L3,Full-time,2013-10-26,,,Active,EMP00216,6.7,HRMS,2013-10-26,2024-10-01
+EMP00018,Tushar Bhat,Male,D17,LOC03,Sales,L5,Full-time,2013-10-26,,,Active,EMP00083,9.0,HRMS,2013-10-26,2026-04-01
+EMP00019,Varun Reddy,Male,D12,LOC02,Customer Support,L5,Full-time,2013-11-04,2025-03-17,Voluntary,Exited,,8.7,HRMS,2013-11-04,2025-03-17
+EMP00020,Aarav Patel,Male,D09,LOC07,Customer Support,L6,Full-time,2013-11-09,,,Active,EMP00218,10.2,HRMS,2013-11-09,2026-08-02
+EMP00021,Tara Gill,Female,D02,LOC01,Product & Design,L6,Full-time,2013-11-21,,,Active,EMP00086,10.8,HRMS,2013-11-21,2024-10-01
+EMP00022,Sahil Naidu,Male,D23,LOC01,Legal & Compliance,L4,Full-time,2014-01-26,,,Active,EMP00011,8.6,HRMS,2014-01-26,2024-10-01
+EMP00023,Anjali Pillai,Undisclosed,D07,LOC01,Product & Design,L5,Full-time,2014-02-22,,,Active,EMP00103,10.1,HRMS,2014-02-22,2024-10-01
+EMP00024,Priya Bose,Female,D09,LOC04,Customer Support,L2,Full-time,2014-06-26,2026-02-04,Voluntary,Exited,,2.6,HRMS,2014-06-26,2026-02-04
+EMP00025,Karan Menon,Male,D20,LOC03,Sales,L3,Full-time,2014-08-09,,,Active,EMP00058,4.6,HRMS,2014-08-09,2026-01-07
+EMP00026,Sandeep Chatterjee,Male,D16,LOC01,Marketing,L4,Full-time,2014-09-04,2026-05-29,Voluntary,Exited,,7.8,HRMS,2014-09-04,2026-05-29
+EMP00027,Sanya Pillai,Female,D09,LOC06,Customer Support,L4,Full-time,2014-10-18,,,Active,EMP00020,6.3,HRMS,2014-10-18,2025-06-10
+EMP00028,Pooja Iyer,Female,D12,LOC05,Data & Analytics,L6,Full-time,2014-11-23,,,Active,EMP00526,11.5,HRMS,2014-11-23,2024-10-01
+EMP00029,Aditi Sen,Female,D25,LOC01,Executive,L8,Full-time,2015-02-28,,,Active,EMP00072,24.9,HRMS,2015-02-28,2024-10-01
+EMP00030,Tara Kulkarni,Female,D21,LOC03,Finance,L4,Full-time,2015-03-20,,,Active,EMP00557,5.5,HRMS,2015-03-20,2025-11-15
+EMP00031,Nidhi Sharma,Female,D03,LOC01,Data & Analytics,L5,Full-time,2015-03-26,,,Active,EMP00604,7.3,HRMS,2015-03-26,2024-10-01
+EMP00032,Gaurav Chatterjee,Male,D10,LOC03,Operations,L6,Full-time,2015-06-05,,,Active,EMP00063,11.5,HRMS,2015-06-05,2025-01-07
+EMP00033,Tushar Singh,Male,D02,LOC05,Engineering,L4,Full-time,2015-07-10,,,Active,EMP00021,7.3,HRMS,2015-07-10,2024-10-01
+EMP00034,Aditya Pillai,Male,D21,LOC01,Finance,L5,Full-time,2015-11-11,2025-09-02,Involuntary,Exited,,7.9,HRMS,2015-11-11,2025-09-02
+EMP00035,Jahnavi Dutta,Female,D18,LOC02,Marketing,L7,Full-time,2015-11-25,,,Active,EMP00073,13.8,HRMS,2015-11-25,2024-10-01
+EMP00036,Pallavi Nair,Female,D07,LOC05,Product & Design,L5,Full-time,2015-12-14,2025-12-28,Voluntary,Exited,,11.0,HRMS,2015-12-14,2025-12-28
+EMP00037,Gurpreet Gill,Male,D02,LOC05,Engineering,L4,Full-time,2015-12-20,2025-10-03,Involuntary,Exited,,6.9,HRMS,2015-12-20,2025-10-03
+EMP00038,Manish Joshi,Male,D17,LOC03,Sales,L3,Full-time,2016-01-27,,,Active,EMP00241,4.5,HRMS,2016-01-27,2024-10-01
+EMP00039,Dev Kapoor,Male,D16,LOC03,Sales,L6,Full-time,2016-02-03,,,Active,EMP00073,16.7,HRMS,2016-02-03,2025-09-04
+EMP00040,Sameer Verma,Male,D14,LOC04,Operations,L5,Full-time,2016-02-06,,,Active,EMP00123,12.5,HRMS,2016-02-06,2024-10-05
+EMP00041,Rahul Saxena,Male,D03,LOC01,Data & Analytics,L5,Full-time,2016-03-11,,,Active,EMP00604,7.9,HRMS,2016-03-11,2024-10-01
+EMP00042,Jahnavi Singh,Female,D12,LOC02,Operations,L2,Full-time,2016-04-18,2025-10-14,Voluntary,Exited,,1.3,HRMS,2016-04-18,2025-10-14
+EMP00043,Dev Kulkarni,Male,D12,LOC05,Operations,L6,Full-time,2016-04-26,,,Active,EMP00526,12.4,HRMS,2016-04-26,2026-04-01
+EMP00044,Suresh Naidu,Male,D18,LOC03,Sales,L6,Full-time,2016-08-13,,,Active,EMP00035,13.6,HRMS,2016-08-13,2024-10-01
+EMP00045,Arnav Rao,Male,D10,LOC03,Operations,L5,Full-time,2016-08-24,,,Active,EMP00879,12.7,HRMS,2016-08-24,2026-01-12
+EMP00046,Rohan Saxena,Male,D17,LOC04,Sales,L5,Full-time,2016-09-01,2025-02-23,Voluntary,Exited,,12.5,HRMS,2016-09-01,2025-02-23
+EMP00047,Faisal Das,Male,D10,LOC03,Operations,L4,Full-time,2016-09-08,,,Active,EMP00344,8.5,HRMS,2016-09-08,2026-01-12
+EMP00048,Karthik Chatterjee,Male,D09,LOC07,Customer Support,L4,Full-time,2016-10-01,,,Active,EMP00728,8.5,HRMS,2016-10-01,2025-01-02
+EMP00049,Neha Naidu,Female,D22,LOC01,Human Resources,L4,Full-time,2016-10-21,,,Active,EMP00193,5.4,HRMS,2016-10-21,2024-10-01
+EMP00050,Sahil Menon,Male,D21,LOC01,Finance,L3,Full-time,2016-10-31,2025-03-27,Voluntary,Exited,,4.8,HRMS,2016-10-31,2025-03-27
+EMP00051,Sandeep Saxena,Male,D24,LOC06,Administration,L5,Full-time,2016-11-19,,,Active,EMP00347,10.9,HRMS,2016-11-19,2024-10-01
+EMP00052,Varsha Naidu,Female,D11,LOC04,Operations,L2,Full-time,2016-12-13,2025-11-07,Voluntary,Exited,,1.2,HRMS,2016-12-13,2025-11-07
+EMP00053,Vikram Gupta,Male,D09,LOC04,Customer Support,L3,Full-time,2016-12-16,2025-10-12,Voluntary,Exited,,3.4,HRMS,2016-12-16,2025-10-12
+EMP00054,Amit Verma,Male,D02,LOC01,Engineering,L5,Full-time,2016-12-23,,,Active,EMP00021,8.5,HRMS,2016-12-23,2026-01-24
+EMP00055,Jahnavi Srinivasan,Female,D10,LOC03,Operations,L4,Full-time,2017-01-09,,,Active,EMP00344,5.9,HRMS,2017-01-09,2024-10-01
+EMP00056,Divya Verma,Female,D20,LOC01,Sales,L6,Full-time,2017-01-13,,,Active,EMP00102,10.2,HRMS,2017-01-13,2024-10-01
+EMP00057,Tushar Sharma,Male,D10,LOC03,Operations,L5,Full-time,2017-03-08,2026-06-19,Involuntary,Exited,,12.0,HRMS,2017-03-08,2026-06-19
+EMP00058,Ishaan Kulkarni,Male,D20,LOC01,Sales,L4,Full-time,2017-03-10,,,Active,EMP00056,5.7,HRMS,2017-03-10,2026-01-07
+EMP00059,Harleen Nair,Female,D12,LOC05,Operations,L3,Contract,2017-03-18,2025-03-18,Involuntary,Exited,,6.3,HRMS,2017-03-18,2025-03-18
+EMP00060,Akash Iyer,Male,D08,LOC01,Product & Design,L4,Full-time,2017-04-20,,,Active,EMP00167,5.2,HRMS,2017-04-20,2025-02-13
+EMP00061,Karan Pandey,Male,D08,LOC04,Product & Design,L4,Full-time,2017-04-20,,,Active,EMP00167,9.5,HRMS,2017-04-20,2024-10-01
+EMP00062,Gauri Nair,Female,D21,LOC01,Finance,L3,Full-time,2017-04-23,,,Active,EMP00298,5.4,HRMS,2017-04-23,2025-09-02
+EMP00063,Rajat Gupta,Male,D25,LOC01,Executive,L8,Full-time,2017-05-29,,,Active,EMP00072,24.5,HRMS,2017-05-29,2024-10-01
+EMP00064,Aarav Hegde,Male,D09,LOC04,Customer Support,L6,Full-time,2017-06-21,2024-10-04,Voluntary,Exited,,12.8,HRMS,2017-06-21,2024-10-04
+EMP00065,Aarav Verma,Male,D05,LOC01,Data & Analytics,L4,Full-time,2017-07-14,,,Active,EMP00450,9.2,HRMS,2017-07-14,2025-05-03
+EMP00066,Sameer Agarwal,Male,D17,LOC02,Sales,L3,Full-time,2017-07-31,,,Active,EMP00934,5.0,HRMS,2017-07-31,2026-04-21
+EMP00067,Pallavi Mehta,Female,D10,LOC07,Customer Support,L1,Full-time,2017-08-09,,,Active,EMP00055,1.0,HRMS,2017-08-09,2026-05-02
+EMP00068,Harsh Srinivasan,Male,D13,LOC02,Operations,L6,Full-time,2017-09-08,,,Active,EMP00063,16.7,HRMS,2017-09-08,2025-07-04
+EMP00069,Trisha Chopra,Female,D23,LOC02,Finance,L4,Full-time,2017-10-25,,,Active,EMP00011,5.7,HRMS,2017-10-25,2024-10-01
+EMP00070,Trisha Gupta,Female,D12,LOC05,Operations,L5,Full-time,2017-11-13,2025-02-11,Voluntary,Exited,,12.4,HRMS,2017-11-13,2025-02-11
+EMP00071,Kunal Fernandes,Male,D01,LOC04,Data & Analytics,L3,Full-time,2017-12-02,2025-01-19,Voluntary,Exited,,3.8,HRMS,2017-12-02,2025-01-19
+EMP00072,Suresh Kulkarni,Male,D25,LOC01,Executive,L9,Full-time,2018-01-08,,,Active,,27.8,HRMS,2018-01-08,2018-01-08
+EMP00073,Deepak Pillai,Male,D25,LOC01,Executive,L8,Full-time,2018-01-12,,,Active,EMP00072,23.9,HRMS,2018-01-12,2024-10-01
+EMP00074,Vivek Rao,Male,D09,LOC06,Data & Analytics,L3,Contract,2018-02-10,2026-06-19,Voluntary,Exited,,4.2,HRMS,2018-02-10,2026-06-19
+EMP00075,Harsh Qureshi,Male,D23,LOC03,Legal & Compliance,L5,Full-time,2018-03-03,,,Active,EMP00011,9.5,HRMS,2018-03-03,2026-04-01
+EMP00076,Kunal Patel,Male,D21,LOC01,Data & Analytics,L2,Full-time,2018-03-21,2025-10-20,Voluntary,Exited,,1.9,HRMS,2018-03-21,2025-10-20
+EMP00077,Abhishek Verma,Male,D09,LOC07,Customer Support,L4,Full-time,2018-04-12,2025-05-23,Voluntary,Exited,,9.2,HRMS,2018-04-12,2025-05-23
+EMP00078,Aarav Khan,Male,D04,LOC04,Engineering,L5,Full-time,2018-04-20,,,Active,EMP00419,11.9,HRMS,2018-04-20,2024-10-01
+EMP00079,Naveen Jain,Male,D11,LOC01,Operations,L3,Full-time,2018-04-22,,,Active,EMP00141,6.6,HRMS,2018-04-22,2024-10-01
+EMP00080,Abhishek Mehta,Male,D02,LOC01,Product & Design,L3,Full-time,2018-04-23,,,Active,EMP00142,6.2,HRMS,2018-04-23,2024-10-01
+EMP00081,Nandini Hegde,Female,D09,LOC06,Customer Support,L4,Full-time,2018-05-09,2026-05-17,Voluntary,Exited,,10.0,HRMS,2018-05-09,2026-05-17
+EMP00082,Mohit Chopra,Male,D04,LOC01,Data & Analytics,L3,Full-time,2018-05-20,,,Active,EMP00237,3.5,HRMS,2018-05-20,2024-10-01
+EMP00083,Uma D'Souza,Female,D17,LOC01,Sales,L7,Full-time,2018-06-08,,,Active,EMP00073,14.0,HRMS,2018-06-08,2024-10-01
+EMP00084,Kavya Bhat,Female,D04,LOC04,Data & Analytics,L3,Full-time,2018-06-09,2026-01-31,Voluntary,Exited,,5.9,HRMS,2018-06-09,2026-01-31
+EMP00085,Aarav Singh,Male,D12,LOC02,Operations,L1,Full-time,2018-06-11,,,Active,EMP00043,1.7,HRMS,2018-06-11,2024-10-01
+EMP00086,Deepika Kumar,Female,D02,LOC01,Engineering,L7,Full-time,2018-06-17,,,Active,EMP00029,15.5,HRMS,2018-06-17,2024-10-01
+EMP00087,Pallavi Srinivasan,Female,D01,LOC04,Engineering,L5,Full-time,2018-07-13,2025-04-23,Voluntary,Exited,,8.5,HRMS,2018-07-13,2025-04-23
+EMP00088,Naveen Dutta,Male,D03,LOC01,Data & Analytics,L2,Full-time,2018-07-18,,,Active,EMP00003,1.5,HRMS,2018-07-18,2024-10-01
+EMP00089,Abhishek Nair,Male,D13,LOC01,Operations,L4,Full-time,2018-07-21,,,Active,EMP00425,6.0,HRMS,2018-07-21,2024-10-01
+EMP00090,Harleen Verma,Female,D17,LOC03,Sales,L4,Full-time,2018-08-08,,,Active,EMP00793,8.4,HRMS,2018-08-08,2025-09-09
+EMP00091,Tushar Bhat,Male,D03,LOC05,Engineering,L2,Full-time,2018-08-18,,,Active,EMP00570,1.6,HRMS,2018-08-18,2024-10-01
+EMP00092,Gauri Kumar,Female,D12,LOC02,Customer Support,L1,Full-time,2018-08-20,2025-01-29,Voluntary,Exited,,1.4,HRMS,2018-08-20,2025-01-29
+EMP00093,Sneha Nair,Female,D09,LOC06,Customer Support,L5,Full-time,2018-08-27,,,Active,EMP00205,11.1,HRMS,2018-08-27,2025-06-29
+EMP00094,Vaishnavi Sharma,Female,D11,LOC06,Operations,L4,Full-time,2018-08-30,,,Active,EMP00736,6.6,HRMS,2018-08-30,2026-04-01
+EMP00095,Harleen Reddy,Female,D01,LOC05,Engineering,L4,Full-time,2018-10-15,,,Active,EMP00374,8.2,HRMS,2018-10-15,2024-11-21
+EMP00096,Rahul Bhat,Male,D22,LOC03,Human Resources,L4,Full-time,2018-10-29,,,Active,EMP00232,6.4,HRMS,2018-10-29,2025-01-03
+EMP00097,Swati D'Souza,Female,D12,LOC02,Operations,L2,Full-time,2018-11-02,2025-09-07,Voluntary,Exited,,2.3,HRMS,2018-11-02,2025-09-07
+EMP00098,Divya Das,Female,D08,LOC01,Engineering,L3,Full-time,2018-11-09,,,Active,EMP00060,5.3,HRMS,2018-11-09,2026-02-02
+EMP00099,Lakshmi Srinivasan,Female,D22,LOC02,Human Resources,L3,Full-time,2018-11-16,,,Active,EMP00579,3.4,HRMS,2018-11-16,2024-10-01
+EMP00100,Pranav Hegde,Male,D16,LOC01,Sales,L4,Full-time,2018-11-19,,,Active,EMP00039,5.9,HRMS,2018-11-19,2026-05-19
+EMP00101,Zaid Mehta,Male,D22,LOC02,Human Resources,L5,Full-time,2018-12-15,,,Active,EMP00232,12.9,HRMS,2018-12-15,2024-10-01
+EMP00102,Ananya Kulkarni,Female,D20,LOC02,Sales,L7,Full-time,2018-12-26,,,Active,EMP00073,20.1,HRMS,2018-12-26,2024-10-01
+EMP00103,Pradeep Mishra,Male,D07,LOC01,Product & Design,L7,Full-time,2019-01-09,,,Active,EMP00029,17.9,HRMS,2019-01-09,2024-10-01
+EMP00104,Neha Naidu,Female,D01,LOC04,Engineering,L1,Contract,2019-02-02,2025-06-27,Voluntary,Exited,,0.7,HRMS,2019-02-02,2025-06-27
+EMP00105,Kavya Sharma,Female,D02,LOC01,Product & Design,L5,Full-time,2019-02-06,,,Active,EMP00021,8.3,HRMS,2019-02-06,2024-10-01
+EMP00106,Kavya Jain,Female,D09,LOC04,Customer Support,L1,Contract,2019-03-04,2025-03-19,Voluntary,Exited,,0.7,HRMS,2019-03-04,2025-03-19
+EMP00107,Sandeep Naidu,Male,D22,LOC01,Human Resources,L4,Full-time,2019-03-05,,,Active,EMP00101,7.5,HRMS,2019-03-05,2024-10-01
+EMP00108,Sandeep Thomas,Male,D14,LOC01,Operations,L7,Full-time,2019-03-06,2026-03-12,Voluntary,Exited,,18.8,HRMS,2019-03-06,2026-03-12
+EMP00109,Nidhi Saxena,Female,D11,LOC04,Operations,L4,Full-time,2019-03-09,,,Active,EMP00006,10.0,HRMS,2019-03-09,2024-10-01
+EMP00110,Kunal Patel,Male,D17,LOC03,Sales,L4,Full-time,2019-03-28,2025-05-28,Voluntary,Exited,,5.1,HRMS,2019-03-28,2025-05-28
+EMP00111,Divya Iyer,Female,D08,LOC01,Data & Analytics,L3,Full-time,2019-04-07,,,Active,EMP00167,3.2,HRMS,2019-04-07,2024-10-01
+EMP00112,Zaid Menon,Male,D01,LOC01,Engineering,L1,Full-time,2019-04-14,2024-12-26,Voluntary,Exited,,0.9,HRMS,2019-04-14,2024-12-26
+EMP00113,Tara Nair,Female,D06,LOC04,IT & Security,L4,Full-time,2019-04-20,,,Active,EMP00332,8.3,HRMS,2019-04-20,2024-10-01
+EMP00114,Ishaan Das,Male,D06,LOC01,IT & Security,L3,Full-time,2019-04-20,2025-03-20,Voluntary,Exited,,5.7,HRMS,2019-04-20,2025-03-20
+EMP00115,Kavya Agarwal,Female,D18,LOC02,Marketing,L6,Full-time,2019-05-08,,,Active,EMP00035,9.5,HRMS,2019-05-08,2026-04-01
+EMP00116,Abhishek Iyer,Male,D08,LOC04,Product & Design,L4,Full-time,2019-07-06,2026-02-02,Voluntary,Exited,,8.7,HRMS,2019-07-06,2026-02-02
+EMP00117,Riya Kapoor,Female,D09,LOC04,Customer Support,L5,Full-time,2019-07-07,,,Active,EMP00904,10.0,HRMS,2019-07-07,2026-04-30
+EMP00118,Gauri Nair,Female,D14,LOC01,Operations,L4,Full-time,2019-07-15,,,Active,EMP00813,8.2,HRMS,2019-07-15,2025-10-28
+EMP00119,Vivek Sen,Male,D18,LOC03,Marketing,L2,Full-time,2019-07-29,,,Active,EMP00209,2.8,HRMS,2019-07-29,2026-08-11
+EMP00120,Rajat Nair,Male,D09,LOC07,Customer Support,L1,Full-time,2019-07-31,2026-09-16,Involuntary,Exited,,0.5,HRMS,2019-07-31,2026-09-16
+EMP00121,Varun Kapoor,Male,D07,LOC05,Product & Design,L3,Full-time,2019-08-08,2026-03-31,Voluntary,Exited,,3.7,HRMS,2019-08-08,2026-03-31
+EMP00122,Faisal D'Souza,Male,D12,LOC05,Operations,L5,Full-time,2019-08-13,2025-08-11,Voluntary,Exited,,9.8,HRMS,2019-08-13,2025-08-11
+EMP00123,Kunal Saxena,Male,D14,LOC01,Operations,L6,Full-time,2019-09-04,,,Active,EMP00063,13.3,HRMS,2019-09-04,2026-03-12
+EMP00124,Rohan Sharma,Male,D10,LOC07,Operations,L4,Full-time,2019-09-15,2026-05-26,Involuntary,Exited,,3.6,HRMS,2019-09-15,2026-05-26
+EMP00125,Varun Bhat,Male,D11,LOC06,Operations,L2,Full-time,2019-09-24,2025-09-03,Voluntary,Exited,,3.3,HRMS,2019-09-24,2025-09-03
+EMP00126,Sahil Jain,Male,D10,LOC07,Operations,L3,Full-time,2019-09-25,2025-01-12,Voluntary,Exited,,4.4,HRMS,2019-09-25,2025-01-12
+EMP00127,Aanya Khan,Female,D02,LOC05,Engineering,L2,Full-time,2019-09-29,2025-09-29,Voluntary,Exited,,1.1,HRMS,2019-09-29,2025-09-29
+EMP00128,Ananya Bose,Female,D21,LOC01,Administration,L4,Full-time,2019-10-03,2025-03-13,Voluntary,Exited,,9.6,HRMS,2019-10-03,2025-03-13
+EMP00129,Farah Iyer,Female,D12,LOC05,Operations,L3,Full-time,2019-10-07,,,Active,EMP00782,3.4,HRMS,2019-10-07,2025-07-07
+EMP00130,Riya Shah,Female,D07,LOC05,Product & Design,L4,Full-time,2019-10-13,2026-05-05,Voluntary,Exited,,3.9,HRMS,2019-10-13,2026-05-05
+EMP00131,Deepak Shah,Male,D03,LOC01,Data & Analytics,L3,Contract,2019-10-18,,,Active,EMP00872,3.8,HRMS,2019-10-18,2026-02-26
+EMP00132,Radhika Kumar,Female,D11,LOC06,Operations,L1,Full-time,2019-10-18,,,Active,EMP00141,1.8,HRMS,2019-10-18,2024-10-01
+EMP00133,Joseph D'Souza,Male,D21,LOC01,Finance,L2,Full-time,2019-10-22,,,Active,EMP00298,1.7,HRMS,2019-10-22,2025-04-01
+EMP00134,Aarav Qureshi,Male,D02,LOC01,Engineering,L1,Contract,2019-10-27,2024-10-27,Involuntary,Exited,,0.5,HRMS,2019-10-27,2024-10-27
+EMP00135,Vaishnavi Qureshi,Female,D10,LOC07,Operations,L1,Full-time,2019-11-07,,,Active,EMP00004,2.0,HRMS,2019-11-07,2024-10-01
+EMP00136,Divya Chatterjee,Female,D20,LOC03,Sales,L6,Full-time,2019-12-09,,,Active,EMP00102,13.8,HRMS,2019-12-09,2024-10-01
+EMP00137,Aditi Kumar,Female,D15,LOC03,Operations,L2,Full-time,2019-12-10,,,Active,EMP00567,1.8,HRMS,2019-12-10,2024-10-01
+EMP00138,Manish Naidu,Male,D21,LOC01,Finance,L2,Full-time,2019-12-21,,,Active,EMP00298,1.5,HRMS,2019-12-21,2025-03-13
+EMP00139,Gurpreet Mishra,Male,D20,LOC01,Sales,L1,Contract,2019-12-25,2025-12-25,Involuntary,Exited,,1.5,HRMS,2019-12-25,2025-12-25
+EMP00140,Uma Hegde,Female,D01,LOC01,Product & Design,L2,Full-time,2020-01-07,2025-12-23,Involuntary,Exited,,2.7,HRMS,2020-01-07,2025-12-23
+EMP00141,Tarun Kulkarni,Male,D11,LOC01,Data & Analytics,L4,Full-time,2020-01-08,,,Active,EMP00736,8.1,HRMS,2020-01-08,2025-02-14
+EMP00142,Deepak Mishra,Male,D02,LOC01,Engineering,L4,Full-time,2020-01-11,,,Active,EMP00105,8.1,HRMS,2020-01-11,2025-01-29
+EMP00143,Dev Kapoor,Male,D10,LOC03,Customer Support,L2,Full-time,2020-01-24,2025-01-13,Voluntary,Exited,,1.5,HRMS,2020-01-24,2025-01-13
+EMP00144,Nandini Saxena,Female,D03,LOC05,Data & Analytics,L3,Full-time,2020-01-27,,,Active,EMP00041,6.7,HRMS,2020-01-27,2024-10-01
+EMP00145,Vikram Iyer,Male,D11,LOC01,Operations,L1,Full-time,2020-02-08,2025-02-27,Voluntary,Exited,,0.1,HRMS,2020-02-08,2025-02-27
+EMP00146,Priya Fernandes,Female,D13,LOC04,Operations,L2,Contract,2020-02-09,2026-01-11,Voluntary,Exited,,2.2,HRMS,2020-02-09,2026-01-11
+EMP00147,Meera Verma,Female,D13,LOC02,Operations,L2,Full-time,2020-02-14,,,Active,EMP00157,1.1,HRMS,2020-02-14,2025-01-07
+EMP00148,Amit Hegde,Male,D01,LOC01,Engineering,L2,Full-time,2020-03-01,,,Active,EMP00270,1.1,HRMS,2020-03-01,2024-10-01
+EMP00149,Siddharth Joshi,Male,D09,LOC07,Operations,L4,Full-time,2020-03-22,,,Active,EMP00578,6.0,HRMS,2020-03-22,2025-04-01
+EMP00150,Divya Chatterjee,Female,D17,LOC05,Sales,L2,Full-time,2020-03-29,2025-01-21,Voluntary,Exited,,1.2,HRMS,2020-03-29,2025-01-21
+EMP00151,Sameer Pillai,Male,D02,LOC05,Engineering,L3,Full-time,2020-04-01,,,Active,EMP00054,5.2,HRMS,2020-04-01,2024-10-01
+EMP00152,Sameer Dutta,Male,D16,LOC02,Sales,L7,Full-time,2020-04-04,2025-09-04,Involuntary,Exited,,21.2,HRMS,2020-04-04,2025-09-04
+EMP00153,Tanvi D'Souza,Female,D04,LOC04,Data & Analytics,L4,Full-time,2020-04-20,,,Active,EMP00419,4.0,HRMS,2020-04-20,2025-04-01
+EMP00154,Aditi Dutta,Female,D19,LOC03,Sales,L2,Full-time,2020-04-20,2025-11-09,Voluntary,Exited,,3.3,HRMS,2020-04-20,2025-11-09
+EMP00155,Karthik Mehta,Male,D10,LOC03,Operations,L1,Full-time,2020-04-24,2025-01-20,Voluntary,Exited,,0.7,HRMS,2020-04-24,2025-01-20
+EMP00156,Sneha Mehta,Female,D14,LOC04,Operations,L4,Full-time,2020-04-25,2025-07-18,Voluntary,Exited,,9.1,HRMS,2020-04-25,2025-07-18
+EMP00157,Arnav Qureshi,Male,D13,LOC05,Operations,L5,Full-time,2020-05-03,,,Active,EMP00494,8.8,HRMS,2020-05-03,2024-11-21
+EMP00158,Trisha Kulkarni,Female,D17,LOC04,Sales,L3,Full-time,2020-05-05,2026-05-09,Voluntary,Exited,,2.3,HRMS,2020-05-05,2026-05-09
+EMP00159,Joseph Das,Male,D12,LOC02,Operations,L5,Full-time,2020-05-06,,,Active,EMP00246,10.3,HRMS,2020-05-06,2026-06-21
+EMP00160,Manish Qureshi,Male,D02,LOC01,Engineering,L2,Contract,2020-05-11,2025-08-08,Voluntary,Exited,,2.9,HRMS,2020-05-11,2025-08-08
+EMP00161,Mohit Bhat,Male,D13,LOC05,Operations,L2,Contract,2020-05-12,2024-12-25,Involuntary,Exited,,1.4,HRMS,2020-05-12,2024-12-25
+EMP00162,Pradeep Mishra,Male,D22,LOC01,Human Resources,L5,Full-time,2020-05-19,,,Active,EMP00232,11.7,HRMS,2020-05-19,2024-10-01
+EMP00163,Megha Chatterjee,Female,D20,LOC03,Sales,L3,Full-time,2020-05-29,,,Active,EMP00313,5.9,HRMS,2020-05-29,2024-10-01
+EMP00164,Kavya Pandey,Female,D09,LOC07,Customer Support,L2,Full-time,2020-06-28,,,Active,EMP00377,1.2,HRMS,2020-06-28,2025-04-01
+EMP00165,Pooja Mehta,Female,D14,LOC05,Operations,L3,Full-time,2020-07-01,,,Active,EMP00118,6.8,HRMS,2020-07-01,2025-07-18
+EMP00166,Harleen Verma,Female,D08,LOC05,Product & Design,L3,Full-time,2020-07-02,2025-09-15,Voluntary,Exited,,3.9,HRMS,2020-07-02,2025-09-15
+EMP00167,Tanvi Singh,Female,D08,LOC01,Product & Design,L5,Full-time,2020-07-08,,,Active,EMP00029,8.1,HRMS,2020-07-08,2025-02-16
+EMP00168,Karan Kulkarni,Male,D22,LOC03,Human Resources,L3,Full-time,2020-07-13,,,Active,EMP00101,5.8,HRMS,2020-07-13,2024-10-01
+EMP00169,Gaurav Bose,Male,D03,LOC01,Product & Design,L6,Full-time,2020-07-16,,,Active,EMP00002,15.7,HRMS,2020-07-16,2024-10-01
+EMP00170,Pallavi Fernandes,Female,D17,LOC05,Sales,L4,Full-time,2020-07-16,,,Active,EMP00793,6.8,HRMS,2020-07-16,2025-09-09
+EMP00171,Faisal Agarwal,Male,D05,LOC05,IT & Security,L3,Contract,2020-07-19,2026-03-09,Voluntary,Exited,,4.8,HRMS,2020-07-19,2026-03-09
+EMP00172,Megha Dutta,Female,D09,LOC07,Customer Support,L1,Full-time,2020-07-21,2026-03-19,Voluntary,Exited,,1.6,HRMS,2020-07-21,2026-03-19
+EMP00173,Vikram Nair,Male,D10,LOC03,Operations,L5,Full-time,2020-07-21,,,Active,EMP00032,7.0,HRMS,2020-07-21,2024-10-01
+EMP00174,Deepak Sharma,Male,D12,LOC05,Operations,L3,Full-time,2020-08-09,,,Active,EMP00208,3.4,HRMS,2020-08-09,2025-03-17
+EMP00175,Bhavna Kumar,Female,D09,LOC06,Customer Support,L4,Full-time,2020-08-25,,,Active,EMP00218,5.3,HRMS,2020-08-25,2024-10-01
+EMP00176,Varun Bose,Male,D11,LOC04,Operations,L2,Full-time,2020-08-28,,,Active,EMP00141,1.0,HRMS,2020-08-28,2024-10-01
+EMP00177,Pradeep Singh,Male,D03,LOC04,Data & Analytics,L3,Full-time,2020-08-31,,,Active,EMP00228,3.9,HRMS,2020-08-31,2024-10-01
+EMP00178,Jahnavi Patel,Female,D17,LOC04,Sales,L2,Full-time,2020-09-04,,,Active,EMP00534,3.6,HRMS,2020-09-04,2024-10-01
+EMP00179,Zaid Kulkarni,Male,D20,LOC02,Sales,L7,Full-time,2020-09-04,,,Active,EMP00073,10.8,HRMS,2020-09-04,2025-04-01
+EMP00180,Ananya Kapoor,Female,D20,LOC01,Sales,L3,Full-time,2020-09-12,,,Active,EMP00417,6.7,HRMS,2020-09-12,2024-10-01
+EMP00181,Uma Patel,Female,D01,LOC01,Data & Analytics,L3,Full-time,2020-09-14,,,Active,EMP00095,5.4,HRMS,2020-09-14,2024-11-21
+EMP00182,Yash Shah,Male,D12,LOC05,Operations,L3,Full-time,2020-09-20,,,Active,EMP00159,5.7,HRMS,2020-09-20,2024-10-01
+EMP00183,Ananya Kapoor,Female,D19,LOC02,Sales,L4,Full-time,2020-09-21,,,Active,EMP00790,6.7,HRMS,2020-09-21,2026-04-01
+EMP00184,Aditya Fernandes,Male,D10,LOC03,Operations,L3,Full-time,2020-09-25,,,Active,EMP00222,1.1,HRMS,2020-09-25,2026-04-01
+EMP00185,Sneha Sen,Undisclosed,D11,LOC04,Operations,L1,Full-time,2020-10-03,2024-12-21,Voluntary,Exited,,1.4,HRMS,2020-10-03,2024-12-21
+EMP00186,Kunal Shah,Male,D05,LOC04,IT & Security,L2,Full-time,2020-10-20,,,Active,EMP00065,2.8,HRMS,2020-10-20,2025-05-27
+EMP00187,Karan Mehta,Male,D02,LOC01,Engineering,L3,Full-time,2020-10-22,,,Active,EMP00388,6.6,HRMS,2020-10-22,2024-10-01
+EMP00188,Aditya Nair,Male,D09,LOC07,Data & Analytics,L3,Full-time,2020-10-27,,,Active,EMP00428,3.9,HRMS,2020-10-27,2024-10-01
+EMP00189,Rukmini Shah,Female,D09,LOC04,Customer Support,L3,Full-time,2020-11-12,,,Active,EMP00472,5.9,HRMS,2020-11-12,2024-10-01
+EMP00190,Neha Singh,Female,D11,LOC01,Operations,L1,Contract,2020-11-12,2025-09-05,Voluntary,Exited,,0.5,HRMS,2020-11-12,2025-09-05
+EMP00191,Jahnavi Shah,Female,D01,LOC05,Engineering,L2,Full-time,2020-11-18,,,Active,EMP00216,1.7,HRMS,2020-11-18,2024-10-01
+EMP00192,Rahul Thomas,Male,D08,LOC05,Product & Design,L1,Full-time,2020-11-19,2024-12-18,Voluntary,Exited,,1.6,HRMS,2020-11-19,2024-12-18
+EMP00193,Simran Bhat,Female,D22,LOC01,Human Resources,L5,Full-time,2020-11-28,,,Active,EMP00675,11.2,HRMS,2020-11-28,2025-04-30
+EMP00194,Harsh Rao,Male,D10,LOC03,Operations,L7,Full-time,2020-12-04,2025-01-07,Voluntary,Exited,,21.1,HRMS,2020-12-04,2025-01-07
+EMP00195,Vaishnavi Gill,Female,D17,LOC02,Sales,L5,Full-time,2020-12-04,,,Active,EMP00083,7.4,HRMS,2020-12-04,2026-01-07
+EMP00196,Suresh Naidu,Male,D19,LOC03,Marketing,L2,Full-time,2020-12-05,,,Active,EMP00183,3.6,HRMS,2020-12-05,2026-05-13
+EMP00197,Akash Shah,Male,D12,LOC02,Customer Support,L1,Contract,2020-12-07,2025-12-07,Involuntary,Exited,,1.5,HRMS,2020-12-07,2025-12-07
+EMP00198,Harsh Fernandes,Undisclosed,D17,LOC03,Operations,L2,Full-time,2020-12-09,,,Active,EMP00195,1.3,HRMS,2020-12-09,2026-04-21
+EMP00199,Anjali Mishra,Female,D05,LOC01,IT & Security,L2,Contract,2020-12-10,2025-04-26,Voluntary,Exited,,1.9,HRMS,2020-12-10,2025-04-26
+EMP00200,Deepak Menon,Male,D13,LOC01,Operations,L2,Full-time,2020-12-30,2026-05-18,Voluntary,Exited,,3.2,HRMS,2020-12-30,2026-05-18
+EMP00201,Rukmini Bose,Female,D09,LOC06,Customer Support,L1,Full-time,2021-01-06,2026-02-13,Voluntary,Exited,,1.5,HRMS,2021-01-06,2026-02-13
+EMP00202,Megha Srinivasan,Female,D16,LOC01,Marketing,L3,Full-time,2021-01-07,,,Active,EMP00974,3.7,HRMS,2021-01-07,2026-05-19
+EMP00203,Akash Gill,Male,D11,LOC01,Operations,L4,Full-time,2021-01-15,2025-05-27,Involuntary,Exited,,9.0,HRMS,2021-01-15,2025-05-27
+EMP00204,Zaid Hegde,Male,D22,LOC01,Finance,L2,Full-time,2021-01-15,,,Active,EMP00096,4.0,HRMS,2021-01-15,2026-02-09
+EMP00205,Akash Chopra,Male,D09,LOC07,Operations,L6,Full-time,2021-01-16,,,Active,EMP00218,13.2,HRMS,2021-01-16,2026-08-02
+EMP00206,Farah Rao,Female,D10,LOC07,Operations,L2,Full-time,2021-01-16,2025-11-27,Voluntary,Exited,,2.2,HRMS,2021-01-16,2025-11-27
+EMP00207,Mohit Chatterjee,Male,D09,LOC07,Data & Analytics,L4,Full-time,2021-01-23,2025-06-16,Voluntary,Exited,,8.8,HRMS,2021-01-23,2025-06-16
+EMP00208,Vivek Khan,Male,D12,LOC02,Operations,L4,Full-time,2021-01-23,,,Active,EMP00782,8.5,HRMS,2021-01-23,2025-07-07
+EMP00209,Pranav Kulkarni,Male,D18,LOC03,Marketing,L5,Full-time,2021-01-25,,,Active,EMP00044,11.8,HRMS,2021-01-25,2025-04-29
+EMP00210,Akash Gupta,Male,D22,LOC01,Human Resources,L1,Full-time,2021-01-27,,,Active,EMP00193,0.8,HRMS,2021-01-27,2024-10-01
+EMP00211,Tanvi D'Souza,Female,D24,LOC03,Administration,L3,Full-time,2021-02-04,,,Active,EMP00051,6.1,HRMS,2021-02-04,2025-01-03
+EMP00212,Nidhi Saxena,Female,D09,LOC07,Customer Support,L2,Full-time,2021-02-10,,,Active,EMP00377,1.8,HRMS,2021-02-10,2024-10-01
+EMP00213,Varun Shah,Male,D02,LOC01,Engineering,L2,Full-time,2021-02-19,,,Active,EMP00033,1.9,HRMS,2021-02-19,2024-10-01
+EMP00214,Gaurav Iyer,Male,D09,LOC06,Customer Support,L1,Full-time,2021-02-20,2025-04-21,Voluntary,Exited,,1.6,HRMS,2021-02-20,2025-04-21
+EMP00215,Amit Qureshi,Male,D09,LOC04,Customer Support,L1,Full-time,2021-02-21,,,Active,EMP00428,1.2,HRMS,2021-02-21,2025-06-16
+EMP00216,Rahul Reddy,Male,D01,LOC04,Engineering,L4,Full-time,2021-02-22,,,Active,EMP00374,5.3,HRMS,2021-02-22,2024-10-01
+EMP00217,Sakshi Kapoor,Female,D12,LOC05,Operations,L1,Contract,2021-02-22,2025-02-22,Involuntary,Exited,,0.3,HRMS,2021-02-22,2025-02-22
+EMP00218,Varun Chopra,Male,D09,LOC07,Customer Support,L7,Full-time,2021-03-05,,,Active,EMP00063,15.4,HRMS,2021-03-05,2025-04-01
+EMP00219,Sahil Dutta,Male,D10,LOC07,Customer Support,L1,Full-time,2021-03-08,,,Active,EMP00045,1.6,HRMS,2021-03-08,2024-10-01
+EMP00220,Aanya Jain,Female,D11,LOC01,Operations,L3,Full-time,2021-03-09,,,Active,EMP00550,4.6,HRMS,2021-03-09,2025-12-05
+EMP00221,Vivek Reddy,Male,D11,LOC01,Operations,L4,Full-time,2021-03-10,2025-06-05,Involuntary,Exited,,6.8,HRMS,2021-03-10,2025-06-05
+EMP00222,Akash Das,Male,D10,LOC03,Operations,L4,Full-time,2021-03-14,,,Active,EMP00344,8.3,HRMS,2021-03-14,2026-06-19
+EMP00223,Divya Shah,Female,D15,LOC01,Operations,L4,Full-time,2021-03-21,,,Active,EMP00436,4.5,HRMS,2021-03-21,2025-04-01
+EMP00224,Pradeep Rao,Male,D09,LOC07,Customer Support,L1,Full-time,2021-03-24,2025-02-17,Voluntary,Exited,,1.1,HRMS,2021-03-24,2025-02-17
+EMP00225,Uma Pillai,Female,D03,LOC01,Product & Design,L2,Full-time,2021-04-04,,,Active,EMP00491,1.3,HRMS,2021-04-04,2024-10-01
+EMP00226,Simran Chatterjee,Female,D17,LOC03,Sales,L2,Full-time,2021-04-08,,,Active,EMP00090,2.7,HRMS,2021-04-08,2024-10-01
+EMP00227,Sameer Thomas,Male,D07,LOC01,Product & Design,L5,Full-time,2021-04-13,,,Active,EMP00103,7.1,HRMS,2021-04-13,2024-10-01
+EMP00228,Ananya Verma,Female,D03,LOC04,Data & Analytics,L4,Full-time,2021-04-19,,,Active,EMP00169,9.4,HRMS,2021-04-19,2024-10-01
+EMP00229,Deepika Joshi,Female,D02,LOC04,Engineering,L2,Full-time,2021-05-15,,,Active,EMP00388,1.1,HRMS,2021-05-15,2026-07-12
+EMP00230,Amit Bose,Male,D01,LOC01,Engineering,L2,Full-time,2021-05-18,,,Active,EMP00499,4.0,HRMS,2021-05-18,2024-10-01
+EMP00231,Vaishnavi Jain,Female,D16,LOC01,Sales,L4,Full-time,2021-05-24,,,Active,EMP00039,3.1,HRMS,2021-05-24,2025-04-01
+EMP00232,Siddharth Gill,Male,D22,LOC01,Human Resources,L6,Full-time,2021-05-26,,,Active,EMP00675,16.1,HRMS,2021-05-26,2024-10-01
+EMP00233,Bhavna Rao,Female,D17,LOC03,Sales,L1,Full-time,2021-05-29,,,Active,EMP00387,1.3,HRMS,2021-05-29,2026-08-19
+EMP00234,Tara Das,Female,D24,LOC03,Administration,L2,Full-time,2021-06-09,2025-11-16,Voluntary,Exited,,3.4,HRMS,2021-06-09,2025-11-16
+EMP00235,Lakshmi Nair,Female,D11,LOC06,Data & Analytics,L1,Full-time,2021-06-18,2025-08-21,Voluntary,Exited,,1.1,HRMS,2021-06-18,2025-08-21
+EMP00236,Ananya Mehta,Female,D07,LOC01,Product & Design,L3,Full-time,2021-06-22,,,Active,EMP00023,6.9,HRMS,2021-06-22,2024-10-01
+EMP00237,Aditya Bose,Male,D04,LOC01,Data & Analytics,L4,Full-time,2021-06-23,,,Active,EMP00078,6.9,HRMS,2021-06-23,2024-10-02
+EMP00238,Aanya Qureshi,Female,D02,LOC04,Engineering,L1,Contract,2021-07-11,2024-10-30,Voluntary,Exited,,1.1,HRMS,2021-07-11,2024-10-30
+EMP00239,Aanya Joshi,Female,D14,LOC04,Operations,L2,Full-time,2021-07-11,,,Active,EMP00118,1.6,HRMS,2021-07-11,2024-10-01
+EMP00240,Trisha Kulkarni,Female,D16,LOC02,Data & Analytics,L4,Full-time,2021-07-11,,,Active,EMP00039,3.8,HRMS,2021-07-11,2026-05-19
+EMP00241,Sandeep Patel,Male,D17,LOC02,Sales,L5,Full-time,2021-07-17,,,Active,EMP00083,5.2,HRMS,2021-07-17,2025-04-01
+EMP00242,Swati Qureshi,Female,D12,LOC05,Operations,L3,Full-time,2021-07-22,,,Active,EMP00263,5.8,HRMS,2021-07-22,2025-07-07
+EMP00243,Manish Sen,Male,D20,LOC01,Administration,L4,Full-time,2021-07-23,,,Active,EMP00136,6.9,HRMS,2021-07-23,2025-02-03
+EMP00244,Yash Shah,Male,D11,LOC01,Operations,L2,Full-time,2021-07-24,2026-01-28,Voluntary,Exited,,2.8,HRMS,2021-07-24,2026-01-28
+EMP00245,Varsha Patel,Female,D16,LOC01,Sales,L1,Full-time,2021-07-31,,,Active,EMP00974,2.0,HRMS,2021-07-31,2026-05-29
+EMP00246,Pradeep Bhat,Male,D12,LOC05,Operations,L6,Full-time,2021-08-17,,,Active,EMP00063,15.9,HRMS,2021-08-17,2025-07-07
+EMP00247,Nikhil Reddy,Male,D08,LOC05,Product & Design,L5,Full-time,2021-08-19,,,Active,EMP00287,9.7,HRMS,2021-08-19,2025-02-13
+EMP00248,Rajat Naidu,Male,D02,LOC01,Engineering,L2,Full-time,2021-08-24,,,Active,EMP00906,2.5,HRMS,2021-08-24,2026-07-12
+EMP00249,Uma Sharma,Female,D18,LOC01,Marketing,L2,Full-time,2021-08-31,2026-07-19,Involuntary,Exited,,1.5,HRMS,2021-08-31,2026-07-19
+EMP00250,Divya Gupta,Female,D20,LOC01,Marketing,L6,Full-time,2021-09-01,,,Active,EMP00102,13.0,HRMS,2021-09-01,2024-10-01
+EMP00251,Vikram Chatterjee,Male,D15,LOC03,Operations,L2,Full-time,2021-09-03,,,Active,EMP00352,1.4,HRMS,2021-09-03,2026-04-01
+EMP00252,Aditya Iyer,Male,D01,LOC05,Engineering,L2,Full-time,2021-09-06,2025-04-21,Involuntary,Exited,,2.8,HRMS,2021-09-06,2025-04-21
+EMP00253,Zaid Sethi,Male,D01,LOC05,Product & Design,L3,Full-time,2021-09-07,,,Active,EMP00270,5.2,HRMS,2021-09-07,2024-10-01
+EMP00254,Amit Chopra,Male,D03,LOC01,Data & Analytics,L3,Full-time,2021-09-07,,,Active,EMP00491,6.2,HRMS,2021-09-07,2024-10-01
+EMP00255,Uma Chatterjee,Female,D12,LOC02,Data & Analytics,L4,Full-time,2021-09-14,,,Active,EMP00028,8.5,HRMS,2021-09-14,2025-08-11
+EMP00256,Shreya Shah,Female,D23,LOC02,Legal & Compliance,L2,Full-time,2021-09-15,,,Active,EMP00075,1.7,HRMS,2021-09-15,2024-10-01
+EMP00257,Bhavna Patel,Female,D09,LOC04,Operations,L2,Full-time,2021-09-17,,,Active,EMP00509,3.2,HRMS,2021-09-17,2024-10-01
+EMP00258,Neha Kapoor,Female,D16,LOC01,Sales,L2,Full-time,2021-09-19,2025-03-28,Voluntary,Exited,,2.9,HRMS,2021-09-19,2025-03-28
+EMP00259,Faisal Joshi,Male,D13,LOC01,Data & Analytics,L3,Full-time,2021-09-25,2024-10-25,Voluntary,Exited,,5.0,HRMS,2021-09-25,2024-10-25
+EMP00260,Sahil Naidu,Male,D03,LOC05,Data & Analytics,L4,Full-time,2021-10-03,2025-03-07,Voluntary,Exited,,7.2,HRMS,2021-10-03,2025-03-07
+EMP00261,Mohit Kapoor,Male,D03,LOC04,Data & Analytics,L1,Full-time,2021-10-05,,,Active,EMP00745,1.8,HRMS,2021-10-05,2025-03-07
+EMP00262,Dev Mehta,Male,D02,LOC01,Engineering,L2,Full-time,2021-10-06,,,Active,EMP00054,1.8,HRMS,2021-10-06,2024-10-01
+EMP00263,Gauri Patel,Female,D12,LOC02,Customer Support,L5,Full-time,2021-10-07,,,Active,EMP00028,5.8,HRMS,2021-10-07,2026-04-01
+EMP00264,Shreya Qureshi,Female,D07,LOC01,Engineering,L4,Full-time,2021-10-10,,,Active,EMP00227,6.0,HRMS,2021-10-10,2024-10-01
+EMP00265,Aarav D'Souza,Male,D24,LOC01,Administration,L4,Full-time,2021-10-23,,,Active,EMP00013,5.8,HRMS,2021-10-23,2026-08-27
+EMP00266,Ravi Fernandes,Male,D04,LOC01,Data & Analytics,L3,Full-time,2021-10-24,,,Active,EMP00078,4.6,HRMS,2021-10-24,2024-10-01
+EMP00267,Pradeep Srinivasan,Male,D02,LOC01,Engineering,L1,Full-time,2021-10-30,2026-09-26,Involuntary,Exited,,1.7,HRMS,2021-10-30,2026-09-26
+EMP00268,Simran D'Souza,Female,D02,LOC01,Engineering,L2,Full-time,2021-11-01,,,Active,EMP00105,1.9,HRMS,2021-11-01,2024-10-01
+EMP00269,Deepak Verma,Male,D17,LOC01,Sales,L1,Full-time,2021-11-08,,,Active,EMP00241,1.4,HRMS,2021-11-08,2024-10-01
+EMP00270,Ananya Shah,Female,D01,LOC01,Engineering,L5,Full-time,2021-11-16,,,Active,EMP00015,13.0,HRMS,2021-11-16,2024-10-01
+EMP00271,Abhishek Chopra,Male,D12,LOC02,Operations,L2,Full-time,2021-11-17,,,Active,EMP00263,1.9,HRMS,2021-11-17,2026-04-01
+EMP00272,Trisha Kulkarni,Female,D11,LOC06,Operations,L2,Full-time,2021-11-18,2025-08-12,Voluntary,Exited,,1.5,HRMS,2021-11-18,2025-08-12
+EMP00273,Joseph Joshi,Male,D15,LOC01,Operations,L1,Contract,2021-11-18,2024-11-18,Involuntary,Exited,,1.8,HRMS,2021-11-18,2024-11-18
+EMP00274,Sakshi Agarwal,Female,D05,LOC01,IT & Security,L3,Full-time,2021-11-21,2025-01-11,Voluntary,Exited,,3.7,HRMS,2021-11-21,2025-01-11
+EMP00275,Arjun Jain,Male,D09,LOC07,Customer Support,L3,Full-time,2021-11-23,,,Active,EMP00399,3.2,HRMS,2021-11-23,2024-10-01
+EMP00276,Harleen Sethi,Undisclosed,D09,LOC04,Customer Support,L4,Full-time,2021-11-26,,,Active,EMP00020,8.5,HRMS,2021-11-26,2024-12-10
+EMP00277,Deepak Thomas,Male,D22,LOC01,Human Resources,L2,Full-time,2021-11-27,2025-09-13,Voluntary,Exited,,1.8,HRMS,2021-11-27,2025-09-13
+EMP00278,Priya Das,Female,D17,LOC01,Sales,L5,Full-time,2021-11-30,2025-09-09,Voluntary,Exited,,7.5,HRMS,2021-11-30,2025-09-09
+EMP00279,Radhika Pandey,Female,D14,LOC01,Operations,L3,Full-time,2021-12-01,,,Active,EMP00288,2.3,HRMS,2021-12-01,2026-05-13
+EMP00280,Sahil Jain,Male,D09,LOC06,Customer Support,L1,Full-time,2021-12-02,,,Active,EMP00149,0.9,HRMS,2021-12-02,2025-06-16
+EMP00281,Tarun Kulkarni,Male,D24,LOC02,Administration,L1,Full-time,2021-12-05,2024-10-15,Voluntary,Exited,,0.5,HRMS,2021-12-05,2024-10-15
+EMP00282,Rohan Khan,Male,D14,LOC03,Operations,L2,Contract,2021-12-08,2025-01-05,Voluntary,Exited,,4.0,HRMS,2021-12-08,2025-01-05
+EMP00283,Farah Verma,Female,D02,LOC05,Engineering,L2,Full-time,2021-12-10,2026-09-23,Voluntary,Exited,,1.3,HRMS,2021-12-10,2026-09-23
+EMP00284,Esha Sethi,Female,D14,LOC01,Operations,L2,Full-time,2021-12-10,,,Active,EMP00009,1.4,HRMS,2021-12-10,2024-10-01
+EMP00285,Ishita Iyer,Female,D11,LOC01,Operations,L5,Full-time,2021-12-15,2025-02-14,Voluntary,Exited,,10.9,HRMS,2021-12-15,2025-02-14
+EMP00286,Rajat Joshi,Male,D10,LOC07,Operations,L6,Full-time,2021-12-16,2026-01-12,Voluntary,Exited,,10.9,HRMS,2021-12-16,2026-01-12
+EMP00287,Zaid Sharma,Male,D08,LOC01,Product & Design,L7,Full-time,2021-12-17,,,Active,EMP00029,13.9,HRMS,2021-12-17,2024-10-01
+EMP00288,Pradeep Fernandes,Male,D14,LOC05,Operations,L4,Full-time,2021-12-19,,,Active,EMP00040,6.8,HRMS,2021-12-19,2026-04-01
+EMP00289,Sakshi Chopra,Female,D05,LOC01,IT & Security,L1,Full-time,2022-01-01,,,Active,EMP00065,1.0,HRMS,2022-01-01,2024-10-01
+EMP00290,Gurpreet Bhat,Male,D09,LOC07,Customer Support,L1,Full-time,2022-01-02,2025-02-16,Voluntary,Exited,,0.9,HRMS,2022-01-02,2025-02-16
+EMP00291,Deepika Reddy,Female,D01,LOC04,Engineering,L2,Full-time,2022-01-07,,,Active,EMP00292,2.1,HRMS,2022-01-07,2024-10-01
+EMP00292,Gaurav Mehta,Male,D01,LOC04,Data & Analytics,L5,Full-time,2022-01-09,,,Active,EMP00015,7.3,HRMS,2022-01-09,2025-04-01
+EMP00293,Manish Patel,Male,D10,LOC07,Operations,L1,Full-time,2022-01-11,,,Active,EMP00173,1.0,HRMS,2022-01-11,2024-10-01
+EMP00294,Akash Sharma,Male,D03,LOC04,Data & Analytics,L3,Full-time,2022-01-12,,,Active,EMP00570,5.5,HRMS,2022-01-12,2025-12-13
+EMP00295,Aditya Fernandes,Male,D06,LOC01,IT & Security,L2,Full-time,2022-01-13,,,Active,EMP00113,2.3,HRMS,2022-01-13,2025-03-23
+EMP00296,Karan Shah,Male,D21,LOC01,Administration,L1,Full-time,2022-01-15,,,Active,EMP00978,0.0,HRMS,2022-01-15,2026-09-12
+EMP00297,Tushar Qureshi,Male,D09,LOC07,Customer Support,L1,Full-time,2022-01-20,2025-07-13,Voluntary,Exited,,0.2,HRMS,2022-01-20,2025-07-13
+EMP00298,Akash Bhat,Male,D21,LOC01,Finance,L4,Full-time,2022-01-21,,,Active,EMP00557,9.5,HRMS,2022-01-21,2024-10-01
+EMP00299,Suresh Naidu,Male,D22,LOC01,Human Resources,L6,Full-time,2022-01-21,2025-04-30,Voluntary,Exited,,14.7,HRMS,2022-01-21,2025-04-30
+EMP00300,Joseph Chatterjee,Male,D09,LOC04,Customer Support,L1,Full-time,2022-01-29,,,Active,EMP00149,0.8,HRMS,2022-01-29,2025-05-23

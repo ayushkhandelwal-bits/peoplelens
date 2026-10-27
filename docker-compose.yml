@@ -1,0 +1,30 @@
+# Local PostgreSQL + the app. Free and self-hosted.
+#   docker compose up -d db                      # database only (run the app from your venv)
+#   docker compose up --build                    # database + app on http://localhost:8501
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: peoplelens
+      POSTGRES_USER: peoplelens
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-change-me}
+    ports: ["5432:5432"]
+    volumes: [pgdata:/var/lib/postgresql/data]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U peoplelens"]
+      interval: 5s
+      retries: 10
+  app:
+    build: .
+    depends_on:
+      db: { condition: service_healthy }
+    environment:
+      PEOPLELENS_DATABASE_URL: postgresql+psycopg://peoplelens:${POSTGRES_PASSWORD:-change-me}@db:5432/peoplelens
+      PEOPLELENS_ANALYST_PASSWORD: ${PEOPLELENS_ANALYST_PASSWORD:-change-me-analyst}
+      PEOPLELENS_VIEWER_PASSWORD: ${PEOPLELENS_VIEWER_PASSWORD:-change-me-viewer}
+      PEOPLELENS_ANALYST_DATABASE_URL: postgresql+psycopg://peoplelens_analyst_ro:${PEOPLELENS_ANALYST_PASSWORD:-change-me-analyst}@db:5432/peoplelens
+      PEOPLELENS_VIEWER_DATABASE_URL: postgresql+psycopg://peoplelens_viewer:${PEOPLELENS_VIEWER_PASSWORD:-change-me-viewer}@db:5432/peoplelens
+      PEOPLELENS_PROFILE: full
+    ports: ["8501:8501"]
+volumes:
+  pgdata:

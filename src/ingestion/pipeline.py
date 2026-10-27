@@ -69,7 +69,7 @@ class _Stage:
         status = "ok" if exc is None else "failed"
         secs = round(time.time() - self.t0, 2)
         self.result.stages.append({"stage": self.name, "status": status, "seconds": secs,
-                                   **({"error": str(exc)} if exc else {})})
+                                   **({"error": str(exc)[:400]} if exc else {})})
         (log.info if exc is None else log.error)("stage %s: %s (%.1fs)", status, self.name, secs)
         return False
 
