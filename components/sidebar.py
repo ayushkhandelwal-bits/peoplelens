@@ -8,9 +8,11 @@ from components import data
 from components.filters import period_selector
 from src.governance.access_control import PERMISSION_LABELS, ROLES
 
-MARK = ("<svg width='18' height='18' viewBox='0 0 64 64'><circle cx='28' cy='28' r='13' fill='none' "
-        "stroke='#5EEAD4' stroke-width='6'/><line x1='38' y1='38' x2='50' y2='50' stroke='#5EEAD4' "
-        "stroke-width='7' stroke-linecap='round'/></svg>")
+MARK = ("<svg width='22' height='22' viewBox='0 0 64 64' aria-hidden='true'>"
+        "<circle cx='17' cy='29' r='5' fill='#fff'/><rect x='11' y='37' width='12' height='15' rx='4' fill='#fff'/>"
+        "<circle cx='32' cy='21' r='5.5' fill='#fff'/><rect x='25.5' y='29.5' width='13' height='22.5' rx='4' fill='#fff'/>"
+        "<circle cx='47' cy='13' r='6' fill='#CCFBF1'/><rect x='40' y='22' width='14' height='30' rx='4' fill='#CCFBF1'/>"
+        "</svg>")
 
 AUTHOR = {
     "tagline": "MBA, Business Analytics · BITS Pilani",

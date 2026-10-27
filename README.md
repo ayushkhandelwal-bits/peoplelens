@@ -1,3 +1,5 @@
+<img src="assets/logo.svg" width="64" alt="PeopleLens logo">
+
 # PeopleLens — Workforce Intelligence & Planning
 
 **Turning Workforce Data into Better Business Decisions.**
