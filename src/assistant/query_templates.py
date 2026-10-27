@@ -167,7 +167,8 @@ def attrition(pq: ParsedQuestion, ctx: Context) -> Evidence:
     df["attrition_rate"] = [attrition_rate(e, h, n) for e, h in zip(df.exits, df.average_headcount)]
     df["voluntary_rate"] = [attrition_rate(e, h, n) for e, h in zip(df.voluntary_exits, df.average_headcount)]
     if dim:
-        df = df[df.average_headcount >= 5].sort_values("attrition_rate", ascending=pq.direction == "lowest")
+        df = df[(df.average_headcount >= 5) & (df.segment != "Executive Office")].sort_values(
+            "attrition_rate", ascending=pq.direction == "lowest")
         top = df.iloc[0]
         head = (f"{'Lowest' if pq.direction == 'lowest' else 'Highest'} annualised attrition in {pq.period_label}: "
                 f"**{top.segment}** at {_pct(top.attrition_rate)} ({int(top.exits)} exits, average headcount "

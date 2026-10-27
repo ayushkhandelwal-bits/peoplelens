@@ -34,7 +34,7 @@ from database.connection import get_readonly_engine
 
 ROLES = {
     "Analyst": {"view_aggregates", "view_row_level", "run_custom_sql", "view_risk_scores", "export_data",
-                "run_pipeline_checks"},
+                "export_reports", "run_pipeline_checks"},
     "Viewer": {"view_aggregates", "run_custom_sql_views", "export_reports"},
 }
 PERMISSION_LABELS = {
@@ -113,7 +113,9 @@ def run_custom_sql(sql: str, role: str) -> pd.DataFrame:
         with engine.connect() as conn:
             return pd.read_sql_query(text(wrapped), conn)
     except Exception as exc:
-        msg = str(getattr(exc, "orig", exc)).split("\n")[0]
+        msg = str(getattr(exc, "orig", None) or exc.__cause__ or exc).split("\n")[0]
+        if "): " in msg:
+            msg = msg.split("): ", 1)[1]  # drop the driver prefix
         if "not authorized" in msg or "permission denied" in msg or "prohibited" in msg:
             raise PermissionError(f"Blocked by the database: {msg}") from exc
         if "interrupted" in msg or "statement timeout" in msg or "canceling statement" in msg:

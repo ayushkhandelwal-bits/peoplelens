@@ -47,6 +47,7 @@ def at_risk_population(f: Filters, engine: Engine | None = None) -> pd.DataFrame
 
 
 def department_attrition_tests(pop: pd.DataFrame, alpha: float = 0.05) -> pd.DataFrame:
+    pop = pop[pop.department_name != "Executive Office"]  # no attrition is simulated for executives
     rows = []
     total_k, total_n = pop.left_voluntarily.sum(), len(pop)
     for dept, g in pop.groupby("department_name"):

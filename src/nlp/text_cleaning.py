@@ -9,7 +9,8 @@ from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS
 # Domain words that appear in most comments and carry no thematic signal.
 DOMAIN_STOPWORDS = {"team", "work", "company", "really", "just", "lot", "time", "thanks", "thank", "quarter",
                     "year", "feel", "like", "get", "got", "make", "makes", "people", "good", "great", "bit",
-                    "things", "thing", "way", "ok", "okay", "able", "also", "would", "could", "still", "even"}
+                    "things", "thing", "way", "ok", "okay", "able", "also", "would", "could", "still", "even",
+                    "come", "new", "rarely", "hard", "extra", "genuinely", "lot", "doing", "given", "simply"}
 STOPWORDS = set(ENGLISH_STOP_WORDS) | DOMAIN_STOPWORDS
 _TOKEN = re.compile(r"[a-z][a-z'\-]+")
 

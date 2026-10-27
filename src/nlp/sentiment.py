@@ -48,7 +48,7 @@ def evaluate_against_labels(scored: pd.DataFrame, labels: pd.DataFrame) -> dict:
     single = m[m.intended_sentiment.isin(["positive", "negative", "neutral"])]
     acc = float((single.sentiment == single.intended_sentiment).mean())
     cm = pd.crosstab(single.intended_sentiment, single.sentiment)
-    sarcasm = m[m.feedback_text.str.contains(r"^(Great|Fantastic|Wonderful|Sure|Amazing),", regex=True)]
+    sarcasm = m[m.feedback_text.str.contains(r"^(?:Great|Fantastic|Wonderful|Sure|Amazing),", regex=True)]
     return dict(n=int(len(single)), accuracy=acc, confusion=cm,
                 mixed_comments=int((m.intended_sentiment == "mixed").sum()),
                 mixed_scored_positive=float((m[m.intended_sentiment == "mixed"].sentiment == "positive").mean())
