@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+
+# Local configuration and secrets
+.env
+.streamlit/secrets.toml
+
+# Generated data, databases, model artefacts, logs and reports (reproducible)
+data/generated*/
+data/*.db
+data/*.db-*
+artifacts/*
+!artifacts/.gitkeep
+logs/
+reports/*
+!reports/.gitkeep
+pgdata/
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
