@@ -4,7 +4,7 @@ manager changes, performance reviews and training.
 Simulation assumptions (documented in docs/data_dictionary.md):
 
 * Voluntary exit hazard (monthly) = k x department factor x tenure curve x
-  exp(-0.42 x latent engagement) x pay-compression effect x promotion recency x
+  exp(-0.60 x latent engagement) x pay-compression effect x promotion recency x
   recent-manager-change x level x contract x source-of-hire (first year) x
   calendar seasonality x temporary event shocks. ``k`` is calibrated once at
   the start of the window so the organisation-wide rate matches the configured
@@ -77,8 +77,8 @@ def voluntary_multiplier(state: WorkforceState, idx: np.ndarray, day: int) -> np
                        [2.1, 1.45, 1.0, 0.8], 0.65)
     cr = comp_ratio(state, idx, day)
     eng = engagement_latent(state, idx, day, cr)
-    e_mult = np.exp(-0.42 * eng)
-    c_mult = np.exp(-1.6 * np.clip(cr - 1, -0.35, 0.25))
+    e_mult = np.exp(-0.60 * eng)
+    c_mult = np.exp(-2.2 * np.clip(cr - 1, -0.35, 0.25))
     since_promo = day - a["last_promo"][idx]
     p_mult = np.where(since_promo < 365, 0.72, np.where(since_promo > 3 * 365, 1.2, 1.0))
     recent_mgr = (a["last_mgr_change"][idx] > 0) & ((day - a["last_mgr_change"][idx]) < 182)

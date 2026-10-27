@@ -109,12 +109,14 @@ def get_readonly_engine(role: str = "analyst") -> Engine | None:
         viewer = role == "viewer"
         timeout = settings.sql_timeout_seconds
 
+        timers: dict[int, dict] = {}
+
         @event.listens_for(engine, "connect")
         def _ro_connect(dbapi_conn, _record):  # pragma: no cover - exercised in tests
             dbapi_conn.execute("PRAGMA query_only=ON")
             dbapi_conn.set_authorizer(_sqlite_authorizer(viewer))
-            # Abort runaway queries: progress handler checks elapsed time.
-            start = {"t": None}
+            # Abort runaway queries: the progress handler checks elapsed time.
+            start = timers.setdefault(id(dbapi_conn), {"t": None})
 
             def _progress():
                 now = datetime.now().timestamp()
@@ -123,13 +125,12 @@ def get_readonly_engine(role: str = "analyst") -> Engine | None:
                 return 1 if now - start["t"] > timeout else 0
 
             dbapi_conn.set_progress_handler(_progress, 200_000)
-            dbapi_conn._pl_start = start  # type: ignore[attr-defined]
 
         @event.listens_for(engine, "before_cursor_execute")
         def _reset_timer(conn, *_a):  # pragma: no cover
             raw = conn.connection.dbapi_connection
-            if hasattr(raw, "_pl_start"):
-                raw._pl_start["t"] = None
+            if id(raw) in timers:
+                timers[id(raw)]["t"] = None
 
         return engine
 

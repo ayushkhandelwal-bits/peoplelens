@@ -66,7 +66,7 @@ def run_survey(state: WorkforceState, ms: int, me: int) -> None:
             career_growth=clip(3.3 + 0.30 * e + 0.35 * recent_promo - 0.3 * stale
                                + 0.6 * float(np.clip(cr[k] - 1, -0.3, 0.2)) + rng.normal(0, 0.5)),
         )
-        enps = int(np.clip(round(6.3 + 1.9 * e + rng.normal(0, 1.4)), 0, 10))
+        enps = int(np.clip(round(7.2 + 1.9 * e + rng.normal(0, 1.4)), 0, 10))
         state.surveys.append(dict(employee_idx=i, survey_day=day, survey_period=period,
                                   dept=int(a["dept"][i]), enps=enps, **scores))
         extremity = abs(scores["engagement"] - 3.5)
