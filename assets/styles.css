@@ -93,3 +93,8 @@ div[data-testid="stExpander"] details { border-radius: 10px; }
 .pl-table th { text-align: left; color: var(--pl-slate); font-weight: 600; border-bottom: 1px solid var(--pl-border);
   padding: 7px 10px; background: #F8FAFC; }
 .pl-table td { border-bottom: 1px solid var(--pl-border); padding: 7px 10px; vertical-align: top; color: #1E293B; }
+
+/* Sidebar credit: contact icons */
+.pl-social { display: flex; gap: 14px; margin-top: 10px; }
+.pl-social a { color: var(--pl-slate); display: inline-flex; line-height: 0; transition: color .15s; }
+.pl-social a:hover { color: var(--pl-teal); }

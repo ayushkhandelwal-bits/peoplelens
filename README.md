@@ -341,6 +341,8 @@ run end-to-end on PostgreSQL 16 with SELECT-only roles.
 
 ## 18. Author
 
-**Ayush Khandelwal — MBA Business Analytics**
+**Ayush Khandelwal — MBA, Business Analytics · BITS Pilani**
+
+[LinkedIn](https://www.linkedin.com/in/ayushjhanginiya/) · [ayushkhandelwal.connect@gmail.com](mailto:ayushkhandelwal.connect@gmail.com)
 
 Independently designed and built as a portfolio project. Released under the MIT licence.
