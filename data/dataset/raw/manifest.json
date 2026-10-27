@@ -1,0 +1,133 @@
+{
+  "source_system": "Simulated HRMS export (synthetic data)",
+  "generated_at": "2026-10-27T19:38:06",
+  "profile": "full",
+  "generation_config": {
+    "seed": 42,
+    "start_date": "2023-10-01",
+    "months": 36,
+    "initial_headcount": 5400,
+    "n_departments": 24,
+    "locations": [
+      "Bengaluru",
+      "Mumbai",
+      "Delhi NCR",
+      "Hyderabad",
+      "Pune",
+      "Chennai",
+      "Jaipur"
+    ],
+    "annual_voluntary_attrition": 0.155,
+    "annual_involuntary_attrition": 0.03,
+    "annual_growth": 0.065,
+    "plan_growth": 0.085,
+    "hiring_volume_multiplier": 1.0,
+    "survey_frequency_months": 3,
+    "survey_response_rate": 0.58,
+    "feedback_comment_rate": 0.33,
+    "performance_review_frequency_months": 12,
+    "forecast_plan_months": 6,
+    "currency": "INR",
+    "end_date": "2026-09-30"
+  },
+  "noise_injected": {
+    "employees": {
+      "status_case_whitespace": 46,
+      "employment_type_case_whitespace": 37
+    },
+    "recruitment_events": {
+      "exact_duplicate_rows": 211
+    },
+    "employee_events": {
+      "exact_duplicate_rows": 20
+    },
+    "engagement_surveys": {
+      "ddmmyyyy_dates": 126
+    },
+    "training_records": {
+      "negative_cost_rows": 11
+    }
+  },
+  "files": {
+    "locations": {
+      "file": "locations.csv",
+      "rows": 7,
+      "sha256": "39cc0380a9ccc30d7bd71ade5500790e3598a5f0f09ad3c255e21ca31abfb5f8"
+    },
+    "departments": {
+      "file": "departments.csv",
+      "rows": 25,
+      "sha256": "7b519667987daa1fadc2bd843380e32e79e3d38ec5ceab697acd085ba7d590c9"
+    },
+    "employees": {
+      "file": "employees.csv",
+      "rows": 9336,
+      "sha256": "5e648822e52bf56bc00d45d2103d0b6ea1a39e52819f7c4fa6e58dc6a1bfe354"
+    },
+    "job_history": {
+      "file": "job_history.csv",
+      "rows": 21987,
+      "sha256": "1f5b361fa1c259250cff0b575c081cf2caefe7c0d1ae04ce17e377242ef16195"
+    },
+    "manager_relationships": {
+      "file": "manager_relationships.csv",
+      "rows": 13706,
+      "sha256": "42d83e0193e3c9020a773b67fd0ede7304b52aa48a112cb9d88fb0dc936d61d0"
+    },
+    "job_requisitions": {
+      "file": "job_requisitions.csv",
+      "rows": 4651,
+      "sha256": "79a576cbe42fa3597ab9279572681ea12854cdd0773ea04c7a0c2e00317fae47"
+    },
+    "candidates": {
+      "file": "candidates.csv",
+      "rows": 43862,
+      "sha256": "556a536ca9105b041e3698105b51f1aae17507a8e8fe978645e6bde108050659"
+    },
+    "recruitment_events": {
+      "file": "recruitment_events.csv",
+      "rows": 106022,
+      "sha256": "561df512729ed5e7520f2edd32ccc1131e88f32a8f63d106eccb27115ffb7bca"
+    },
+    "employee_events": {
+      "file": "employee_events.csv",
+      "rows": 20219,
+      "sha256": "4c3ddf53fcf8f9d123d475c60fad92c624402a5e06bb8ba47386899d07c34060"
+    },
+    "performance_reviews": {
+      "file": "performance_reviews.csv",
+      "rows": 20355,
+      "sha256": "7ad17f2f5fcb9f3ba581a0af85d3dac489e98c8cd67f6878eef8bc49925e68ee"
+    },
+    "engagement_surveys": {
+      "file": "engagement_surveys.csv",
+      "rows": 37896,
+      "sha256": "68cbf75a3362bc9221b553e719e71fd0f5a8f2c54f44e1981484760b009540af"
+    },
+    "survey_feedback": {
+      "file": "survey_feedback.csv",
+      "rows": 12683,
+      "sha256": "9437d75003efbad788062b975662065f7f52d4336d230d650955b893017e43cf"
+    },
+    "compensation_history": {
+      "file": "compensation_history.csv",
+      "rows": 25147,
+      "sha256": "592b25ecc0b7ad71974a940e0016fe07de308bb397ca88ea95622d7536f4be98"
+    },
+    "training_records": {
+      "file": "training_records.csv",
+      "rows": 23676,
+      "sha256": "cdfc65b7d20a5c6e4c2842ef0645bd10cef545bf2ade310c3d9cfb0244cc156c"
+    },
+    "monthly_workforce_snapshots": {
+      "file": "monthly_workforce_snapshots.csv",
+      "rows": 204239,
+      "sha256": "978a906640dbe20084c304db52d04a66b9221b4dcd9365856489956b169ffbba"
+    },
+    "workforce_budget": {
+      "file": "workforce_budget.csv",
+      "rows": 1050,
+      "sha256": "279a2166b87b99f2ee5f74981c4ef2cea7b1084492872d2d4f2f522ce25a5dc5"
+    }
+  }
+}

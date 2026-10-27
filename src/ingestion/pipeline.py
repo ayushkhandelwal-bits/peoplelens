@@ -20,7 +20,7 @@ from pathlib import Path
 from sqlalchemy import text
 from sqlalchemy.engine import Engine
 
-from config.settings import GENERATED_DIR, LOG_DIR, REPORT_DIR, get_generation_config
+from config.settings import DATASET_DIR, GENERATED_DIR, LOG_DIR, REPORT_DIR, get_generation_config
 from database.connection import get_engine
 from database.schema import CORE_TABLES, pipeline_runs
 from database.seed import create_schema, create_views, seed_metric_definitions, setup_postgres_roles
@@ -85,6 +85,17 @@ def generate_export(profile: str = "full", seed: int | None = None, out_dir: Pat
     return manifest
 
 
+def dataset_profile() -> str | None:
+    """Profile of the committed dataset in ``data/dataset`` (None if it is not present)."""
+    m = DATASET_DIR / "raw" / "manifest.json"
+    if not m.exists():
+        return None
+    try:
+        return json.loads(m.read_text(encoding="utf-8")).get("profile")
+    except Exception:
+        return None
+
+
 def _record_run(engine: Engine, result: PipelineResult, started: datetime, manifest: dict | None) -> None:
     cfg = (manifest or {}).get("generation_config", {})
     row = dict(run_id=result.run_id, started_at=started, finished_at=datetime.now(), status=result.status,
@@ -109,15 +120,28 @@ def _profile_of(cfg: dict) -> str:
 
 def run_pipeline(profile: str = "full", seed: int | None = None, regenerate: bool = True,
                  reset: bool = False, keep_staging: bool = False, engine: Engine | None = None,
-                 out_dir: Path | None = None) -> PipelineResult:
+                 out_dir: Path | None = None, use_dataset: bool | None = None) -> PipelineResult:
+    """Generate (or read) the HRMS export, validate it and publish it to the database.
+
+    By default the committed dataset in ``data/dataset`` is used when it matches the
+    requested profile and no custom seed or output folder is given; pass
+    ``use_dataset=False`` (``--regenerate`` on the command line) to simulate afresh.
+    """
     configure_logging()
     engine = engine or get_engine()
+    if use_dataset is None:
+        use_dataset = out_dir is None and seed is None and dataset_profile() == profile
+    work_dir = out_dir or GENERATED_DIR
+    if use_dataset:
+        out_dir, regenerate = DATASET_DIR, False
     out_dir = out_dir or GENERATED_DIR
     started = datetime.now()
     result = PipelineResult(run_id=started.strftime("RUN%Y%m%d%H%M%S"))
     manifest = None
     try:
-        if regenerate or not (out_dir / "raw" / "manifest.json").exists():
+        if use_dataset:
+            log.info("using committed dataset %s", out_dir)
+        elif regenerate or not (out_dir / "raw" / "manifest.json").exists():
             with _Stage(result, "generate synthetic HRMS export"):
                 generate_export(profile, seed, out_dir)
         with _Stage(result, "read & verify export manifest"):
@@ -130,7 +154,7 @@ def run_pipeline(profile: str = "full", seed: int | None = None, regenerate: boo
             staged = read_staging(engine, list(raw))
             cleaned, actions, quarantine = clean_tables(staged)
             if quarantine:
-                qdir = out_dir / "quarantine"
+                qdir = work_dir / "quarantine"
                 qdir.mkdir(parents=True, exist_ok=True)
                 for name, df in quarantine.items():
                     df.to_csv(qdir / f"{name}.csv", index=False)

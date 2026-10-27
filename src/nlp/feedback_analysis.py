@@ -8,7 +8,7 @@ import pandas as pd
 from scipy import stats
 from sqlalchemy.engine import Engine
 
-from config.settings import GENERATED_DIR, get_settings
+from config.settings import DATASET_DIR, GENERATED_DIR, get_settings
 from src.analytics.common import Filters, q
 from src.nlp.sentiment import score_frame
 from src.nlp.topic_analysis import theme_frame
@@ -32,7 +32,7 @@ def load_feedback(f: Filters, engine: Engine | None = None) -> pd.DataFrame:
 
 @lru_cache(maxsize=1)
 def load_labels() -> pd.DataFrame | None:
-    for p in (GENERATED_DIR / "feedback_labels.csv",):
+    for p in (GENERATED_DIR / "feedback_labels.csv", DATASET_DIR / "feedback_labels.csv"):
         if p.exists():
             return pd.read_csv(p)
     return None

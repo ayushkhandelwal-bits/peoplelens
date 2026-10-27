@@ -14,9 +14,9 @@ at <https://streamlit.io/cloud> before deploying; no payment details are require
    PEOPLELENS_PROFILE = "full"          # or "dev" for a faster first start
    PEOPLELENS_AUTO_BOOTSTRAP = "true"
    ```
-4. Deploy. No database file is committed, so on first start the app runs the pipeline (generate → validate → load
-   → train) into a local SQLite file — about 1–3 minutes for `full` on the free tier, ~15 seconds for `dev`. The
-   container's disk is ephemeral; if the app is restarted the data is regenerated identically from the seed.
+4. Deploy. The dataset (`data/dataset`) is in the repository but the database is not, so on first start the app
+   loads the dataset (verify → clean → validate → load) and trains the models into a local SQLite file — a few
+   minutes on the free tier. The container's disk is ephemeral; after a restart the same files are loaded again.
 
 Limitations of the hosted demo: SQLite instead of PostgreSQL (role separation is demonstrated with the SQLite
 authorizer), cold-start build time, shared CPU/memory limits. Do not connect a public demo to any real data.

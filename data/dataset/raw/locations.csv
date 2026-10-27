@@ -1,0 +1,8 @@
+location_id,city,region,office_type
+LOC01,Bengaluru,South,Headquarters
+LOC02,Mumbai,West,Regional Office
+LOC03,Delhi NCR,North,Regional Office
+LOC04,Hyderabad,South,Technology & Service Hub
+LOC05,Pune,West,Technology & Service Hub
+LOC06,Chennai,South,Service Hub
+LOC07,Jaipur,North,Service Hub

@@ -1,6 +1,7 @@
 """Run everything: generate data, load and validate, train models, write the monthly report.
 
-    python scripts/run_pipeline.py                      # full profile
+    python scripts/run_pipeline.py                      # full profile, from the committed dataset (data/dataset)
+    python scripts/run_pipeline.py --regenerate         # simulate the data afresh instead (same seed = same data)
     python scripts/run_pipeline.py --profile dev        # fast development dataset
     python scripts/run_pipeline.py --skip-models        # data only
 """
@@ -17,10 +18,13 @@ def main() -> None:
     p.add_argument("--profile", default="full", choices=["full", "dev"])
     p.add_argument("--seed", type=int, default=None)
     p.add_argument("--reset", action="store_true")
+    p.add_argument("--regenerate", action="store_true",
+                   help="Simulate the export instead of using the committed dataset in data/dataset.")
     p.add_argument("--skip-models", action="store_true")
     p.add_argument("--skip-report", action="store_true")
     args = p.parse_args()
-    r = run_pipeline(args.profile, args.seed, regenerate=True, reset=args.reset)
+    r = run_pipeline(args.profile, args.seed, regenerate=True, reset=args.reset,
+                     use_dataset=False if args.regenerate else None)
     print(f"Data pipeline {r.status}: {sum(r.row_counts.values()):,} rows; quality {r.quality}")
     if not args.skip_models:
         from src.models.training import train_all

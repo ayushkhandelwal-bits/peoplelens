@@ -63,7 +63,7 @@ More in [`docs/screenshots`](docs/screenshots). All screenshots are of the runni
 ```mermaid
 flowchart LR
     subgraph C["1 · Create"]
-        SIM["Workforce simulator<br/>Python · NumPy · seed 42"] --> EXP["HRMS-style export<br/>17 CSVs + SHA-256 manifest"]
+        SIM["Workforce simulator<br/>Python · NumPy · seed 42"] --> EXP["HRMS-style export<br/>16 CSVs + SHA-256 manifest"]
     end
     subgraph E["2 · Engineer & check"]
         STG["Staging tables"] --> CLN["Clean & type<br/>pandas"] --> DQ{{"Quality gate<br/>138 rules"}}
@@ -110,6 +110,12 @@ results, the tech stack, design decisions and a glossary.
 
 Details: [`docs/architecture.md`](docs/architecture.md).
 
+**The dataset is in the repository.** [`data/dataset/`](data/dataset) holds the complete synthetic HRMS export the
+project is built on — 16 CSV files (544,861 rows; 9,336 employees over Oct 2023 – Sep 2026) plus a manifest with
+SHA-256 checksums — so it can be browsed on GitHub or opened in Excel. The pipeline loads it by default; the simulator
+that created it (`src/data_generation/`) reproduces it byte for byte from seed 42. Only the derived SQLite database
+(157 MB) and model artefacts are rebuilt rather than committed.
+
 ```
 peoplelens-workforce-intelligence/
 ├── app.py                     Streamlit entry point (navigation, sidebar)
@@ -130,7 +136,8 @@ peoplelens-workforce-intelligence/
 ├── scripts/                   generate, load, validate, train, report, run_pipeline, setup
 ├── tests/                     pytest suite + tests/ui headless browser checks
 ├── docs/                      architecture, data dictionary, metrics, modelling, governance, insights, deployment
-└── data/samples/              small labelled synthetic extract
+├── data/dataset/              the synthetic dataset itself: 16 CSVs (544,861 rows) + checksummed manifest
+└── data/samples/              small extract (≤ 300 rows per table) for a quick look
 ```
 
 (The brief suggested `pages/`; the UI lives in `views/` because Streamlit treats a `pages/` folder as legacy
@@ -148,7 +155,7 @@ multipage navigation, which conflicts with the custom navigation used here.)
 | ML | scikit-learn (logistic regression, gradient boosting) |
 | NLP | VADER (offline lexicon, extended with a small workplace lexicon), TF-IDF, keyword themes |
 | App & charts | Streamlit, Plotly |
-| Quality | pytest (97 tests), Ruff, Playwright headless UI checks |
+| Quality | pytest (99 tests), Ruff, Playwright headless UI checks |
 
 ## 6. Synthetic data generation
 
@@ -299,7 +306,8 @@ docker compose up -d db
 ## 15. Running the application
 
 ```powershell
-python scripts/run_pipeline.py          # generate + load + validate + train models + monthly report (~1-2 min)
+python scripts/run_pipeline.py          # load data/dataset + validate + train models + monthly report (~1-2 min)
+python scripts/run_pipeline.py --regenerate   # simulate the data afresh instead (seed 42 = identical files)
 streamlit run app.py                    # http://localhost:8501
 ```
 
@@ -307,6 +315,7 @@ Individual steps:
 
 ```powershell
 python scripts/generate_data.py [--profile dev] [--seed 7]   # synthetic HRMS export only
+python scripts/generate_data.py --publish                    # rewrite data/dataset (the dataset kept in Git)
 python scripts/load_database.py [--reset]                    # staging -> clean -> quality gate -> publish
 python scripts/validate_project.py                           # re-run all quality rules on the live database
 python scripts/train_models.py                               # deliberate model refresh
@@ -320,7 +329,7 @@ If the database is missing, the app builds it on first launch (`PEOPLELENS_AUTO_
 
 ```powershell
 pip install -r requirements-dev.txt
-pytest                # 97 tests on an isolated temporary database (~30 s)
+pytest                # 99 tests on an isolated temporary database (~30 s)
 ruff check .
 # optional headless UI checks against a running app:
 python -m playwright install chromium

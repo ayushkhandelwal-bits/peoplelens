@@ -2,9 +2,10 @@
 
 ## Provenance
 All records are produced by the seeded simulator in `src/data_generation/` and exported as a simulated HRMS extract
-(`data/generated/raw/*.csv` + `manifest.json` with row counts and SHA-256 checksums). Ingestion refuses an export
+(`data/dataset/raw/*.csv` + `manifest.json` with row counts and SHA-256 checksums), published in the repository. Ingestion refuses an export
 whose checksums or row counts do not match. No real HRMS (or any external system) is connected; no real personal data
-is used. Generated data, databases and model artefacts are excluded from Git and reproducible from the seed.
+is used. The export is version-controlled (stored byte-for-byte, no line-ending conversion) and reproducible from seed 42;
+the derived database and model artefacts are rebuilt rather than committed.
 
 ## Ownership (assumed for the fictional organisation)
 

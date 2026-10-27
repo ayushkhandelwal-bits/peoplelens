@@ -60,7 +60,7 @@ def _build_lock():
 def bootstrap_if_needed() -> None:
     """Build data (and models) on first launch when the database is empty.
 
-    Intended for free hosting where no database file is shipped. Uses the
+    Intended for free hosting where no database file is shipped (the dataset in data/dataset is loaded). Uses the
     configured profile; the full profile takes roughly one to three minutes.
     Concurrent sessions wait for a single build instead of starting their own.
     """

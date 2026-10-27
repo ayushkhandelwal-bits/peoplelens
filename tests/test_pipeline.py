@@ -112,3 +112,37 @@ def test_failed_gate_does_not_overwrite_published_data(engine, monkeypatch):
     # restore a successful latest run for the remaining tests
     monkeypatch.undo()
     assert pl.run_pipeline("dev", regenerate=False).status == "SUCCESS"
+
+
+def test_committed_dataset_is_intact():
+    """The dataset kept in Git must match its manifest byte for byte (checksums and row counts)."""
+    from config.settings import DATASET_DIR
+    from src.ingestion.hrms_export import read_export
+
+    if not (DATASET_DIR / "raw" / "manifest.json").exists():
+        pytest.skip("no committed dataset in this checkout")
+    tables, manifest = read_export(DATASET_DIR)
+    assert manifest["profile"] == "full" and manifest["generation_config"]["seed"] == 42
+    assert len(tables) == 16 and (DATASET_DIR / "feedback_labels.csv").exists()
+
+
+def test_pipeline_uses_committed_dataset_when_profile_matches(tmp_path, monkeypatch):
+    from sqlalchemy import create_engine
+
+    from src.ingestion import pipeline
+
+    ds = tmp_path / "dataset"
+    pipeline.generate_export("dev", None, ds)
+    monkeypatch.setattr(pipeline, "DATASET_DIR", ds)
+    called = []
+    monkeypatch.setattr(pipeline, "generate_export", lambda *a, **k: called.append(a))
+    eng = create_engine(f"sqlite:///{(tmp_path / 'ds.db').as_posix()}")
+    r = pipeline.run_pipeline("dev", engine=eng)
+    assert r.status == "SUCCESS" and not called
+    assert not (ds / "quarantine").exists()  # nothing is written into the committed folder
+    # --regenerate bypasses the dataset and calls the simulator (stubbed here, so that run stops early)
+    from src.ingestion.hrms_export import ManifestError
+
+    with pytest.raises(ManifestError):
+        pipeline.run_pipeline("dev", engine=eng, use_dataset=False, out_dir=tmp_path / "gen")
+    assert len(called) == 1

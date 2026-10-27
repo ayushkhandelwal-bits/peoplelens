@@ -1,0 +1,4 @@
+# The published dataset is verified against SHA-256 checksums in its manifest.
+# Store and check out these files byte-for-byte (no CRLF conversion on Windows).
+data/dataset/** -text
+data/samples/** -text

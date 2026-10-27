@@ -31,7 +31,7 @@ LANES = [
     ("Create the data", [
         ("Workforce simulator", "Month-by-month company: exits, hiring funnel, promotions, pay, surveys, comments",
          "Python · NumPy · seed 42"),
-        ("HRMS-style export", "17 CSV files + manifest with row counts and SHA-256 fingerprints", "CSV"),
+        ("HRMS-style export", "16 CSV files + manifest with row counts and SHA-256 fingerprints, kept in the repo", "CSV"),
     ]),
     ("Engineer & check", [
         ("Staging", "Raw files loaded untouched; fingerprints verified first", "SQLAlchemy"),
@@ -160,7 +160,7 @@ def render() -> None:
     dq = s.get("dq", {})
     metric(c[2], "Quality checks passed", f"{dq.get('PASS', 0)} / {sum(dq.values()) if dq else 0}")
     metric(c[3], "Defined KPIs", "35")
-    metric(c[4], "Automated tests", "97")
+    metric(c[4], "Automated tests", "99")
 
     tabs = st.tabs(["End-to-end flow", "Step by step", "Models explained", "Tech stack", "Design decisions",
                     "Key terms"])
@@ -210,7 +210,7 @@ def _steps(s: dict) -> None:
            ["CSV", "SHA-256 manifest"],
            "Analytics teams receive exports, not clean tables. The fingerprint proves the files were not altered or "
            "half-written before loading.",
-           "17 files; the load refuses to start if any count or fingerprint differs.",
+           "16 CSV files, kept in the repository (data/dataset); the load refuses to start if any count or fingerprint differs.",
            "Data & Governance → Lineage & refresh.")
     _stage(3, "Clean, validate and only then publish",
            "Raw files land in staging tables. pandas trims and standardises text, parses dates, removes duplicates and "
@@ -433,7 +433,7 @@ def _stack() -> None:
         ["Text", "VADER (vaderSentiment)", "Comment sentiment", "Offline, free, explainable"],
         ["App", "Streamlit", "Web interface, navigation, caching", "Python-only, free hosting"],
         ["Charts", "Plotly", "Interactive charts", "Hover detail, consistent styling"],
-        ["Testing & quality", "pytest, Ruff", "97 tests, code style", "Catch regressions before deploy"],
+        ["Testing & quality", "pytest, Ruff", "99 tests, code style", "Catch regressions before deploy"],
         ["UI checks", "Playwright", "Headless browser tests, screenshots", "Proves pages render without errors"],
         ["Packaging", "Docker, docker-compose", "App + PostgreSQL in one command", "Reproducible setup"],
         ["Hosting", "Streamlit Community Cloud", "Public demo", "Free; rebuilds data on start"],

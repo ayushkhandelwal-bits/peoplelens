@@ -1,6 +1,6 @@
 """Load the existing HRMS export into the database (staging -> clean -> validate -> publish).
 
-    python scripts/load_database.py          # load data/generated/raw into the configured database
+    python scripts/load_database.py          # load the export (data/dataset by default) into the configured database
     python scripts/load_database.py --reset  # drop and recreate all tables first
 """
 

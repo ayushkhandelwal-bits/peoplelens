@@ -32,6 +32,8 @@ _load_dotenv(PROJECT_ROOT / ".env")
 
 DATA_DIR = Path(os.environ.get("PEOPLELENS_DATA_DIR", PROJECT_ROOT / "data"))
 GENERATED_DIR = DATA_DIR / "generated"
+# The published synthetic dataset committed to the repository (full profile, seed 42).
+DATASET_DIR = Path(os.environ.get("PEOPLELENS_DATASET_DIR", PROJECT_ROOT / "data" / "dataset"))
 ARTIFACT_DIR = Path(os.environ.get("PEOPLELENS_ARTIFACT_DIR", PROJECT_ROOT / "artifacts"))
 REPORT_DIR = Path(os.environ.get("PEOPLELENS_REPORT_DIR", PROJECT_ROOT / "reports"))
 LOG_DIR = Path(os.environ.get("PEOPLELENS_LOG_DIR", PROJECT_ROOT / "logs"))

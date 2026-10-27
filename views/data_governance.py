@@ -186,7 +186,7 @@ def _privacy() -> None:
   drive disciplinary, termination or other automated employment decisions. Ask PeopleLens declines such requests.
 - **Least privilege.** Viewer access is limited to aggregate views at the database level; analysts get read-only
   access; only the pipeline writes.
-- **Retention & deletion (assumed policy).** Raw exports are transient (regenerated, not committed to Git);
+- **Retention & deletion (assumed policy).** The raw export is version-controlled in `data/dataset` and verified by checksum on every load;
   staging tables are dropped after each successful load; quarantined rows are kept for audit in
   `data/generated/quarantine`; the database is rebuilt from source on every pipeline run.
 - **Ownership (assumed).** HR Operations owns employee, job and lifecycle tables; Talent Acquisition owns
