@@ -508,6 +508,11 @@ def _drivers(att: dict, v: str) -> None:
                                     height=300), config=charts.CONFIG)
         caption(f"The change in {scope_name} attrition is converted to an organisation-wide change of "
                 f"{res['attrition_delta_pp']:+.2f} pp a year and fed into the scenario engine (6-month horizon).")
+    insight("**Compare changes, not levels.** The starting rate shown is the model's own prediction "
+            f"({res['base_annual_rate']:.1%} voluntary a year), a little below the observed voluntary attrition of the "
+            "last 12 months — the model was trained on earlier, calmer periods. The *difference* between baseline and "
+            "your scenario is the useful output. The promotion lever works mainly through moving people up a level "
+            "(seniority is associated with lower attrition); time since promotion on its own shows little effect.")
     insight("**Read with care.** The model learns associations from historical (synthetic) data — e.g. engaged people "
             "leave less — not proven cause and effect. Use these numbers to compare options and size them roughly. "
             "Training hours are a model input but show no protective association here, so they are not offered as "

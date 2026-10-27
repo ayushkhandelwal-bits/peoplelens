@@ -100,6 +100,37 @@ stated. The MBA lens: every technical component answers a business question.
 Identity-based roles and PostgreSQL row-level security; time-varying survival models; hierarchical forecast
 reconciliation; recruiter-capacity planning; incremental loads; saving scenario versions to the plan table.
 
+## Forecasting in one minute
+* **What it is:** a stock-and-flow model — headcount next month = this month − expected exits + expected hires. Exits
+  use each calendar month's historical exit rate (scaled to the last 12 months); hires use offers already accepted
+  (adjusted for drop-outs), otherwise the recent hiring pace.
+* **Why:** lowest backtest error (MAE 29 heads vs 31 Holt, 35 drift, 52 Holt-Winters, 97 naive); uses the known offer
+  pipeline, which pure time-series models cannot see; every number is explainable; it supports what-if scenarios.
+* **Why not ARIMA / Prophet / LSTM:** ~36 monthly points — too short to learn yearly seasonality reliably (Holt-Winters
+  already overfits) and far too short for deep learning.
+
+## Attrition driver simulator
+* Changes the trained model's *inputs* (engagement, manager support, career growth, pay vs peers, promotions, manager
+  stability), re-scores the current workforce and feeds the change in attrition into the headcount projection, with
+  turnover cost and the cost of closing pay gaps.
+* It shows associations, not causes. Compare scenarios with the baseline rather than reading absolute levels: the
+  model's baseline (≈ 13% voluntary a year) sits below the observed 15.5% because it was trained on earlier periods.
+
+## Tough questions to be ready for
+* *"Engagement change raises risk in your model — isn't that wrong?"* The latest score is also in the model. Holding it
+  fixed, a bigger recent rise means the previous score was lower, i.e. a weaker engagement history. Correlated inputs
+  make single coefficients hard to read alone; the direction of the latest score (protective) is the robust signal.
+* *"You say promotion staleness doesn't matter, but promotions reduce attrition in your simulator."* The simulator
+  moves people up a level; seniority is associated with lower attrition. Time since promotion alone is not significant
+  (OR 0.99).
+* *"Training increases predicted risk?"* Most likely selection: the people who get more training differ from those who
+  don't (role, tenure, development stage). It's an association, not evidence that training causes exits — so it isn't offered as a lever.
+* *"AUC 0.64 is weak."* Most individual resignations are driven by things HR data doesn't hold (offers, personal
+  life). The model is for prioritising teams (top-decile lift 1.9×), not for predicting individuals.
+* *"Is any of this real?"* No — synthetic data, by design, so it can be public. The value is the method: the analysis
+  recovers built-in effects (Customer Support) and rejects spurious ones (location, p = 0.73 after controlling for
+  department).
+
 ## Likely questions — short answers
 * *What would you do first with real data?* Profile and reconcile headcount to payroll, agree metric definitions
   with HR and Finance, then build the quality gate before any dashboard.

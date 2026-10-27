@@ -36,7 +36,7 @@ def main() -> int:
 
     lo, hi = data_bounds(engine)
     k = kpi_summary(Filters(start=max(lo, hi.replace(day=1)), end=hi), engine)
-    print(f"KPI smoke test: headcount {k.active_headcount:,} at {hi}, attrition {k.attrition_rate:.1%}")
+    print(f"KPI smoke test: headcount {k.active_headcount:,} at {hi}, attrition in {hi:%b %Y} alone (annualised) {k.attrition_rate:.1%}")
     print(f"Model artefacts present: {models_available()}")
     return 1 if summary["blocking"] else 0
 

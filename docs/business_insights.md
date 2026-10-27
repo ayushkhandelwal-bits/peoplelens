@@ -21,7 +21,9 @@ To reproduce: `python scripts/run_pipeline.py`, then open the module named under
   **2 of 24** departments differ after correction (Customer Support higher, Enterprise Sales lower); **4 more** would
   look "significant" without correcting for multiple comparisons.
 * **Interpretation:** Leadership attention should go to one team, not to a league table of 24.
-* **Potential impact:** 222 voluntary Customer Support exits in 12 months ≈ **₹9.6 Cr** estimated replacement cost.
+* **Potential impact:** 223 voluntary Customer Support exits in 12 months ≈ **₹7.4 Cr** estimated replacement cost
+  (≈ ₹3.3 L per exit — below the ₹4.3 L organisation average because frontline salaries are lower, but the largest
+  departmental total; Planning & Business Insights → turnover cost by department).
 * **Recommended action:** stay interviews, workload and pay-positioning review, and manager-stability check in
   Customer Support; stop escalating departments whose rates are within noise.
 * **Limitations:** department differences partly reflect level and tenure mix; synthetic data.
