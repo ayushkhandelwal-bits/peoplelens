@@ -9,12 +9,14 @@ analytics modules.
 from __future__ import annotations
 
 import json
+import threading
+from contextlib import contextmanager
 from datetime import date
 
 import pandas as pd
 import streamlit as st
 
-from config.settings import ARTIFACT_DIR, get_settings
+from config.settings import ARTIFACT_DIR, DATA_DIR, get_settings
 from database.connection import get_engine, read_sql, table_exists
 from src.analytics import compensation, engagement, metrics, performance, recruitment, retention, workforce
 from src.analytics.common import Filters, data_bounds, lookups
@@ -30,34 +32,64 @@ def database_ready() -> bool:
         return False
 
 
+# One build at a time. On hosted platforms a health-check session and the first
+# visitor often arrive together; without this both would write the same export
+# files and the checksum verification would (correctly) reject the result.
+_BUILD_LOCK = threading.Lock()
+
+
+@contextmanager
+def _build_lock():
+    """Thread lock (sessions share one process) plus an OS file lock (separate processes)."""
+    with _BUILD_LOCK:
+        DATA_DIR.mkdir(parents=True, exist_ok=True)
+        with open(DATA_DIR / ".build.lock", "w") as fh:
+            try:
+                import fcntl
+            except ImportError:  # Windows: the thread lock is sufficient for one server
+                fcntl = None
+            if fcntl:
+                fcntl.flock(fh, fcntl.LOCK_EX)
+            try:
+                yield
+            finally:
+                if fcntl:
+                    fcntl.flock(fh, fcntl.LOCK_UN)
+
+
 def bootstrap_if_needed() -> None:
     """Build data (and models) on first launch when the database is empty.
 
     Intended for free hosting where no database file is shipped. Uses the
-    configured profile; the full profile takes roughly one to two minutes.
+    configured profile; the full profile takes roughly one to three minutes.
+    Concurrent sessions wait for a single build instead of starting their own.
     """
+    from src.models.model_evaluation import models_available
+
     settings = get_settings()
-    if database_ready():
-        from src.models.model_evaluation import models_available
-
-        if not models_available() and settings.auto_bootstrap:
-            with st.status("Training predictive models for the first time…", expanded=False):
-                from src.models.training import train_all
-
-                train_all()
+    if database_ready() and models_available():
         return
-    if not settings.auto_bootstrap:
+    if not database_ready() and not settings.auto_bootstrap:
         st.error("The database has not been built. Run `python scripts/run_pipeline.py` and reload.")
         st.stop()
-    with st.status(f"Building the synthetic workforce database ({settings.profile} profile)… "
-                   "this happens once.", expanded=True) as status:
-        from src.ingestion.pipeline import run_pipeline
-        from src.models.training import train_all
+    if not settings.auto_bootstrap:
+        return
+    with st.status(f"Preparing PeopleLens ({settings.profile} profile)… this happens once and takes "
+                   "a few minutes.", expanded=True) as status:
+        if _BUILD_LOCK.locked():
+            st.write("Another session is already building the data — waiting for it to finish…")
+        with _build_lock():
+            # Re-check after acquiring the lock: another session may have finished the work.
+            from src.models.training import train_all
 
-        st.write("Generating, validating and loading data…")
-        run_pipeline(settings.profile)
-        st.write("Training and evaluating models…")
-        train_all()
+            if not database_ready():
+                from src.ingestion.pipeline import run_pipeline
+
+                st.write("Generating, validating and loading data…")
+                run_pipeline(settings.profile)
+            if not models_available():
+                st.write("Training and evaluating models…")
+                train_all()
         status.update(label="Database ready", state="complete")
     st.cache_data.clear()
 
