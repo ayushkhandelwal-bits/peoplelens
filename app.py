@@ -57,7 +57,7 @@ st.session_state["_ask_page"] = pages["Workspace"][0]
 
 nav = st.navigation(pages, position="hidden")
 sidebar.brand()
-sidebar.navigation(pages)
+sidebar.navigation(pages, nav)
 v = data.data_version()
 sidebar.controls(v)
 sidebar.status_block(v)

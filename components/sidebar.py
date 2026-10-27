@@ -33,13 +33,17 @@ def brand() -> None:
         "</div><div class='pl-brand-sub'>Workforce Intelligence &amp; Planning</div>", unsafe_allow_html=True)
 
 
-def navigation(pages: dict) -> None:
+def navigation(pages: dict, current=None) -> None:
     sb = st.sidebar
     for section, items in pages.items():
         if section != "Modules":
             sb.markdown("<div class='pl-eyebrow' style='margin:8px 0 0 4px'>Workspace</div>", unsafe_allow_html=True)
         for page in items:
-            sb.page_link(page, label=page.title, icon=page.icon)
+            if current is not None and page.url_path == current.url_path:
+                with sb.container(key="pl_nav_active"):
+                    st.page_link(page, label=page.title, icon=page.icon)
+            else:
+                sb.page_link(page, label=page.title, icon=page.icon)
     sb.divider()
 
 
