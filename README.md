@@ -51,28 +51,59 @@ pulling?* PeopleLens integrates these sources into one consistent model and answ
 | ![](docs/screenshots/predictive_forecast.png) | ![](docs/screenshots/planning_recommendations.png) |
 | **Ask PeopleLens** | **Data & Governance** |
 | ![](docs/screenshots/ask_peoplelens.png) | ![](docs/screenshots/data_governance_access.png) |
+| **How It Works** | **How It Works — models** |
+| ![](docs/screenshots/how_it_works.png) | ![](docs/screenshots/how_it_works_models.png) |
 
 More in [`docs/screenshots`](docs/screenshots). All screenshots are of the running application on the generated data.
 
 ## 4. Architecture
 
+```mermaid
+flowchart LR
+    subgraph C["1 · Create"]
+        SIM["Workforce simulator<br/>Python · NumPy · seed 42"] --> EXP["HRMS-style export<br/>17 CSVs + SHA-256 manifest"]
+    end
+    subgraph E["2 · Engineer & check"]
+        STG["Staging tables"] --> CLN["Clean & type<br/>pandas"] --> DQ{{"Quality gate<br/>138 rules"}}
+    end
+    subgraph S["3 · Store"]
+        DB[("PostgreSQL / SQLite<br/>16 tables")] --> MART["Mart<br/>employee × month"]
+        DB --> VW["Aggregate views v_*"]
+    end
+    subgraph A["4 · Analyse & predict"]
+        KPI["Metric layer<br/>35 KPIs"]
+        STAT["Statistics<br/>SciPy · statsmodels"]
+        ML["Models<br/>forecast · attrition · time to fill"]
+        NLP["Text analytics<br/>VADER · TF-IDF"]
+    end
+    subgraph D["5 · Deliver"]
+        APP["Streamlit app<br/>4 modules · Plotly"]
+        ASK["Ask PeopleLens<br/>rule-based"]
+        REP["Monthly report &<br/>recommendations"]
+    end
+    EXP -->|verify checksums| STG
+    DQ -->|only if 0 errors| DB
+    MART --> KPI & STAT & ML
+    DB --> NLP
+    KPI --> ASK & REP
+    KPI & STAT & ML & NLP & ASK --> APP
+    VW -.->|Viewer role| APP
 ```
-Seeded simulator ──► HRMS-style export (CSV + SHA-256 manifest, realistic noise)
-      │                         │
-      │                         ▼
-      │                 staging tables (stg_*) ──► cleaning & typing ──► QUALITY GATE (138 rules)
-      │                                                                        │ blocks on error
-      ▼                                                                        ▼
-  NLP labels (eval only)                    core relational model (16 tables, one transaction)
-                                                       │
-                              ┌────────────────────────┼────────────────────────┐
-                              ▼                        ▼                        ▼
-                   curated mart (employee×month)   aggregate views v_*   pipeline_runs / data_quality_results
-                              │                        │
-            ┌─────────────────┼──────────────┐         │  (Viewer role: views only, enforced by the DB)
-            ▼                 ▼              ▼         ▼
-     metrics & diagnostics  models      Ask PeopleLens  ──►  Streamlit app · monthly report · CSV exports
-```
+
+**Models at a glance** — every model is trained on the past, tested on a later period, and kept only if it beats a
+simple baseline:
+
+| Question | Options compared | Chosen | Why |
+|---|---|---|---|
+| Headcount in 6 months? | Naive, Drift, Holt, Holt-Winters, Flow model | Flow model (MAE 30 vs 97 naive) | Lowest backtest error; uses the known hiring pipeline |
+| Who is likely to leave? | Logistic regression, Gradient boosting | Logistic regression (AUC 0.64, lift 1.9×) | Boosting not materially better; drivers stay explainable |
+| How long to fill a role? | Global median, Segment median, Gradient boosting | Kaplan-Meier P50/P80 ranges | No point model beat the baseline |
+| What if…? | — | Deterministic scenario arithmetic | What-ifs must be traceable, not "predicted" |
+| Comment sentiment & themes | VADER, keyword lexicon, TF-IDF | VADER + workplace lexicon | Offline, free, explainable; limits measured |
+| Plain-English questions | LLM text-to-SQL (rejected) | Rule-based templates | Correct, auditable, zero cost |
+
+The app's **How It Works** page walks through this flow step by step, with each model's diagram, live validation
+results, the tech stack, design decisions and a glossary.
 
 Details: [`docs/architecture.md`](docs/architecture.md).
 
@@ -168,6 +199,7 @@ DDL in [`database/schema.sql`](database/schema.sql) is generated from it.
 | **Planning & Business Insights** | Plan vs actual (absolute and %); manpower cost vs budget; turnover-cost model with sensitivity; scenario comparison; rule-based recommendations; exportable executive report |
 | **Ask PeopleLens** | Natural-language questions → parameterised SQL / model artefacts → explained answers |
 | **Data & Governance** | Quality results, lineage, run log, metric glossary, data dictionary, live access-control test, privacy |
+| **How It Works** | End-to-end technical walkthrough: flow diagram, step-by-step stages, each model (options, choice, validation), tech stack, design decisions, glossary |
 
 ## 9. KPI definitions
 

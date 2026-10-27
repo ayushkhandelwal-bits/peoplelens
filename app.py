@@ -19,6 +19,7 @@ from components import data, sidebar  # noqa: E402
 from views import (  # noqa: E402
     ask_peoplelens,
     data_governance,
+    how_it_works,
     planning_business_insights,
     predictive_intelligence,
     talent_lifecycle,
@@ -48,6 +49,8 @@ pages = {
         st.Page(ask_peoplelens.render, title="Ask PeopleLens", icon=":material/forum:", url_path="ask"),
         st.Page(data_governance.render, title="Data & Governance", icon=":material/verified_user:",
                 url_path="data-governance"),
+        st.Page(how_it_works.render, title="How It Works", icon=":material/account_tree:",
+                url_path="how-it-works"),
     ],
 }
 st.session_state["_ask_page"] = pages["Workspace"][0]

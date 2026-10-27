@@ -26,7 +26,7 @@ digraph {
   exp [label="HRMS-style export\\nCSV + manifest (SHA-256)"];
   stg [label="Staging tables\\nstg_*"];
   cln [label="Cleaning & typing\\n(trim, case, dates, dedupe,\\nquarantine)"];
-  dq [label="Quality gate\\n120+ rules", fillcolor="#FEF3C7"];
+  dq [label="Quality gate\\n138 rules", fillcolor="#FEF3C7"];
   core [label="Core relational model\\n16 tables"];
   mart [label="Curated mart\\nmart_employee_month"];
   views [label="Aggregate views v_*\\n(Viewer role)"];
