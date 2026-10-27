@@ -4,6 +4,10 @@
 
 **Turning Workforce Data into Better Business Decisions.**
 
+### ▶ Live app: [PeopleLens — Workforce Intelligence](https://peoplelens.streamlit.app/)
+
+Free hosting: if the app has been idle it may show a *wake up* button — click it and allow a minute or two to load.
+
 PeopleLens is an independently developed, end-to-end workforce analytics product. It simulates the people data of
 a fictional ~6,000-person organisation, engineers it into a validated relational model, and turns it into decisions:
 where the workforce is changing, why people leave, what the next six months look like, what turnover costs, and what
@@ -53,10 +57,11 @@ pulling?* PeopleLens integrates these sources into one consistent model and answ
 | ![](docs/screenshots/predictive_forecast.png) | ![](docs/screenshots/planning_recommendations.png) |
 | **Ask PeopleLens** | **Data & Governance** |
 | ![](docs/screenshots/ask_peoplelens.png) | ![](docs/screenshots/data_governance_access.png) |
-| **How It Works** | **How It Works — models** |
-| ![](docs/screenshots/how_it_works.png) | ![](docs/screenshots/how_it_works_models.png) |
+| **Attrition drivers (what-if)** | **How It Works** |
+| ![](docs/screenshots/predictive_attrition_drivers.png) | ![](docs/screenshots/how_it_works.png) |
 
-More in [`docs/screenshots`](docs/screenshots). All screenshots are of the running application on the generated data.
+More in [`docs/screenshots`](docs/screenshots). All screenshots are of the running application on the synthetic dataset; try it live at
+[peoplelens.streamlit.app](https://peoplelens.streamlit.app/).
 
 ## 4. Architecture
 
@@ -304,6 +309,9 @@ docker compose up -d db
 ```
 
 ## 15. Running the application
+
+No installation needed to try it: **[PeopleLens — Workforce Intelligence](https://peoplelens.streamlit.app/)** is hosted on
+Streamlit Community Cloud. To run it locally:
 
 ```powershell
 python scripts/run_pipeline.py          # load data/dataset + validate + train models + monthly report (~1-2 min)

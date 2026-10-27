@@ -1,6 +1,8 @@
 # Deployment
 
-The local installation is the complete reference implementation. A hosted demo is optional and free.
+The local installation is the complete reference implementation. A free hosted demo runs at
+**[PeopleLens — Workforce Intelligence](https://peoplelens.streamlit.app/)** (Streamlit Community Cloud, deployed from the
+`main` branch of this repository).
 
 ## Option 1 — Streamlit Community Cloud (free)
 
