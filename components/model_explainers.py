@@ -12,13 +12,13 @@ EXPLAIN = {
         question="How many people will we have in each of the next 6 months, and how far from plan will we be?",
         inputs="Monthly headcount, hires and exits since Oct 2023; offers already accepted with a future joining "
                "date; the approved plan (budget) headcount.",
-        method="Five methods compete. The winner, the **flow model**, works like a bank balance: "
+        method="Six methods compete, including **SARIMA**. The **flow model** is used: it works like a bank balance: "
                "next month = this month − expected exits + expected hires. Exits use each calendar month's typical "
                "exit rate (rescaled to the last 12 months); hires use the accepted-offer pipeline, then the recent "
                "hiring pace.",
         tested="**Rolling backtest:** pretend it is Sep 2025, Dec 2025 and Mar 2026, forecast 6 months using only "
-               "data up to then, and compare with what actually happened. The method with the lowest average miss "
-               "(MAE) is selected.",
+               "data up to then, and compare with what actually happened. A challenger replaces the flow model only "
+               "if it cuts the average miss (MAE) by more than 5% — SARIMA came within 2.5%, a statistical tie.",
         read="The dashed line is the most likely path; the shaded band is where the actual figure should fall about "
              "8 times in 10. Department bars show the expected gap to plan at the horizon.",
         flow="forecast",

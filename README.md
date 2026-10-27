@@ -8,6 +8,8 @@
 
 Free hosting: if the app has been idle it may show a *wake up* button — click it and allow a minute or two to load.
 
+**One-page summary:** [`docs/PeopleLens_project_summary.pdf`](docs/PeopleLens_project_summary.pdf)
+
 PeopleLens is an independently developed, end-to-end workforce analytics product. It simulates the people data of
 a fictional ~6,000-person organisation, engineers it into a validated relational model, and turns it into decisions:
 where the workforce is changing, why people leave, what the next six months look like, what turnover costs, and what
@@ -102,7 +104,7 @@ simple baseline:
 
 | Question | Options compared | Chosen | Why |
 |---|---|---|---|
-| Headcount in 6 months? | Naive, Drift, Holt, Holt-Winters, Flow model | Flow model (MAE 29 vs 97 naive) | Lowest backtest error; uses the known hiring pipeline |
+| Headcount in 6 months? | Naive, Drift, Holt, Holt-Winters, SARIMA, Flow model | Flow model (MAE 29 vs 97 naive) | SARIMA a near-tie (28.4); flow kept under a >5% replacement rule — explainable, uses the hiring pipeline, powers what-ifs |
 | Who is likely to leave? | Logistic regression, Gradient boosting | Logistic regression (AUC 0.64, lift 1.9×) | Boosting not materially better; drivers stay explainable |
 | How long to fill a role? | Global median, Segment median, Gradient boosting | Kaplan-Meier P50/P80 ranges | No point model beat the baseline |
 | What if we improve engagement, pay gaps, promotions? | — | Attrition driver simulator: re-scores the workforce with the trained model, feeds the change into the headcount projection | Ties model drivers to headcount and cost; associations, not causes |
@@ -160,7 +162,7 @@ multipage navigation, which conflicts with the custom navigation used here.)
 | ML | scikit-learn (logistic regression, gradient boosting) |
 | NLP | VADER (offline lexicon, extended with a small workplace lexicon), TF-IDF, keyword themes |
 | App & charts | Streamlit, Plotly |
-| Quality | pytest (99 tests), Ruff, Playwright headless UI checks |
+| Quality | pytest (102 tests), Ruff, Playwright headless UI checks |
 
 ## 6. Synthetic data generation
 
@@ -232,7 +234,7 @@ DDL in [`database/schema.sql`](database/schema.sql) is generated from it.
 
 | Model | Validation | Result on the generated data |
 |---|---|---|
-| Headcount forecast (6 months) | Rolling-origin backtests (3 origins), vs Naive, Drift, Holt, Holt-Winters | **Flow model selected — MAE 29 heads vs 97 for naive** (Holt damped 31) |
+| Headcount forecast (6 months) | Rolling-origin backtests (3 origins), vs Naive, Drift, Holt, Holt-Winters, SARIMA (AIC-selected) | **Flow model kept — MAE 29 heads vs 97 for naive**; SARIMA 28.4 is within the 5% tie band (Holt damped 31) |
 | Attrition risk (voluntary exit ≤ 6 months) | Temporal hold-out: train 7 quarter-ends (Mar 2024–Sep 2025), test Mar 2026 | **Logistic regression ROC-AUC 0.64**, PR-AUC 0.13 vs 7.6% base rate, top-decile lift 1.9× (GBM 0.62) |
 | Time to fill | Chronological hold-out + Kaplan-Meier | Segment models **do not beat** the global median (MAE ≈ 41 days) → planning uses P50/P80 distributions |
 
@@ -337,7 +339,7 @@ If the database is missing, the app builds it on first launch (`PEOPLELENS_AUTO_
 
 ```powershell
 pip install -r requirements-dev.txt
-pytest                # 99 tests on an isolated temporary database (~30 s)
+pytest                # 102 tests on an isolated temporary database (~30 s)
 ruff check .
 # optional headless UI checks against a running app:
 python -m playwright install chromium

@@ -151,3 +151,26 @@ def test_pipeline_counts_pending_offers():
     p = workforce_forecast.pipeline_at(acc, origin, months)
     # one dated future joiner + two recent pending offers (median lag 34 days -> Oct); the stale 2025 offer is ignored
     assert p.sum() == 3 and p[0] == 3
+
+
+def test_forecast_selection_keeps_incumbent_unless_materially_better():
+    s = pd.DataFrame({"mae": [28.4, 29.1, 31.0]}, index=["SARIMA (auto)", "Flow model", "Holt (damped)"])
+    sel, ch, gain = workforce_forecast.select_model(s)
+    assert sel == "Flow model" and ch == "SARIMA (auto)" and 0 < gain < 0.05
+    s.loc["SARIMA (auto)", "mae"] = 20.0
+    assert workforce_forecast.select_model(s)[0] == "SARIMA (auto)"
+
+
+def test_sarima_candidate_forecasts_and_needs_two_years():
+    rng = np.random.default_rng(0)
+    m = np.arange(36)
+    y = pd.Series(5000 + 25 * m + 40 * np.sin(2 * np.pi * m / 12) + rng.normal(0, 10, 36))
+    f = workforce_forecast.MODELS["SARIMA (auto)"](y, 6)
+    assert f is not None and len(f) == 6 and np.all(np.isfinite(f))
+    assert abs(f[0] - y.iloc[-1]) < 200  # sensible continuation, not an explosion
+    assert workforce_forecast.MODELS["SARIMA (auto)"](y.iloc[:20], 6) is None
+
+
+def test_forecast_metadata_records_selection_rule(engine):
+    meta = workforce_forecast.train(engine)
+    assert meta["selection_rule"] and "5%" in meta["selection_rule"]

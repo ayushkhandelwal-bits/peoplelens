@@ -83,9 +83,9 @@ MODEL_FLOWS = {
 digraph {{ rankdir=LR; bgcolor="transparent"; {_NODE} {_EDGE}
   a [label="Monthly headcount,\\nhires & exits\\n(30+ months)"];
   b [label="Accepted offers with\\nfuture joining dates"];
-  c [label="5 candidate models\\nNaive · Drift · Holt ·\\nHolt-Winters · Flow model", fillcolor="#E0F2FE"];
+  c [label="6 candidate models\\nNaive · Drift · Holt · Holt-Winters\\nSARIMA · Flow model", fillcolor="#E0F2FE"];
   d [label="Rolling backtest\\n3 origins × 6 months\\n(train on past only)", fillcolor="#FEF3C7"];
-  e [label="Lowest error wins\\n→ Flow model"];
+  e [label="Keep flow model unless a\\nchallenger is >5% better"];
   f [label="6-month forecast\\n+ 80% range\\n+ hiring demand", fillcolor="#CCFBF1"];
   a -> c; b -> c; c -> d -> e -> f;
 }}""",
@@ -160,7 +160,7 @@ def render() -> None:
     dq = s.get("dq", {})
     metric(c[2], "Quality checks passed", f"{dq.get('PASS', 0)} / {sum(dq.values()) if dq else 0}")
     metric(c[3], "Defined KPIs", "35")
-    metric(c[4], "Automated tests", "99")
+    metric(c[4], "Automated tests", "102")
 
     tabs = st.tabs(["End-to-end flow", "Step by step", "Models explained", "Tech stack", "Design decisions",
                     "Key terms"])
@@ -302,8 +302,8 @@ def _models() -> None:
             "when it doesn't.")
 
     summary = pd.DataFrame([
-        ["Headcount forecast", "Naive, Drift, Holt, Holt-Winters, Flow model", fc.get("selected_model", "Flow model"),
-         "Lowest backtest error; uses the known hiring pipeline", "Rolling backtest, 3 origins"],
+        ["Headcount forecast", "Naive, Drift, Holt, Holt-Winters, SARIMA, Flow model", fc.get("selected_model", "Flow model"),
+         "SARIMA a near-tie; flow kept (explainable, uses hiring pipeline, powers what-ifs)", "Rolling backtest, 3 origins"],
         ["Attrition risk", "Logistic regression, Gradient boosting", "Logistic regression",
          "Boosting not materially better; LR is explainable", "Train 2024–25 → test Mar 2026"],
         ["Time to fill", "Global median, Segment median, Gradient boosting", "Kaplan-Meier ranges",
@@ -330,13 +330,18 @@ def _models() -> None:
                              horizontal=True, height=260)
             st.plotly_chart(fig, width="stretch")
         with c2:
-            best, naive = comp.iloc[0], comp[comp.model == "Naive"]
+            best = comp[comp.model == fc.get("selected_model", "Flow model")].iloc[0]
+            naive = comp[comp.model == "Naive"]
+            sar = comp[comp.model.str.startswith("SARIMA")]
             cut = (1 - best.mae / naive.mae.iloc[0]) if len(naive) else None
             st.markdown(
                 f"**Chosen: {best.model}.** It works like a bank statement: next month = this month − expected "
                 "exits (seasonal exit rate) + expected hires (offers already accepted, plus the recent hiring pace).\n\n"
                 f"**Result:** average error **{best.mae:.0f} heads** on a ~6,000 workforce"
                 + (f", **{cut:.0%} better** than simply assuming no change." if cut else ".")
+                + (f"\n\n**SARIMA** (classic statistical model, settings chosen by AIC on training data only) scored "
+                   f"**{sar.mae.iloc[0]:.1f}** — a near-tie. The rule is to replace the incumbent only for a >5% gain, "
+                   "so the explainable flow model, which also powers the what-if tools, is kept." if len(sar) else "")
                 + "\n\n**Why not Holt-Winters?** It needs several full years to learn seasonality; with ~30 months it "
                   "over-fits. **Honest note:** for monthly exits alone, a seasonal-naive guess is slightly better — "
                   "reported in Model monitoring.")
@@ -433,7 +438,7 @@ def _stack() -> None:
         ["Text", "VADER (vaderSentiment)", "Comment sentiment", "Offline, free, explainable"],
         ["App", "Streamlit", "Web interface, navigation, caching", "Python-only, free hosting"],
         ["Charts", "Plotly", "Interactive charts", "Hover detail, consistent styling"],
-        ["Testing & quality", "pytest, Ruff", "99 tests, code style", "Catch regressions before deploy"],
+        ["Testing & quality", "pytest, Ruff", "102 tests, code style", "Catch regressions before deploy"],
         ["UI checks", "Playwright", "Headless browser tests, screenshots", "Proves pages render without errors"],
         ["Packaging", "Docker, docker-compose", "App + PostgreSQL in one command", "Reproducible setup"],
         ["Hosting", "Streamlit Community Cloud", "Public demo", "Free; rebuilds data on start"],

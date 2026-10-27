@@ -28,6 +28,13 @@ ICON_MAIL = ("<svg width='19' height='19' viewBox='0 0 24 24' fill='none' stroke
              "stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='5' width='18' height='14' rx='2'/>"
              "<path d='m3 7 9 6 9-6'/></svg>")
 
+ROLE_NOTES = {
+    "Analyst": "<b>Analyst:</b> full read-only access — synthetic employee records, individual risk scores and SQL on "
+               "all tables.",
+    "Viewer": "<b>Viewer:</b> totals and charts only. Hidden: employee records (Workforce Explorer → Records), "
+              "individual risk scores, CSV exports; SQL is limited to summary views by the database itself.",
+}
+
 
 def brand() -> None:
     st.sidebar.markdown(
@@ -56,6 +63,8 @@ def controls(v: str) -> None:
         st.segmented_control("Access role", list(ROLES), key="role",
                                     help="Demonstrates role-based access. Viewer sees aggregates only and its SQL "
                                          "runs on a database connection limited to aggregate views.")
+        role = st.session_state.get("role") or "Analyst"
+        st.markdown(f"<div class='pl-role-note'>{ROLE_NOTES[role]}</div>", unsafe_allow_html=True)
 
 
 def glance(v: str) -> None:

@@ -7,6 +7,9 @@ Candidate models (organisation level):
 * **Holt (damped)** – additive damped-trend exponential smoothing.
 * **Holt-Winters** – additive trend + 12-month seasonality (only when at least
   two seasonal cycles are available in the training window).
+* **SARIMA (auto)** – seasonal ARIMA chosen per training window by AIC from a
+  small grid ((p,1,q) x (P,0,0)12, p<=2, q<=1, P<=1); differencing is fixed so
+  AIC values are comparable, and the choice uses training data only.
 * **Flow model** – a structural model: next month's headcount = headcount
   - expected exits (headcount x seasonal monthly exit rate, rescaled to the
   trailing 12-month level) + expected joiners (accepted offers already
@@ -14,8 +17,11 @@ Candidate models (organisation level):
   average hiring level).
 
 Evaluation uses rolling-origin backtests with a fixed 6-month horizon and
-strictly chronological splits (no shuffling). The model with the lowest mean
-MAE across backtests is selected; prediction intervals come from backtest
+strictly chronological splits (no shuffling). The incumbent flow model is kept
+unless another candidate lowers mean backtest MAE by more than 5% (the same
+"material improvement" rule used for the attrition model) — with three origins,
+smaller differences are within noise, and the flow model also drives the
+department forecasts, hiring demand and scenarios; prediction intervals come from backtest
 errors by horizon (normal approximation), so they reflect real out-of-sample
 error rather than in-sample fit.
 """
@@ -30,12 +36,16 @@ import numpy as np
 import pandas as pd
 from sqlalchemy.engine import Engine
 from statsmodels.tsa.holtwinters import ExponentialSmoothing
+from statsmodels.tsa.statespace.sarimax import SARIMAX
 
 from database.connection import get_engine, read_sql
 from src.models.model_evaluation import MODEL_VERSION, load_json, regression_metrics, save_json
 
 log = logging.getLogger(__name__)
 HORIZON = 6
+INCUMBENT = "Flow model"
+MATERIAL_IMPROVEMENT = 0.05  # a challenger must cut mean backtest MAE by more than 5% to replace the incumbent
+SARIMA_GRID = [((p, 1, q), (sp, 0, 0, 12)) for p in (0, 1, 2) for q in (0, 1) for sp in (0, 1) if p + q > 0]
 Z80 = 1.2816
 
 
@@ -92,6 +102,29 @@ def _holt_winters(y: pd.Series, h: int) -> np.ndarray | None:
         fit = ExponentialSmoothing(y.values.astype(float), trend="add", damped_trend=True, seasonal="add",
                                    seasonal_periods=12).fit(optimized=True)
     return fit.forecast(h)
+
+
+def fit_sarima(y: pd.Series):
+    """Select a SARIMA specification by AIC on the training series only; returns (result, order, seasonal)."""
+    best = None
+    values = np.asarray(y, float)
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore")
+        for order, seasonal in SARIMA_GRID:
+            try:
+                r = SARIMAX(values, order=order, seasonal_order=seasonal, trend="n").fit(disp=False)
+            except Exception:  # pragma: no cover - numerical failure for one specification
+                continue
+            if np.isfinite(r.aic) and (best is None or r.aic < best[0].aic):
+                best = (r, order, seasonal)
+    return best
+
+
+def _sarima(y: pd.Series, h: int) -> np.ndarray | None:
+    if len(y) < 24:
+        return None
+    best = fit_sarima(y)
+    return None if best is None else best[0].forecast(h)
 
 
 def seasonal_exit_rates(hist: pd.DataFrame) -> dict[int, float]:
@@ -158,7 +191,18 @@ def flow_forecast(hist: pd.DataFrame, accepted: pd.DataFrame, h: int, scale_hire
     return np.array(out_hc), np.array(out_exits), np.array(out_hires)
 
 
-MODELS = {"Naive": _naive, "Drift": _drift, "Holt (damped)": _holt, "Holt-Winters": _holt_winters}
+MODELS = {"Naive": _naive, "Drift": _drift, "Holt (damped)": _holt, "Holt-Winters": _holt_winters,
+          "SARIMA (auto)": _sarima}
+
+
+def select_model(summary: pd.DataFrame) -> tuple[str, str, float | None]:
+    """Keep the incumbent unless a challenger is materially better. Returns (selected, best challenger, gain)."""
+    challengers = summary.drop(index=INCUMBENT, errors="ignore")
+    if INCUMBENT not in summary.index:
+        return summary.index[0], challengers.index[0] if len(challengers) else "", None
+    best_ch = challengers.mae.idxmin()
+    gain = 1 - challengers.mae.min() / summary.loc[INCUMBENT, "mae"]
+    return (best_ch if gain > MATERIAL_IMPROVEMENT else INCUMBENT), best_ch, float(gain)
 
 
 def _forecast_all(hist: pd.DataFrame, accepted: pd.DataFrame, h: int) -> dict[str, np.ndarray]:
@@ -259,7 +303,7 @@ def train(engine: Engine | None = None) -> dict:
     metrics, errors = backtest(org, data["accepted"])
     hc_models = metrics[~metrics.model.str.startswith("Exits")]
     summary = hc_models.groupby("model")[["mae", "rmse", "mape"]].mean().sort_values("mae")
-    best = summary.index[0]
+    best, challenger, gain = select_model(summary)
     exits_summary = metrics[metrics.model.str.startswith("Exits")].groupby("model")[["mae", "rmse"]].mean()
 
     fc_all = _forecast_all(org, data["accepted"], HORIZON)
@@ -278,7 +322,10 @@ def train(engine: Engine | None = None) -> dict:
     demand = hiring_demand(data, dept_fc, engine)
     meta = dict(
         model_version=MODEL_VERSION, trained_at=datetime.now().isoformat(timespec="seconds"),
-        horizon_months=HORIZON, selected_model=best, history_months=int(len(org)),
+        horizon_months=HORIZON, selected_model=best,
+        selection_rule=f"Keep the {INCUMBENT.lower()} unless another candidate lowers mean backtest MAE by more than "
+                       f"{MATERIAL_IMPROVEMENT:.0%}.",
+        best_challenger=challenger, challenger_gain=gain, sarima_spec=_sarima_spec(org.headcount), history_months=int(len(org)),
         history_start=org.index[0].date().isoformat(), history_end=origin.date().isoformat(),
         backtest_origins=sorted(metrics.origin.unique().tolist()),
         model_comparison=summary.reset_index().to_dict("records"),
@@ -297,8 +344,14 @@ def train(engine: Engine | None = None) -> dict:
                      "Forecasts assume no policy change; use the scenario tools for what-ifs."],
     )
     save_json("workforce_forecast.json", meta)
-    log.info("workforce forecast trained: selected %s (MAE %.1f)", best, summary.iloc[0].mae)
+    log.info("workforce forecast trained: selected %s (MAE %.1f); best challenger %s (%+.1f%%)", best,
+             summary.loc[best, "mae"], challenger, (gain or 0) * 100)
     return meta
+
+
+def _sarima_spec(y: pd.Series) -> str | None:
+    best = fit_sarima(y) if len(y) >= 24 else None
+    return None if best is None else f"SARIMA{best[1]}x{best[2]}"
 
 
 def load_meta() -> dict | None:

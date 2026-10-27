@@ -161,3 +161,12 @@ section[data-testid="stSidebar"] .st-key-pl_nav_active [data-testid="stIconMater
 .pl-ex-t b { color: var(--pl-navy); }
 @media (max-width: 1100px) { .pl-ex-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 640px) { .pl-ex-grid { grid-template-columns: 1fr; } }
+
+/* Role feedback */
+.pl-head-row { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.pl-role-badge { font-size: 0.72rem; font-weight: 650; border-radius: 999px; padding: 3px 10px;
+  border: 1px solid var(--pl-border); background: #F1F5F9; color: var(--pl-slate); white-space: nowrap; }
+.pl-role-badge.viewer { background: #FFFBEB; border-color: #FCD34D; color: #92400E; }
+section[data-testid="stSidebar"] .pl-role-note { font-size: 0.74rem; line-height: 1.4; color: #A5B4CB;
+  margin: -4px 0 12px 0; }
+section[data-testid="stSidebar"] .pl-role-note b { color: #5EEAD4; }

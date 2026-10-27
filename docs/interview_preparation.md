@@ -54,7 +54,8 @@ stated. The MBA lens: every technical component answers a business question.
 ## Forecasting methodology
 * Baselines first (naive, drift), then Holt and Holt-Winters, then a structural flow model using the accepted-offer
   pipeline and seasonal exit rates.
-* Rolling-origin backtests; flow model MAE 29 heads vs 97 naive. Holt-Winters overfits with ~30 months of history.
+* Rolling-origin backtests; flow model MAE 29 heads vs 97 naive; SARIMA 28.4 (a tie, flow kept under the >5% rule).
+  Holt-Winters overfits with ~30 months of history.
 * Seasonal-naive actually forecasts *monthly exits* slightly better than the flow model — I report that rather than
   hide it.
 * Intervals from out-of-sample errors, not in-sample fit.
@@ -104,10 +105,15 @@ reconciliation; recruiter-capacity planning; incremental loads; saving scenario 
 * **What it is:** a stock-and-flow model — headcount next month = this month − expected exits + expected hires. Exits
   use each calendar month's historical exit rate (scaled to the last 12 months); hires use offers already accepted
   (adjusted for drop-outs), otherwise the recent hiring pace.
-* **Why:** lowest backtest error (MAE 29 heads vs 31 Holt, 35 drift, 52 Holt-Winters, 97 naive); uses the known offer
-  pipeline, which pure time-series models cannot see; every number is explainable; it supports what-if scenarios.
-* **Why not ARIMA / Prophet / LSTM:** ~36 monthly points — too short to learn yearly seasonality reliably (Holt-Winters
-  already overfits) and far too short for deep learning.
+* **Why:** backtest MAE 29 heads vs 31 Holt, 35 drift, 52 Holt-Winters, 97 naive; uses the known offer pipeline, which
+  pure time-series models cannot see; every number is explainable; it supports what-if scenarios.
+* **"Did you try ARIMA?"** Yes — SARIMA with its specification chosen by AIC on each training window only. It scored
+  28.4 vs 29.1: a statistical tie (2.5%, three test points, it won twice and lost badly once). My rule, the same one I
+  used for the attrition model, is that a challenger must be materially better (> 5%) to replace a simpler,
+  explainable incumbent — so I kept the flow model, which also drives the what-if tools.
+* **Follow-ups:** the two models err in opposite directions, so averaging them looked much better in backtests — but I
+  noticed that after seeing results, so I'd validate it on new months before adopting it (avoiding test-set tuning).
+  Prophet / LSTM: ~36 monthly points is far too short.
 
 ## Attrition driver simulator
 * Changes the trained model's *inputs* (engagement, manager support, career growth, pay vs peers, promotions, manager

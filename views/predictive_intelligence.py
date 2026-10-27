@@ -63,7 +63,7 @@ def _forecast(fc: dict, v: str) -> None:
     hist = pd.DataFrame(fc["history"]).assign(month=lambda d: pd.to_datetime(d.month))
     f = pd.DataFrame(fc["forecast"]).assign(month=lambda d: pd.to_datetime(d.month))
     comp = pd.DataFrame(fc["model_comparison"])
-    best = comp.iloc[0]
+    best = comp[comp.model == fc["selected_model"]].iloc[0]
     naive = comp[comp.model == "Naive"].iloc[0]
     c = st.columns(4)
     metric(c[0], f"Forecast · {f.month.iloc[-1]:%b %Y}", fmt_int(f.forecast.iloc[-1]),
@@ -97,6 +97,15 @@ def _forecast(fc: dict, v: str) -> None:
         insight(f"The **{fc['selected_model']}** reduces forecast error by **{better:.0%}** versus carrying the last "
                 f"value forward, because it uses the known offer pipeline and seasonal exit pattern instead of "
                 "extrapolating the trend.")
+        ch, gain = fc.get("best_challenger"), fc.get("challenger_gain")
+        if ch and gain is not None and ch != fc["selected_model"]:
+            insight(f"**Selection rule:** {fc.get('selection_rule', '')} Closest challenger: **{ch}** "
+                    f"({abs(gain):.1%} {'lower' if gain > 0 else 'higher'} average error"
+                    + (f"; {fc['sarima_spec']} on the full history" if ch.startswith("SARIMA") and fc.get("sarima_spec")
+                       else "")
+                    + "). With three backtest origins a difference this small is within noise, so the explainable "
+                      "flow model — which also drives department forecasts, hiring demand and scenarios — is kept. "
+                      "Switch the challenger on in the chart legend to compare.")
     with c2:
         st.markdown("**Expected flows**")
         show(f[["month", "expected_exits", "expected_hires", "forecast"]].assign(month=f.month.dt.strftime("%b %Y")),
@@ -314,7 +323,8 @@ def _monitoring(fc: dict, att: dict, ttf: dict) -> None:
         dict(model="Workforce forecast", version=fc["model_version"], trained=fc["trained_at"],
              data=f"{fc['history_months']} months to {fc['history_end']}",
              validation=f"Rolling origins {', '.join(fc['backtest_origins'])}",
-             metric=f"MAE {pd.DataFrame(fc['model_comparison']).iloc[0].mae:,.0f} heads ({fc['selected_model']})"),
+             metric=f"MAE {pd.DataFrame(fc['model_comparison']).set_index('model').loc[fc['selected_model'], 'mae']:,.0f} heads "
+                    f"({fc['selected_model']})"),
         dict(model="Attrition risk (6 months)", version=att["model_version"], trained=att["trained_at"],
              data=f"{att['train_rows']:,} train / {att['test_rows']:,} test rows",
              validation=f"Temporal hold-out at {att['test_date']}",

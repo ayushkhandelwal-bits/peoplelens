@@ -56,7 +56,11 @@ def insight(text: str, kind: str = "") -> None:
 
 
 def page_header(eyebrow: str, title: str, lede: str) -> None:
-    st.markdown(f"<div class='pl-eyebrow'>{html.escape(eyebrow)}</div>", unsafe_allow_html=True)
+    role = st.session_state.get("role") or "Analyst"
+    badge = (f"<span class='pl-role-badge {role.lower()}' title='Access role — change it in the sidebar'>"
+             f"{'🔒 ' if role == 'Viewer' else ''}Viewing as {html.escape(role)}</span>")
+    st.markdown(f"<div class='pl-head-row'><div class='pl-eyebrow'>{html.escape(eyebrow)}</div>{badge}</div>",
+                unsafe_allow_html=True)
     st.title(title)
     st.markdown(f"<div class='pl-lede'>{html.escape(lede)}</div>", unsafe_allow_html=True)
 
