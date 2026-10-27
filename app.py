@@ -53,13 +53,13 @@ pages = {
                 url_path="how-it-works"),
     ],
 }
-st.session_state["_ask_page"] = pages["Workspace"][0]
 
 nav = st.navigation(pages, position="hidden")
 sidebar.brand()
 sidebar.navigation(pages, nav)
 v = data.data_version()
 sidebar.controls(v)
+sidebar.glance(v)
 sidebar.status_block(v)
 sidebar.about_block()
 nav.run()

@@ -54,12 +54,32 @@ def controls(v: str) -> None:
         st.segmented_control("Access role", list(ROLES), key="role",
                                     help="Demonstrates role-based access. Viewer sees aggregates only and its SQL "
                                          "runs on a database connection limited to aggregate views.")
-        with st.form("ask_sidebar", clear_on_submit=True, border=False):
-            q = st.text_input("Ask PeopleLens", placeholder="e.g. attrition by department last quarter",
-                              label_visibility="visible")
-            if st.form_submit_button("Ask", type="secondary", icon=":material/arrow_forward:") and q.strip():
-                st.session_state.ask_question = q.strip()
-                st.switch_page(st.session_state["_ask_page"])
+
+
+def glance(v: str) -> None:
+    """Headline numbers for the selected period (whole organisation), visible from every page."""
+    from components.kpi_cards import fmt_pct
+    from src.analytics.common import Filters
+
+    start, end = st.session_state.get("_period") or data.bounds(v)
+    try:
+        k = data.kpis(Filters(start, end), v)
+    except Exception:
+        return
+    if not k.has_data:
+        return
+    var = k.plan_variance
+    var_txt = "—" if var is None else f"{var:+,}"
+    var_cls = "" if var is None else ("neg" if var < 0 else "pos")
+    rows = [
+        ("Headcount", f"{k.active_headcount:,}", f"at {end:%b %Y}", ""),
+        ("Attrition", fmt_pct(k.attrition_rate), "annualised", ""),
+        ("Vs plan", var_txt, "" if k.plan_variance_pct is None else fmt_pct(k.plan_variance_pct, signed=True), var_cls),
+    ]
+    cells = "".join(f"<div class='pl-glance-row'><span class='pl-glance-l'>{lbl}<small>{sub}</small></span>"
+                    f"<span class='pl-glance-v {cls}'>{val}</span></div>" for lbl, val, sub, cls in rows)
+    st.sidebar.markdown(f"<div class='pl-glance'><div class='pl-glance-h'>At a glance · {start:%b %y} – {end:%b %y}"
+                        f"</div>{cells}</div>", unsafe_allow_html=True)
 
 
 def status_block(v: str) -> None:

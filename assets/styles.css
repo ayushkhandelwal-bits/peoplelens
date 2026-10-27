@@ -135,3 +135,17 @@ section[data-testid="stSidebar"] .st-key-pl_nav_active a {
   box-shadow: inset 3px 0 0 #2DD4BF; }
 section[data-testid="stSidebar"] .st-key-pl_nav_active a p { color: #FFFFFF !important; font-weight: 650; }
 section[data-testid="stSidebar"] .st-key-pl_nav_active [data-testid="stIconMaterial"] { color: #5EEAD4 !important; }
+
+/* Sidebar: at-a-glance card */
+.pl-glance { background: linear-gradient(160deg, rgba(45,212,191,0.12), rgba(255,255,255,0.03));
+  border: 1px solid rgba(94,234,212,0.25); border-radius: 12px; padding: 10px 12px; margin: 4px 0 12px 0; }
+.pl-glance-h { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase;
+  color: #5EEAD4; margin-bottom: 6px; }
+.pl-glance-row { display: flex; justify-content: space-between; align-items: baseline; padding: 5px 0;
+  border-top: 1px solid rgba(148,163,184,0.14); }
+.pl-glance-row:first-of-type { border-top: none; }
+.pl-glance-l { color: #CBD5E1; font-size: 0.8rem; }
+.pl-glance-l small { display: block; color: #8193AE; font-size: 0.68rem; }
+.pl-glance-v { color: #FFFFFF; font-weight: 700; font-size: 1.02rem; }
+.pl-glance-v.neg { color: #FCA5A5; }
+.pl-glance-v.pos { color: #86EFAC; }
